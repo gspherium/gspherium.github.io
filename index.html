@@ -912,13 +912,68 @@
     </div>
   </div>
 
-  <!-- STICKERS MODAL -->
-  <div class="modal-overlay" id="stickersModal" onclick="closeModalOutside(event)">
+<!-- STICKERS & DECALS MODAL -->
+  <div class="modal-overlay" id="stickerModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
-      <span class="modal-close" onclick="closeModal('stickersModal')">&times;</span>
-      <h2>Sticker Printing</h2>
-      <p class="desc">Die-cut vinyl, PVC, transparent, label, wall, and paper stickers tailored to any shape or size.</p>
-      <a href="https://wa.me/971526907360?text=Order%20Stickers" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Stickers via WhatsApp</a>
+      <span class="modal-close" onclick="closeModal('stickerModal')">&times;</span>
+      <h2>Custom Stickers & Decals</h2>
+      <p class="desc">Tap any thumbnail image below to expand it to full size:</p>
+      
+      <div class="quality-list">
+
+        <!-- 1. DIE-CUT VINYL STICKERS -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-diecut.jpg.jfif.jpg', 'Custom Die-Cut Vinyl Stickers')">
+            <img src="sticker-diecut.jpg.jfif.jpg" alt="Die-Cut Stickers">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Custom Die-Cut Vinyl Stickers</strong>
+            <span>Waterproof and scratch-resistant vinyl stickers precision-cut to your exact logo shape.</span>
+          </div>
+        </div>
+
+        <!-- 2. PRODUCT ROLL LABELS -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-roll.jpg.jfif.jpg', 'Product Packaging Roll Labels')">
+            <img src="sticker-roll.jpg.jfif.jpg" alt="Roll Labels">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Packaging & Product Roll Labels</strong>
+            <span>High-volume printed label rolls for bottles, jars, pouches, and retail box packaging.</span>
+          </div>
+        </div>
+
+        <!-- 3. CLEAR TRANSPARENT STICKERS -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-clear.jpg.jfif.jpg', 'Clear Transparent Stickers')">
+            <img src="sticker-clear.jpg.jfif.jpg" alt="Clear Vinyl Stickers">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>3. Clear Transparent Stickers</strong>
+            <span>Seamless transparent background stickers with white ink backing for a sleek glass or bottle aesthetic.</span>
+          </div>
+        </div>
+
+        <!-- 4. WINDOW & VEHICLE DECALS -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-window.jpg.jfif.jpg', 'Large Window & Vehicle Decals')">
+            <img src="sticker-window.jpg.jfif.jpg" alt="Window Decals">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>4. Storefront Window & Vehicle Graphics</strong>
+            <span>Large-format frosted or full-color vinyl branding for store windows and corporate fleet vehicles.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Custom%20Stickers%20and%20Decals." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Stickers via WhatsApp
+      </a>
     </div>
   </div>
 
