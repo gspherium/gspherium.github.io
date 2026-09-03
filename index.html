@@ -3,140 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gspherium - Graphic Designing & Printing Services Dubai</title>
+  <title>GS PHERIUM - Custom Printing & Branding Solutions Dubai</title>
 
+  <!-- Google Fonts & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
+    body { background-color: #0b132b; color: #f8fafc; overflow-x: hidden; }
 
     /* --- SPLASH SCREEN ANIMATION --- */
     #splash-screen {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: #020617; display: flex; flex-direction: column;
+      background: #ffffff; display: flex; flex-direction: column;
       justify-content: center; align-items: center; z-index: 9999;
-      transition: opacity 0.8s ease, visibility 0.8s;
+      transition: opacity 0.8s ease, visibility 0.8s; text-align: center;
+      padding: 20px;
     }
-    .logo-anim {
-      font-size: 3.5rem; font-weight: 700; color: #38bdf8;
-      animation: zoomIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-      letter-spacing: 2px;
+    .logo-container {
+      margin-bottom: 10px;
+      animation: zoomIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    .logo-main {
+      font-size: 3.8rem; font-weight: 900; color: #0f1c3f; letter-spacing: -1px;
+      line-height: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .logo-accent {
+      color: #e11d48; display: inline-block; transform: skewX(-10deg);
+    }
+    .logo-sub {
+      font-size: 1.6rem; font-weight: 700; color: #0f1c3f; letter-spacing: 12px; margin-top: 5px;
+    }
+    .sub-tagline {
+      color: #5a6b82; font-size: 1.05rem; margin-top: 20px; font-weight: 500;
+      animation: fadeIn 2s ease forwards;
+    }
+    .enter-btn-container {
+      margin-top: 35px; animation: fadeIn 2.5s ease forwards;
     }
     .enter-btn {
-      margin-top: 25px; font-size: 1.2rem; color: #94a3b8; cursor: pointer;
-      letter-spacing: 3px; text-transform: uppercase; transition: color 0.3s;
-      animation: fadeIn 2.5s ease forwards;
+      background-color: #0f1c3f; color: #ffffff; padding: 14px 32px;
+      border-radius: 30px; font-weight: 700; font-size: 0.95rem; letter-spacing: 1.5px;
+      cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 10px;
+      box-shadow: 0 4px 15px rgba(15, 28, 63, 0.3); transition: transform 0.2s, background 0.3s;
     }
-    .enter-btn:hover { color: #38bdf8; text-shadow: 0 0 10px rgba(56,189,248,0.5); }
+    .enter-btn:hover { transform: scale(1.05); background-color: #1c2d5a; }
 
-    @keyframes zoomIn { 0% { transform: scale(0.2); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    @keyframes zoomIn { 0% { transform: scale(0.3); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
     @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
 
-    /* --- SIDEBAR CONTACT WIDGET --- */
+    /* --- FLOATING CONTACT WIDGET --- */
     .floating-contact {
       position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
-      display: flex; flex-direction: column; gap: 15px; z-index: 1000;
-      background: rgba(30, 41, 59, 0.8); padding: 15px 10px; border-radius: 30px;
-      backdrop-filter: blur(5px); border: 1px solid #334155; text-align: center;
+      display: flex; flex-direction: column; gap: 12px; z-index: 1000;
+      background: rgba(15, 28, 63, 0.95); padding: 15px 10px; border-radius: 30px;
+      border: 1px solid #1c2d5a; text-align: center;
     }
-    .floating-contact span { font-size: 0.65rem; color: #94a3b8; writing-mode: vertical-rl; transform: rotate(180deg); margin-bottom: 5px; }
-    .floating-btn { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; text-decoration: none; transition: transform 0.3s; }
+    .floating-contact span { font-size: 0.65rem; color: #94a3b8; writing-mode: vertical-rl; transform: rotate(180deg); }
+    .floating-btn { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; text-decoration: none; transition: transform 0.3s; }
     .floating-btn:hover { transform: scale(1.15); }
     .wa-btn { background: #25d366; }
     .mail-btn { background: #ea4335; }
 
-    /* --- HEADER & MAIN SITE --- */
-    header { padding: 40px 20px; text-align: center; background: #1e293b; border-bottom: 1px solid #334155; }
-    header h1 { font-size: 2.5rem; color: #38bdf8; }
-    header p { color: #94a3b8; font-size: 0.9rem; margin-top: 5px; }
+    /* --- HEADER & NAVIGATION --- */
+    header { padding: 30px 20px; text-align: center; background: #0f1c3f; border-bottom: 1px solid #1c2d5a; }
+    header h1 { font-size: 2.2rem; color: #ffffff; letter-spacing: 2px; }
+    header p { color: #38bdf8; font-size: 0.95rem; margin-top: 5px; font-weight: 500; }
 
+    /* --- SERVICES GRID --- */
     .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-    .card { background: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155; transition: transform 0.3s; }
+    .card { background: #111d42; border-radius: 12px; overflow: hidden; border: 1px solid #1c2d5a; transition: transform 0.3s; }
     .card:hover { transform: translateY(-8px); }
-    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card img { width: 100%; height: 210px; object-fit: cover; }
     .card-body { padding: 20px; }
-    .card-body h3 { font-size: 1.1rem; color: #f8fafc; margin-bottom: 10px; }
+    .card-body h3 { font-size: 1.1rem; color: #ffffff; margin-bottom: 8px; }
     .card-body p { font-size: 0.85rem; color: #94a3b8; line-height: 1.5; }
 
-    footer { text-align: center; padding: 30px; background: #020617; color: #64748b; font-size: 0.85rem; border-top: 1px solid #1e293b; }
+    /* --- FOOTER --- */
+    footer { text-align: center; padding: 30px; background: #070d1e; color: #64748b; font-size: 0.85rem; border-top: 1px solid #111d42; }
+    footer strong { color: #f8fafc; }
   </style>
 </head>
 <body>
 
+  <!-- 1. SPLASH SCREEN ANIMATION -->
   <div id="splash-screen">
-    <div class="logo-anim">GSPHERIUM</div>
-    <div class="enter-btn" onclick="enterSite()">Click . Connect . Convert</div>
-  </div>
-
-  <div class="floating-contact">
-    <span>For More Info</span>
-    <a href="https://wa.me/971526907360" target="_blank" class="floating-btn wa-btn"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:gspherium@gmail.com" class="floating-btn mail-btn"><i class="fas fa-envelope"></i></a>
-  </div>
-
-  <header>
-    <h1>GSPHERIUM</h1>
-    <p>Graphic Designing & Premium Printing Services | Al Rigga, Dubai</p>
-  </header>
-
-  <div class="container">
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Business Cards">
-        <div class="card-body">
-          <h3>Business Card Printing</h3>
-          <p>Premium matte, gloss, textured, and foil-finished business cards designed to leave an impression.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=600&q=80" alt="Flyers">
-        <div class="card-body">
-          <h3>Flyer & Brochure Printing</h3>
-          <p>High-volume, vibrant promotional prints on top-tier paper stocks for active brand campaigns.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="T-Shirt Printing">
-        <div class="card-body">
-          <h3>DTF & 3D Puff T-Shirt Printing</h3>
-          <p>Durable Direct-To-Film and tactile 3D raised print designs tailored for custom apparel.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Acrylic & Signage">
-        <div class="card-body">
-          <h3>Acrylic Stands & Signages</h3>
-          <p>Custom laser-cut acrylic displays, 3D shopfront letters, and indoor corporate signage solutions.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=600&q=80" alt="Stickers">
-        <div class="card-body">
-          <h3>Custom Sticker Printing</h3>
-          <p>Die-cut vinyl, PVC, transparent, label, wall, and paper stickers tailored to any shape or size.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Corporate Gifts">
-        <div class="card-body">
-          <h3>Corporate Gifts & Engraving</h3>
-          <p>High-precision laser engraving on metal, wood, or acrylic along with bespoke promotional gift sets.</p>
-        </div>
-      </div>
+    <div class="logo-container">
+      <div class="logo-main">GS <span class="logo-accent">PHERIUM</span></div>
+    </div>
+    <div class="sub-tagline">Custom Printing, Corporate Merch & Branding Solutions</div>
+    <div class="enter-btn-container">
+      <button class="enter-btn" onclick="enterSite()">
+        <i class="fas fa-mouse-pointer"></i> CLICK. CONNECT. CONVERT.
+      </button>
     </div>
   </div>
 
+  <!-- 2. FLOATING CONTACT WIDGET -->
+  <div class="floating-contact">
+    <span>For More Information</span>
+    <a href="https://wa.me/971526907360" target="_blank" class="floating-btn wa-btn" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:gspherium@gmail.com" class="floating-btn mail-btn" title="Email Us"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <!-- 3. HEADER -->
+  <header>
+    <h1>GS PHERIUM</h1>
+    <p>Custom Printing, Corporate Merch & Branding Solutions | Al Rigga, Dubai</p>
+  </header>
+
+  <!-- 4. SERVICES SHOWCASE (15 SERVICES) -->
+  <div class="container">
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Business Card Printing">
+        <div class="card-body">
+          <h3>Business Card Printing</h3>
+          <p>Matte, gloss, textured, soft-touch, and foil-stamped business cards designed to elevate your network.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=600&q=80" alt="Flyer Printing">
+        <div class="card-body">
+          <h3>Flyer & Brochure Printing</h3>
+          <p>High-volume, crisp marketing flyers and bi-fold/tri-fold brochures on premium paper stocks.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80" alt="Letterhead Printing">
+        <div class="card-body">
+          <h3>Letterhead Printing</h3>
+          <p>Official corporate stationary and letterheads printed on high-grade smooth paper.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80" alt="T-Shirt Printing DTF">
+        <div class="card-body">
+          <h3>T-Shirt Printing (DTF)</h3>
+          <p>Direct-to-Film custom apparel printing with full-color detail and stretch-resistant durability.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="3D Puff T-Shirt Printing">
+        <div class="card-body">
+          <h3>3D Puff T-Shirt Printing</h3>
+          <p>Tactile, raised 3D rubberized text and graphics for custom streetwear and branding.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80" alt="Custom Embroidery">
+        <div class="card-body">
+          <h3>Custom Embroidery</h3>
+          <p>High-density thread embroidery for corporate polos, caps, uniforms, and jackets.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&w=600&q=80" alt="UV Printing">
+        <div class="card-body">
+          <h3>UV Direct Printing</h3>
+          <p>Instant-cure direct UV printing on acrylic, wood, glass, metal, and plastic materials.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Custom Corporate Gifts">
+        <div class="card-body">
+          <h3>Customized Corporate Gifts</h3>
+          <p>Tailored promotional gift sets, branded drinkware, notebooks, and executive giveaways.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="Acrylic Stands">
+        <div class="card-body">
+          <h3>Acrylic Stands (Any Size)</h3>
+          <p>Custom laser-cut acrylic display stands, table menus, and office signage made to order.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Banner & Roll-Up Printing">
+        <div class="card-body">
+          <h3>Banner & Roll-Up Printing</h3>
+          <p>Retractable roll-up stands and wide-format vinyl banners for exhibitions and retail spaces.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=600&q=80" alt="Signages">
+        <div class="card-body">
+          <h3>Signages & 3D Letters</h3>
+          <p>Indoor/outdoor 3D acrylic letters, LED illuminated storefront signs, and directional boards.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Large Scale Photo Printing">
+        <div class="card-body">
+          <h3>Large Scale Photo Printing</h3>
+          <p>Gallery-quality high-resolution canvas prints and large photo frames for office or home décor.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Sticker Printing">
+        <div class="card-body">
+          <h3>Sticker Printing (PVC, Label, Vinyl)</h3>
+          <p>Custom die-cut stickers in PVC, clear vinyl, paper, label, wall, and waterproof finishes.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Book Printing">
+        <div class="card-body">
+          <h3>Book & Catalog Printing</h3>
+          <p>Custom booklets, catalogs, and manuals in any quantity with spiral or hard-cover binding.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Engraving & Keychains">
+        <div class="card-body">
+          <h3>Engraving & Custom Keychains</h3>
+          <p>Laser engraving on metal/wood along with customized acrylic, leather, and metal keychains.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5. FOOTER -->
   <footer>
-    <p>Location: Al Rigga, Dubai - UAE | Contact: +971 52 690 7360 | Email: gspherium@gmail.com</p>
-    <p style="margin-top:5px;">&copy; Gspherium. All Rights Reserved.</p>
+    <p><strong>Location:</strong> Al Rigga, Dubai - UAE | <strong>Mobile:</strong> +971 52 690 7360 | <strong>Email:</strong> gspherium@gmail.com</p>
+    <p style="margin-top:8px;">&copy; GS PHERIUM. All Rights Reserved.</p>
   </footer>
 
   <script>
