@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GS PHERIUM - Custom Printing & Branding Solutions Dubai</title>
 
+  <!-- Google Fonts & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -154,6 +155,7 @@
 </head>
 <body>
 
+  <!-- SPLASH SCREEN -->
   <div id="splash-screen">
     <div class="splash-logo-container">
       <img src="logo.png.png" alt="GS PHERIUM Logo" class="splash-logo-img">
@@ -166,12 +168,14 @@
     </div>
   </div>
 
+  <!-- FLOATING CONTACT -->
   <div class="floating-contact">
     <span>For More Information</span>
     <a href="https://wa.me/971526907360" target="_blank" class="floating-btn wa-btn"><i class="fab fa-whatsapp"></i></a>
     <a href="mailto:gspherium@gmail.com" class="floating-btn mail-btn"><i class="fas fa-envelope"></i></a>
   </div>
 
+  <!-- HEADER -->
   <header>
     <div class="header-logo-container" onclick="openModal('aboutModal')">
       <div class="header-logo-badge">
@@ -182,6 +186,7 @@
     <p>Custom Printing, Corporate Merch & Branding Solutions | Al Rigga, Dubai</p>
   </header>
 
+  <!-- ALL 15 SERVICES GRID -->
   <div class="container">
     <div class="grid">
 
@@ -323,6 +328,7 @@
     </div>
   </div>
 
+  <!-- ABOUT MODAL -->
   <div class="modal-overlay" id="aboutModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('aboutModal')">&times;</span>
@@ -332,6 +338,7 @@
     </div>
   </div>
 
+  <!-- BUSINESS CARD MODAL -->
   <div class="modal-overlay" id="cardModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('cardModal')">&times;</span>
@@ -401,6 +408,7 @@
     </div>
   </div>
 
+  <!-- FLYER & BROCHURE MODAL WITH FIXED SIZES POSITION -->
   <div class="modal-overlay" id="flyerModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('flyerModal')">&times;</span>
@@ -409,9 +417,10 @@
       
       <div class="quality-list">
 
-        <div class="quality-item" onclick="openLightbox('flyer-single.jpg', 'Single & Double-Sided Marketing Flyers')">
+        <!-- 1. SINGLE & DOUBLE SIDED FLYER -->
+        <div class="quality-item" onclick="openLightbox('flyer-single.jpg.jfif', 'Single & Double-Sided Marketing Flyers')">
           <div class="quality-item-img-wrap">
-            <img src="flyer-single.jpg" alt="Marketing Flyers">
+            <img src="flyer-single.jpg.jfif" alt="Marketing Flyers">
             <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
           </div>
           <div class="quality-item-text">
@@ -420,9 +429,10 @@
           </div>
         </div>
 
-        <div class="quality-item" onclick="openLightbox('flyer-bifold.jpg', 'Bi-Fold Corporate Brochures')">
+        <!-- 2. BI-FOLD BROCHURE -->
+        <div class="quality-item" onclick="openLightbox('flyer-bifold.jpg.jfif', 'Bi-Fold Corporate Brochures')">
           <div class="quality-item-img-wrap">
-            <img src="flyer-bifold.jpg" alt="Bi-Fold Brochure">
+            <img src="flyer-bifold.jpg.jfif" alt="Bi-Fold Brochure">
             <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
           </div>
           <div class="quality-item-text">
@@ -431,9 +441,10 @@
           </div>
         </div>
 
-        <div class="quality-item" onclick="openLightbox('flyer-trifold.jpg', 'Tri-Fold Promotional Pamphlets')">
+        <!-- 3. TRI-FOLD BROCHURE -->
+        <div class="quality-item" onclick="openLightbox('flyer-trifold.jpg.jfif', 'Tri-Fold Promotional Pamphlets')">
           <div class="quality-item-img-wrap">
-            <img src="flyer-trifold.jpg" alt="Tri-Fold Brochure">
+            <img src="flyer-trifold.jpg.jfif" alt="Tri-Fold Brochure">
             <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
           </div>
           <div class="quality-item-text">
@@ -442,9 +453,10 @@
           </div>
         </div>
 
-        <div class="quality-item" onclick="openLightbox('flyer-heavy.jpg', 'Thick Cardstock Premium Flyers')">
+        <!-- 4. HEAVYWEIGHT CARDSTOCK -->
+        <div class="quality-item" onclick="openLightbox('flyer-heavy.jpg.jfif', 'Thick Cardstock Premium Flyers')">
           <div class="quality-item-img-wrap">
-            <img src="flyer-heavy.jpg" alt="Thick Cardstock Flyer">
+            <img src="flyer-heavy.jpg.jfif" alt="Thick Cardstock Flyer">
             <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
           </div>
           <div class="quality-item-text">
@@ -455,6 +467,7 @@
 
       </div>
 
+      <!-- AVAILABLE PAPER SIZES SECTION -->
       <div class="paper-size-box">
         <div class="paper-size-title"><i class="fas fa-ruler-combined"></i> Available Paper Sizes</div>
         <div class="paper-size-tags">
@@ -468,6 +481,7 @@
     </div>
   </div>
 
+  <!-- OTHER SERVICE MODALS -->
   <div class="modal-overlay" id="letterheadModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('letterheadModal')">&times;</span><h2>Letterhead Printing</h2><p class="desc">Official corporate stationary and letterheads printed on smooth, high-grade paper.</p><a href="https://wa.me/971526907360?text=Order%20Letterheads" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Letterheads via WhatsApp</a></div></div>
   <div class="modal-overlay" id="tshirtModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('tshirtModal')">&times;</span><h2>T-Shirt Printing (DTF)</h2><p class="desc">Direct-to-Film custom apparel printing with vibrant colors and durable, stretch-resistant prints.</p><a href="https://wa.me/971526907360?text=Order%20T-Shirts" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order DTF T-Shirts via WhatsApp</a></div></div>
   <div class="modal-overlay" id="puffModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('puffModal')">&times;</span><h2>3D Puff T-Shirt Printing</h2><p class="desc">Tactile, raised 3D rubberized text and graphics for streetwear and custom branded merchandise.</p><a href="https://wa.me/971526907360?text=Order%203D%20Puff" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order 3D Puff Printing via WhatsApp</a></div></div>
@@ -482,6 +496,7 @@
   <div class="modal-overlay" id="bookModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('bookModal')">&times;</span><h2>Book & Catalog Printing</h2><p class="desc">Custom booklets, catalogs, and manuals in any quantity with spiral, perfect, or hard-cover binding.</p><a href="https://wa.me/971526907360?text=Order%20Book%20Printing" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Book Printing via WhatsApp</a></div></div>
   <div class="modal-overlay" id="engravingModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('engravingModal')">&times;</span><h2>Laser Engraving</h2><p class="desc">Precision laser etching on metal, wood, or acrylic along with customized promo keychains.</p><a href="https://wa.me/971526907360?text=Order%20Laser%20Engraving" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Engraving via WhatsApp</a></div></div>
 
+  <!-- FULL-SCREEN LIGHTBOX OVERLAY -->
   <div id="image-lightbox" onclick="closeLightbox()">
     <img id="lightbox-img" src="" alt="Full Screen View">
     <div class="lightbox-caption" id="lightbox-caption"></div>
