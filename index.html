@@ -30,7 +30,7 @@
     #splash-screen.hidden {
       opacity: 0;
       visibility: hidden;
-      pointer-events: none; /* CRITICAL FIX: Allows touches to pass through */
+      pointer-events: none;
     }
     .splash-logo-container {
       background: #ffffff; padding: 15px 30px; border-radius: 12px;
@@ -98,7 +98,7 @@
     .modal-card h2 { color: #f4f4f5; font-size: 1.5rem; margin-bottom: 10px; border-bottom: 1px solid #27272a; padding-bottom: 10px; }
     .modal-card p.desc { color: #a1a1aa; font-size: 0.9rem; margin-bottom: 20px; }
     
-    .quality-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 25px; }
+    .quality-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
     .quality-item { 
       background: #09090b; padding: 16px; border-radius: 12px; border: 1px solid #27272a;
       display: flex; gap: 16px; align-items: center; cursor: pointer;
@@ -115,6 +115,14 @@
     }
     .quality-item-text strong { color: #38bdf8; font-size: 0.95rem; display: block; margin-bottom: 4px; }
     .quality-item-text span { color: #d4d4d8; font-size: 0.85rem; line-height: 1.5; display: block; }
+
+    /* --- AVAILABLE PAPER SIZES CONTAINER --- */
+    .paper-size-box {
+      background: #09090b; border: 1px solid #27272a; border-radius: 12px; padding: 16px; margin-bottom: 25px; text-align: center;
+    }
+    .paper-size-title { font-size: 0.85rem; color: #a1a1aa; margin-bottom: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+    .paper-size-tags { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .size-tag { background: #27272a; color: #38bdf8; padding: 6px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; border: 1px solid #3f3f46; }
 
     /* --- FULL SCREEN LIGHTBOX --- */
     #image-lightbox {
@@ -393,7 +401,73 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="flyerModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('flyerModal')">&times;</span><h2>Flyer & Brochure Printing</h2><p class="desc">High-volume marketing flyers and bi-fold/tri-fold brochures on premium paper stocks.</p><a href="https://wa.me/971526907360?text=Order%20Flyers" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Flyers via WhatsApp</a></div></div>
+  <div class="modal-overlay" id="flyerModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('flyerModal')">&times;</span>
+      <h2>Flyer & Brochure Printing Options</h2>
+      <p class="desc">Tap any option below to view full size image:</p>
+      
+      <div class="quality-list">
+
+        <div class="quality-item" onclick="openLightbox('flyer-single.jpg', 'Single & Double-Sided Marketing Flyers')">
+          <div class="quality-item-img-wrap">
+            <img src="flyer-single.jpg" alt="Marketing Flyers">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Single & Double-Sided Flyers</strong>
+            <span>Printed on 150gsm to 170gsm vibrant gloss or smooth matte paper stock for high-impact promotions.</span>
+          </div>
+        </div>
+
+        <div class="quality-item" onclick="openLightbox('flyer-bifold.jpg', 'Bi-Fold Corporate Brochures')">
+          <div class="quality-item-img-wrap">
+            <img src="flyer-bifold.jpg" alt="Bi-Fold Brochure">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Bi-Fold Folded Brochures</strong>
+            <span>4-panel layout folded neatly down the center, perfect for company portfolios and restaurant menus.</span>
+          </div>
+        </div>
+
+        <div class="quality-item" onclick="openLightbox('flyer-trifold.jpg', 'Tri-Fold Promotional Pamphlets')">
+          <div class="quality-item-img-wrap">
+            <img src="flyer-trifold.jpg" alt="Tri-Fold Brochure">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>3. Tri-Fold / Z-Fold Pamphlets</strong>
+            <span>Compact 6-panel informational brochures ideal for product catalogues and corporate service lists.</span>
+          </div>
+        </div>
+
+        <div class="quality-item" onclick="openLightbox('flyer-heavy.jpg', 'Thick Cardstock Premium Flyers')">
+          <div class="quality-item-img-wrap">
+            <img src="flyer-heavy.jpg" alt="Thick Cardstock Flyer">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>4. Heavyweight Cardstock Flyers (300gsm)</strong>
+            <span>Thick, luxury flyer cards finished with optional soft-touch matte or crystal gloss lamination.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="paper-size-box">
+        <div class="paper-size-title"><i class="fas fa-ruler-combined"></i> Available Paper Sizes</div>
+        <div class="paper-size-tags">
+          <span class="size-tag">A6</span>
+          <span class="size-tag">A5</span>
+          <span class="size-tag">A4</span>
+        </div>
+      </div>
+
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Flyers%20%26%20Brochures." target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Flyers via WhatsApp</a>
+    </div>
+  </div>
+
   <div class="modal-overlay" id="letterheadModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('letterheadModal')">&times;</span><h2>Letterhead Printing</h2><p class="desc">Official corporate stationary and letterheads printed on smooth, high-grade paper.</p><a href="https://wa.me/971526907360?text=Order%20Letterheads" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Letterheads via WhatsApp</a></div></div>
   <div class="modal-overlay" id="tshirtModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('tshirtModal')">&times;</span><h2>T-Shirt Printing (DTF)</h2><p class="desc">Direct-to-Film custom apparel printing with vibrant colors and durable, stretch-resistant prints.</p><a href="https://wa.me/971526907360?text=Order%20T-Shirts" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order DTF T-Shirts via WhatsApp</a></div></div>
   <div class="modal-overlay" id="puffModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('puffModal')">&times;</span><h2>3D Puff T-Shirt Printing</h2><p class="desc">Tactile, raised 3D rubberized text and graphics for streetwear and custom branded merchandise.</p><a href="https://wa.me/971526907360?text=Order%203D%20Puff" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order 3D Puff Printing via WhatsApp</a></div></div>
