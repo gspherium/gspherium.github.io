@@ -12,7 +12,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     
-    /* MATTE CHARCOAL & WOOD TEXTURED BACKGROUND */
+    /* MATTE CHARCOAL BACKGROUND */
     body { 
       background-color: #121214; 
       background-image: 
@@ -31,17 +31,12 @@
       padding: 20px;
     }
     .splash-logo-container {
-      background: #ffffff;
-      padding: 15px 30px;
-      border-radius: 12px;
+      background: #ffffff; padding: 15px 30px; border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.8);
       animation: zoomIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
     .splash-logo-img { max-width: 260px; width: 80%; height: auto; display: block; }
-    .sub-tagline {
-      color: #a1a1aa; font-size: 1.05rem; margin-top: 20px; font-weight: 400; letter-spacing: 0.5px;
-      animation: fadeIn 2s ease forwards;
-    }
+    .sub-tagline { color: #a1a1aa; font-size: 1.05rem; margin-top: 20px; font-weight: 400; letter-spacing: 0.5px; animation: fadeIn 2s ease forwards; }
     .enter-btn-container { margin-top: 30px; animation: fadeIn 2.5s ease forwards; }
     .enter-btn {
       background: linear-gradient(135deg, #27272a 0%, #18181b 100%);
@@ -68,73 +63,76 @@
     .wa-btn { background: #25d366; }
     .mail-btn { background: #ea4335; }
 
-    /* --- HEADER & MATTE EMBOSSED LOGO CONTAINER --- */
+    /* --- HEADER --- */
     header { padding: 40px 20px 30px; text-align: center; background: #18181b; border-bottom: 1px solid #27272a; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
     .header-logo-container { display: inline-block; cursor: pointer; transition: transform 0.3s ease; }
     .header-logo-container:hover { transform: scale(1.03); }
-    
-    .header-logo-badge {
-      background: #ffffff;
-      padding: 12px 28px;
-      border-radius: 12px;
-      display: inline-block;
-      margin-bottom: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-      border: 1px solid #e4e4e7;
-    }
+    .header-logo-badge { background: #ffffff; padding: 12px 28px; border-radius: 12px; display: inline-block; margin-bottom: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.6); border: 1px solid #e4e4e7; }
     .header-logo-img { height: 60px; width: auto; display: block; }
-    
     header h1 { font-size: 2.2rem; color: #f4f4f5; letter-spacing: 3px; font-weight: 700; }
     header p { color: #a1a1aa; font-size: 0.95rem; margin-top: 6px; font-weight: 400; }
     .click-hint { font-size: 0.75rem; color: #71717a; margin-top: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
 
-    /* --- ABOUT US POPUP MODAL --- */
-    .modal-overlay {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(9, 9, 11, 0.9); backdrop-filter: blur(8px);
-      display: flex; justify-content: center; align-items: center;
-      z-index: 10000; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s;
-    }
-    .modal-overlay.active { opacity: 1; visibility: visible; }
-    .modal-card {
-      background: #18181b; width: 90%; max-width: 550px; border-radius: 16px;
-      border: 1px solid #27272a; padding: 35px 30px; text-align: center; position: relative;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); transform: translateY(20px); transition: transform 0.4s ease;
-    }
-    .modal-overlay.active .modal-card { transform: translateY(0); }
-    .modal-close {
-      position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: #71717a;
-      cursor: pointer; transition: color 0.2s;
-    }
-    .modal-close:hover { color: #ffffff; }
-    .modal-logo-badge { background: #ffffff; padding: 10px 22px; border-radius: 10px; display: inline-block; margin-bottom: 15px; }
-    .modal-logo { height: 45px; display: block; }
-    .modal-card h2 { color: #f4f4f5; font-size: 1.6rem; margin-bottom: 12px; letter-spacing: 1px; }
-    .modal-card p { color: #a1a1aa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
-    .modal-features { text-align: left; background: #09090b; padding: 18px 20px; border-radius: 10px; margin-bottom: 25px; border: 1px solid #27272a; }
-    .modal-features li { color: #e4e4e7; font-size: 0.85rem; margin-bottom: 10px; list-style: none; display: flex; align-items: center; gap: 10px; }
-    .modal-features li i { color: #22c55e; }
-    .modal-contact-btn {
-      display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #ffffff; font-weight: 600;
-      padding: 12px 28px; border-radius: 25px; text-decoration: none; font-size: 0.9rem;
-      transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(37,211,102,0.3);
-    }
-    .modal-contact-btn:hover { transform: scale(1.05); }
-
-    /* --- MATTE CAROUSEL & SERVICES GRID --- */
+    /* --- SERVICES GRID & CLICKABLE CARDS --- */
     .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
     .card { 
       background: #18181b; border-radius: 14px; overflow: hidden; 
       border: 1px solid #27272a; transition: all 0.3s ease; 
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4); cursor: pointer; position: relative;
     }
-    .card:hover { transform: translateY(-8px); border-color: #3f3f46; box-shadow: 0 15px 30px rgba(0,0,0,0.7); }
+    .card:hover { transform: translateY(-8px); border-color: #52525b; box-shadow: 0 15px 30px rgba(0,0,0,0.7); }
     .card img { width: 100%; height: 210px; object-fit: cover; filter: brightness(0.95); transition: filter 0.3s; }
     .card:hover img { filter: brightness(1.05); }
     .card-body { padding: 22px; }
-    .card-body h3 { font-size: 1.1rem; color: #f4f4f5; margin-bottom: 8px; font-weight: 600; }
+    .card-body h3 { font-size: 1.1rem; color: #f4f4f5; margin-bottom: 8px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
     .card-body p { font-size: 0.85rem; color: #a1a1aa; line-height: 1.6; }
+    .card-click-badge { font-size: 0.75rem; color: #38bdf8; font-weight: 500; margin-top: 12px; display: inline-flex; align-items: center; gap: 5px; }
+
+    /* --- DETAIL POPUP MODALS WITH IMAGES --- */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(9, 9, 11, 0.92); backdrop-filter: blur(8px);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 10000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-card {
+      background: #18181b; width: 92%; max-width: 700px; max-height: 88vh; overflow-y: auto;
+      border-radius: 16px; border: 1px solid #3f3f46; padding: 30px; text-align: left; position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9); transform: translateY(20px); transition: transform 0.3s ease;
+    }
+    .modal-overlay.active .modal-card { transform: translateY(0); }
+    .modal-close {
+      position: absolute; top: 15px; right: 20px; font-size: 1.6rem; color: #a1a1aa;
+      cursor: pointer; transition: color 0.2s; z-index: 10;
+    }
+    .modal-close:hover { color: #ffffff; }
+    .modal-card h2 { color: #f4f4f5; font-size: 1.5rem; margin-bottom: 10px; border-bottom: 1px solid #27272a; padding-bottom: 10px; }
+    .modal-card p.desc { color: #a1a1aa; font-size: 0.9rem; margin-bottom: 20px; line-height: 1.5; }
+    
+    .quality-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 25px; }
+    .quality-item { 
+      background: #09090b; padding: 16px; border-radius: 12px; border: 1px solid #27272a;
+      display: flex; gap: 16px; align-items: center;
+    }
+    .quality-item img {
+      width: 100px; height: 80px; object-fit: cover; border-radius: 8px; border: 1px solid #3f3f46; flex-shrink: 0;
+    }
+    .quality-item-text strong { color: #38bdf8; font-size: 0.95rem; display: block; margin-bottom: 4px; }
+    .quality-item-text span { color: #d4d4d8; font-size: 0.85rem; line-height: 1.5; display: block; }
+    
+    @media (max-width: 550px) {
+      .quality-item { flex-direction: column; text-align: center; }
+      .quality-item img { width: 100%; height: 140px; }
+    }
+
+    .modal-order-btn {
+      display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #ffffff; font-weight: 600;
+      padding: 14px 28px; border-radius: 25px; text-decoration: none; font-size: 0.95rem; width: 100%; justify-content: center;
+      transition: transform 0.2s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); margin-top: 10px;
+    }
+    .modal-order-btn:hover { transform: scale(1.02); }
 
     /* --- FOOTER --- */
     footer { text-align: center; padding: 35px; background: #09090b; color: #71717a; font-size: 0.85rem; border-top: 1px solid #18181b; }
@@ -165,7 +163,7 @@
 
   <!-- 3. HEADER WITH MATTE LOGO -->
   <header>
-    <div class="header-logo-container" onclick="openAboutModal()" title="Click to view About Us">
+    <div class="header-logo-container" onclick="openModal('aboutModal')" title="Click to view About Us">
       <div class="header-logo-badge">
         <img src="logo.png.png" alt="GS PHERIUM Logo" class="header-logo-img">
       </div>
@@ -175,152 +173,621 @@
     <div class="click-hint"><i class="fas fa-info-circle"></i> Click logo above for About Us</div>
   </header>
 
-  <!-- 4. ABOUT US POPUP MODAL -->
-  <div class="modal-overlay" id="aboutModal" onclick="closeAboutModalOutside(event)">
-    <div class="modal-card">
-      <span class="modal-close" onclick="closeAboutModal()">&times;</span>
-      <div class="modal-logo-badge">
-        <img src="logo.png.png" alt="GS PHERIUM Logo" class="modal-logo">
-      </div>
-      <h2>About GS PHERIUM</h2>
-      <p>Based in Al Rigga, Dubai, <strong>GS PHERIUM</strong> is your premier destination for high-impact custom printing, corporate merchandise, and bespoke promotional solutions. We turn creative concepts into high-quality physical products designed to elevate your brand presence across the UAE.</p>
-      
-      <ul class="modal-features">
-        <li><i class="fas fa-check-circle"></i> High-precision DTF, 3D Puff & UV printing technology.</li>
-        <li><i class="fas fa-check-circle"></i> Premium corporate gifting, embroidery & engraving.</li>
-        <li><i class="fas fa-check-circle"></i> Fast turnaround times tailored for corporate campaigns.</li>
-      </ul>
+  <!-- 4. SERVICES SHOWCASE (CLICKABLE CARDS) -->
+  <div class="container">
+    <div class="grid">
 
-      <a href="https://wa.me/971526907360" target="_blank" class="modal-contact-btn">
-        <i class="fab fa-whatsapp"></i> Connect With Us
+      <!-- CARD 1: BUSINESS CARDS -->
+      <div class="card" onclick="openModal('cardModal')">
+        <img src="card.jpg.webp" alt="Business Card Printing">
+        <div class="card-body">
+          <h3>Business Card Printing <i class="fas fa-arrow-right"></i></h3>
+          <p>Matte, gloss, textured, soft-touch, and foil-stamped business cards designed to elevate your brand.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view finishes & photos</div>
+        </div>
+      </div>
+
+      <!-- CARD 2: FLYERS -->
+      <div class="card" onclick="openModal('flyerModal')">
+        <img src="flyer.jpg.jfif" alt="Flyer Printing">
+        <div class="card-body">
+          <h3>Flyer & Brochure Printing <i class="fas fa-arrow-right"></i></h3>
+          <p>High-volume marketing flyers and bi-fold/tri-fold brochures on premium paper stocks.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view folds & options</div>
+        </div>
+      </div>
+
+      <!-- CARD 3: LETTERHEADS -->
+      <div class="card" onclick="openModal('letterheadModal')">
+        <img src="letterhead.jpg.jfif" alt="Letterhead Printing">
+        <div class="card-body">
+          <h3>Letterhead Printing <i class="fas fa-arrow-right"></i></h3>
+          <p>Official corporate stationary and letterheads printed on smooth, high-grade paper.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view paper options</div>
+        </div>
+      </div>
+
+      <!-- CARD 4: DTF T-SHIRTS -->
+      <div class="card" onclick="openModal('tshirtModal')">
+        <img src="tshirt.jpg.jfif" alt="T-Shirt Printing DTF">
+        <div class="card-body">
+          <h3>T-Shirt Printing (DTF) <i class="fas fa-arrow-right"></i></h3>
+          <p>Direct-to-Film custom apparel printing with vibrant colors and durable, stretch-resistant prints.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view print quality</div>
+        </div>
+      </div>
+
+      <!-- CARD 5: 3D PUFF -->
+      <div class="card" onclick="openModal('puffModal')">
+        <img src="3dpuff.jpg.jfif" alt="3D Puff T-Shirt Printing">
+        <div class="card-body">
+          <h3>3D Puff T-Shirt Printing <i class="fas fa-arrow-right"></i></h3>
+          <p>Tactile, raised 3D rubberized text and graphics for streetwear and custom branded merchandise.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view 3D puff effects</div>
+        </div>
+      </div>
+
+      <!-- CARD 6: EMBROIDERY -->
+      <div class="card" onclick="openModal('embroideryModal')">
+        <img src="embroidery.jpg.jfif" alt="Custom Embroidery">
+        <div class="card-body">
+          <h3>Custom Embroidery <i class="fas fa-arrow-right"></i></h3>
+          <p>High-density thread embroidery for corporate polo shirts, caps, workwear, and jackets.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view stitching details</div>
+        </div>
+      </div>
+
+      <!-- CARD 7: UV PRINTING -->
+      <div class="card" onclick="openModal('uvModal')">
+        <img src="uvprint.jpg.webp" alt="UV Printing On Anything">
+        <div class="card-body">
+          <h3>UV Direct Printing (On Anything) <i class="fas fa-arrow-right"></i></h3>
+          <p>Direct UV printing on acrylic, wood, glass, metal, plastic, phone cases, and custom items.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view printed items</div>
+        </div>
+      </div>
+
+      <!-- CARD 8: CORPORATE GIFTS -->
+      <div class="card" onclick="openModal('giftsModal')">
+        <img src="gifts.jpg.jfif" alt="Custom Corporate Gifts">
+        <div class="card-body">
+          <h3>Customized Corporate Gifts <i class="fas fa-arrow-right"></i></h3>
+          <p>Tailored promotional gift sets, branded bottles, notebooks, pens, and corporate giveaways.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view gift sets</div>
+        </div>
+      </div>
+
+      <!-- CARD 9: ACRYLIC STANDS -->
+      <div class="card" onclick="openModal('acrylicModal')">
+        <img src="acrylic.jpg.jfif" alt="Acrylic Stands">
+        <div class="card-body">
+          <h3>Acrylic Stands (Any Size) <i class="fas fa-arrow-right"></i></h3>
+          <p>Custom laser-cut acrylic display stands, table displays, and office counter signage made to order.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view display types</div>
+        </div>
+      </div>
+
+      <!-- CARD 10: BANNERS -->
+      <div class="card" onclick="openModal('bannerModal')">
+        <img src="banner.jpg.jfif" alt="Banner & Roll-Up Printing">
+        <div class="card-body">
+          <h3>Banner & Roll-Up Printing <i class="fas fa-arrow-right"></i></h3>
+          <p>Retractable roll-up stands and wide-format vinyl banners for tradeshows, exhibitions, and retail.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view stand options</div>
+        </div>
+      </div>
+
+      <!-- CARD 11: SIGNAGES -->
+      <div class="card" onclick="openModal('signageModal')">
+        <img src="signage.jpg.png" alt="Signages">
+        <div class="card-body">
+          <h3>Signages & 3D Letters <i class="fas fa-arrow-right"></i></h3>
+          <p>Indoor and outdoor 3D acrylic letters, illuminated shopfront signs, and directional boards.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view signage designs</div>
+        </div>
+      </div>
+
+      <!-- CARD 12: LARGE PHOTO PRINTING -->
+      <div class="card" onclick="openModal('photoModal')">
+        <img src="photo.jpg.jfif" alt="Large Scale Photo Printing">
+        <div class="card-body">
+          <h3>Large Scale Photo Printing <i class="fas fa-arrow-right"></i></h3>
+          <p>High-resolution gallery-quality canvas photo prints and wall art framing for offices or homes.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view canvas finishes</div>
+        </div>
+      </div>
+
+      <!-- CARD 13: STICKERS -->
+      <div class="card" onclick="openModal('stickersModal')">
+        <img src="stickers.jpg.jfif" alt="Sticker Printing">
+        <div class="card-body">
+          <h3>Sticker Printing (PVC, Label, Vinyl) <i class="fas fa-arrow-right"></i></h3>
+          <p>Die-cut vinyl, PVC, transparent, label, wall, and paper stickers tailored to any shape or size.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view sticker styles</div>
+        </div>
+      </div>
+
+      <!-- CARD 14: BOOKS -->
+      <div class="card" onclick="openModal('bookModal')">
+        <img src="book.jpg.jfif" alt="Book Printing">
+        <div class="card-body">
+          <h3>Book & Catalog Printing <i class="fas fa-arrow-right"></i></h3>
+          <p>Custom booklets, catalogs, and manuals in any quantity with spiral, perfect, or hard-cover binding.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view binding styles</div>
+        </div>
+      </div>
+
+      <!-- CARD 15: ENGRAVING -->
+      <div class="card" onclick="openModal('engravingModal')">
+        <img src="engraving.jpg.jfif" alt="Engraving & Keychains">
+        <div class="card-body">
+          <h3>Laser Engraving & Custom Keychains <i class="fas fa-arrow-right"></i></h3>
+          <p>Precision laser etching on metal, wood, or acrylic along with customized promo keychains.</p>
+          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view engraving work</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= POPUP MODALS WITH ITEM PHOTOS ================= -->
+
+  <!-- ABOUT US MODAL -->
+  <div class="modal-overlay" id="aboutModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('aboutModal')">&times;</span>
+      <h2 style="text-align:center;">About GS PHERIUM</h2>
+      <p class="desc" style="text-align:center;">Based in Al Rigga, Dubai, <strong>GS PHERIUM</strong> is your premier destination for high-impact custom printing, corporate merchandise, and bespoke promotional solutions across the UAE.</p>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Chat With Us On WhatsApp
       </a>
     </div>
   </div>
 
-  <!-- 5. SERVICES SHOWCASE (CHARCOAL CARDS) -->
-  <div class="container">
-    <div class="grid">
+  <!-- BUSINESS CARD MODAL WITH INDIVIDUAL PHOTOS -->
+  <div class="modal-overlay" id="cardModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('cardModal')">&times;</span>
+      <h2>Business Card Printing Options</h2>
+      <p class="desc">Explore our specialized business card finishes designed to leave a lasting impression:</p>
+      
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="card.jpg.webp" alt="Spot UV Business Card">
+          <div class="quality-item-text">
+            <strong>1. Spot UV Finish</strong>
+            <span>Features a raised gloss coating over specific logos or text to create a striking 3D shine against matte paper backgrounds.</span>
+          </div>
+        </div>
 
-      <div class="card">
-        <img src="card.jpg.webp" alt="Business Card Printing">
-        <div class="card-body">
-          <h3>Business Card Printing</h3>
-          <p>Matte, gloss, textured, soft-touch, and foil-stamped business cards designed to elevate your brand.</p>
+        <div class="quality-item">
+          <img src="card.jpg.webp" alt="Foil Stamped Business Card">
+          <div class="quality-item-text">
+            <strong>2. Foil Stamping (Gold / Silver / Metallic)</strong>
+            <span>Uses metallic hot-stamped foil to give typography or logos a reflective mirror shine.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <img src="card.jpg.webp" alt="Embossed Business Card">
+          <div class="quality-item-text">
+            <strong>3. Embossed or Debossed</strong>
+            <span>Creates 3D raised (embossed) or indented (debossed) impressions directly into heavy paper stock.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <img src="card.jpg.webp" alt="Painted Edge Card">
+          <div class="quality-item-text">
+            <strong>4. Painted Edge Cards</strong>
+            <span>Adds a bold splash of custom brand color along the outer edges of multi-layer cards.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <img src="card.jpg.webp" alt="Die-Cut Business Card">
+          <div class="quality-item-text">
+            <strong>5. Custom Die-Cut Shapes</strong>
+            <span>Precision cut custom silhouettes, rounded corners, or bespoke brand shapes tailored to your logo.</span>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="flyer.jpg.jfif" alt="Flyer Printing">
-        <div class="card-body">
-          <h3>Flyer & Brochure Printing</h3>
-          <p>High-volume marketing flyers and bi-fold/tri-fold brochures on premium paper stocks.</p>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Business%20Cards." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Business Cards via WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- FLYER MODAL -->
+  <div class="modal-overlay" id="flyerModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('flyerModal')">&times;</span>
+      <h2>Flyer & Brochure Printing</h2>
+      <p class="desc">High-volume marketing materials printed on crisp glossy or matte art paper:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="flyer.jpg.jfif" alt="Flyer Printing">
+          <div class="quality-item-text">
+            <strong>1. Single & Double-Sided Flyers</strong>
+            <span>Standard A4, A5, and DL promotional flyers on 150gsm to 350gsm gloss/matte art paper.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="flyer.jpg.jfif" alt="Bi-Fold Tri-Fold Brochures">
+          <div class="quality-item-text">
+            <strong>2. Bi-Fold & Tri-Fold Brochures</strong>
+            <span>Precision-folded corporate brochures ideal for product catalogs, menus, and company profiles.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Flyers/Brochures." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Flyers via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="letterhead.jpg.jfif" alt="Letterhead Printing">
-        <div class="card-body">
-          <h3>Letterhead Printing</h3>
-          <p>Official corporate stationary and letterheads printed on smooth, high-grade paper.</p>
+  <!-- LETTERHEAD MODAL -->
+  <div class="modal-overlay" id="letterheadModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('letterheadModal')">&times;</span>
+      <h2>Corporate Letterhead Stationary</h2>
+      <p class="desc">Official company paper compatible with standard laser and office printers:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="letterhead.jpg.jfif" alt="Smooth Letterhead Paper">
+          <div class="quality-item-text">
+            <strong>1. 120gsm Smooth Woodfree Paper</strong>
+            <span>Ultra-smooth bright white stationary suitable for contracts, official invoices, and receipts.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="letterhead.jpg.jfif" alt="Textured Letterhead">
+          <div class="quality-item-text">
+            <strong>2. Textured Linen Paper</strong>
+            <span>Premium textured weave paper for executive letters and legal documentation.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Letterheads." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Letterheads via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="tshirt.jpg.jfif" alt="T-Shirt Printing DTF">
-        <div class="card-body">
-          <h3>T-Shirt Printing (DTF)</h3>
-          <p>Direct-to-Film custom apparel printing with vibrant colors and durable, stretch-resistant prints.</p>
+  <!-- DTF TSHIRT MODAL -->
+  <div class="modal-overlay" id="tshirtModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('tshirtModal')">&times;</span>
+      <h2>DTF (Direct-To-Film) T-Shirt Printing</h2>
+      <p class="desc">Vibrant full-color apparel transfer printing with zero color limitations:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="tshirt.jpg.jfif" alt="DTF Apparel Transfer">
+          <div class="quality-item-text">
+            <strong>1. Full Color HD Graphics</strong>
+            <span>Prints complex gradients, photography, and fine line artwork onto 100% cotton or poly blends.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="tshirt.jpg.jfif" alt="Durable DTF Transfer">
+          <div class="quality-item-text">
+            <strong>2. Stretch & Wash Durable</strong>
+            <span>Flexible adhesive powders ensure prints don't crack, peel, or fade after repeated wash cycles.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20DTF%20T-Shirt%20Printing." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order DTF T-Shirts via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="3dpuff.jpg.jfif" alt="3D Puff T-Shirt Printing">
-        <div class="card-body">
-          <h3>3D Puff T-Shirt Printing</h3>
-          <p>Tactile, raised 3D rubberized text and graphics for streetwear and custom branded merchandise.</p>
+  <!-- 3D PUFF MODAL -->
+  <div class="modal-overlay" id="puffModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('puffModal')">&times;</span>
+      <h2>3D Puff Raised Print Apparel</h2>
+      <p class="desc">Tactile, raised rubberized graphics that pop off hoodies, t-shirts, and streetwear:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="3dpuff.jpg.jfif" alt="3D Puff Raised Apparel">
+          <div class="quality-item-text">
+            <strong>1. Raised Rubberized Texture</strong>
+            <span>Heat-expanded puff vinyl creates a bold 3D tactile elevation for logos and typography.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="3dpuff.jpg.jfif" alt="Matte 3D Puff Hoodie">
+          <div class="quality-item-text">
+            <strong>2. Matte & Metallic Finishes</strong>
+            <span>Available in high-density matte black, neon shades, white, and reflective metallic puff.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%203D%20Puff%20Apparel." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order 3D Puff Printing via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="embroidery.jpg.jfif" alt="Custom Embroidery">
-        <div class="card-body">
-          <h3>Custom Embroidery</h3>
-          <p>High-density thread embroidery for corporate polo shirts, caps, workwear, and jackets.</p>
+  <!-- EMBROIDERY MODAL -->
+  <div class="modal-overlay" id="embroideryModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('embroideryModal')">&times;</span>
+      <h2>Custom Thread Embroidery</h2>
+      <p class="desc">High-density computer embroidery for corporate uniforms and apparel:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="embroidery.jpg.jfif" alt="Polo Shirt Embroidery">
+          <div class="quality-item-text">
+            <strong>1. Polo Shirts & Uniforms</strong>
+            <span>Precision chest and sleeve logos stitched with fade-resistant polyester threads.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="embroidery.jpg.jfif" alt="3D Cap Embroidery">
+          <div class="quality-item-text">
+            <strong>2. 3D Embroidered Caps & Jackets</strong>
+            <span>Raised foam-stitching (3D puff embroidery) for baseball caps, snapbacks, and winter jackets.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Embroidery." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Embroidery via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="uvprint.jpg.webp" alt="UV Printing On Anything">
-        <div class="card-body">
-          <h3>UV Direct Printing (On Anything)</h3>
-          <p>High-precision, scratch-resistant direct UV printing on acrylic, wood, glass, metal, plastic, phone cases, and custom items.</p>
+  <!-- UV PRINT MODAL -->
+  <div class="modal-overlay" id="uvModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('uvModal')">&times;</span>
+      <h2>UV Direct Printing (On Anything)</h2>
+      <p class="desc">Instant-cure flatbed UV printing directly onto rigid materials:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="uvprint.jpg.webp" alt="UV Printing Acrylic Glass">
+          <div class="quality-item-text">
+            <strong>1. Acrylic, Glass & Crystal</strong>
+            <span>Full-color prints with optional white ink backing for glass awards and acrylic blocks.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="uvprint.jpg.webp" alt="UV Printing Phone Case Wood">
+          <div class="quality-item-text">
+            <strong>2. Wood, Metal & Phone Cases</strong>
+            <span>Scratch-resistant durable UV inks applied to power banks, wooden plaques, tumblers, and plastic items.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20UV%20Direct%20Printing." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order UV Printing via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="gifts.jpg.jfif" alt="Custom Corporate Gifts">
-        <div class="card-body">
-          <h3>Customized Corporate Gifts</h3>
-          <p>Tailored promotional gift sets, branded bottles, notebooks, pens, and corporate giveaways.</p>
+  <!-- GIFTS MODAL -->
+  <div class="modal-overlay" id="giftsModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('giftsModal')">&times;</span>
+      <h2>Customized Corporate Gifts</h2>
+      <p class="desc">Bespoke promotional giveaway sets for exhibitions and VIP clients:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="gifts.jpg.jfif" alt="Corporate Gift Box Set">
+          <div class="quality-item-text">
+            <strong>1. Executive Gift Sets</strong>
+            <span>Matching sets including thermos bottles, PU leather notebooks, metal pens, and USB drives.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="gifts.jpg.jfif" alt="Branded Giveaways">
+          <div class="quality-item-text">
+            <strong>2. Event Giveaways</strong>
+            <span>Branded lanyards, mugs, tote bags, stress balls, and custom packaging boxes.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Corporate%20Gifts." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Gifts via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="acrylic.jpg.jfif" alt="Acrylic Stands">
-        <div class="card-body">
-          <h3>Acrylic Stands (Any Size)</h3>
-          <p>Custom laser-cut acrylic display stands, table displays, and office counter signage made to order.</p>
+  <!-- ACRYLIC MODAL -->
+  <div class="modal-overlay" id="acrylicModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('acrylicModal')">&times;</span>
+      <h2>Acrylic Display Stands</h2>
+      <p class="desc">Custom laser-cut transparent and colored acrylic displays:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="acrylic.jpg.jfif" alt="Acrylic Menu Stand">
+          <div class="quality-item-text">
+            <strong>1. Tabletop & Menu Holders</strong>
+            <span>Clear L-shape and T-shape acrylic stands for restaurant menus, QR codes, and price lists.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="acrylic.jpg.jfif" alt="Acrylic Counter Signage">
+          <div class="quality-item-text">
+            <strong>2. Custom Cut Signage</strong>
+            <span>3mm to 10mm thick laser-polished clear, black, or frosted acrylic boards.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Acrylic%20Stands." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Acrylic Stands via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="banner.jpg.jfif" alt="Banner & Roll-Up Printing">
-        <div class="card-body">
-          <h3>Banner & Roll-Up Printing</h3>
-          <p>Retractable roll-up stands and wide-format vinyl banners for tradeshows, exhibitions, and retail.</p>
+  <!-- BANNER MODAL -->
+  <div class="modal-overlay" id="bannerModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('bannerModal')">&times;</span>
+      <h2>Banner & Roll-Up Displays</h2>
+      <p class="desc">Portable trade show displays and heavy-duty outdoor banners:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="banner.jpg.jfif" alt="Roll Up Banner Stand">
+          <div class="quality-item-text">
+            <strong>1. Roll-Up Banner Stands</strong>
+            <span>Standard (85x200cm) and Luxury aluminum retractable stands with curl-free blockout media.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="banner.jpg.jfif" alt="Flex Vinyl Banner">
+          <div class="quality-item-text">
+            <strong>2. Flex Banners & Eyelet Banners</strong>
+            <span>Weatherproof PVC flex banners with hemmed reinforced edges and brass eyelets for outdoor hanging.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Banners/Roll-Ups." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Banners via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="signage.jpg.png" alt="Signages">
-        <div class="card-body">
-          <h3>Signages & 3D Letters</h3>
-          <p>Indoor and outdoor 3D acrylic letters, illuminated shopfront signs, and directional boards.</p>
+  <!-- SIGNAGE MODAL -->
+  <div class="modal-overlay" id="signageModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('signageModal')">&times;</span>
+      <h2>Signages & 3D Letters</h2>
+      <p class="desc">Storefront and indoor architectural signage solutions:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="signage.jpg.png" alt="3D Channel Letters">
+          <div class="quality-item-text">
+            <strong>1. 3D Acrylic & Metal Channel Letters</strong>
+            <span>Raised 3D push-through lettering made from stainless steel, brass, or acrylic.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="signage.jpg.png" alt="Illuminated Shopfront Sign">
+          <div class="quality-item-text">
+            <strong>2. LED Illuminated Shop Signboards</strong>
+            <span>Backlit, front-lit, and edge-lit LED lightboxes for storefront visibility day and night.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Signage." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Signage via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="photo.jpg.jfif" alt="Large Scale Photo Printing">
-        <div class="card-body">
-          <h3>Large Scale Photo Printing</h3>
-          <p>High-resolution gallery-quality canvas photo prints and wall art framing for offices or homes.</p>
+  <!-- PHOTO PRINTING MODAL -->
+  <div class="modal-overlay" id="photoModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('photoModal')">&times;</span>
+      <h2>Large Scale Photo & Canvas Printing</h2>
+      <p class="desc">High-resolution fine art gallery prints for interior decoration:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="photo.jpg.jfif" alt="Stretched Canvas Print">
+          <div class="quality-item-text">
+            <strong>1. Stretched Canvas Wall Frames</strong>
+            <span>Textured cotton canvas stretched over solid wooden internal frames ready for wall mounting.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="photo.jpg.jfif" alt="Photo Poster Print">
+          <div class="quality-item-text">
+            <strong>2. High-Gloss Photo Posters</strong>
+            <span>Vivid 240gsm archival photo paper prints for poster frames and office art displays.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Photo%20Canvas%20Prints." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Photo Prints via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="stickers.jpg.jfif" alt="Sticker Printing">
-        <div class="card-body">
-          <h3>Sticker Printing (PVC, Label, Vinyl)</h3>
-          <p>Die-cut vinyl, PVC, transparent, label, wall, and paper stickers tailored to any shape or size.</p>
+  <!-- STICKERS MODAL -->
+  <div class="modal-overlay" id="stickersModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('stickersModal')">&times;</span>
+      <h2>Sticker & Label Printing</h2>
+      <p class="desc">Custom die-cut stickers for packaging, branding, and window graphics:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="stickers.jpg.jfif" alt="Vinyl Waterproof Sticker">
+          <div class="quality-item-text">
+            <strong>1. Waterproof Vinyl & PVC Stickers</strong>
+            <span>Durable, sun-resistant gloss/matte die-cut vinyl stickers for bottles, cars, and products.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="stickers.jpg.jfif" alt="Transparent Clear Label">
+          <div class="quality-item-text">
+            <strong>2. Transparent & Foil Labels</strong>
+            <span>Clear transparent labels, gold foil stickers, paper labels on rolls, and wall decals.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Stickers." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Stickers via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="book.jpg.jfif" alt="Book Printing">
-        <div class="card-body">
-          <h3>Book & Catalog Printing</h3>
-          <p>Custom booklets, catalogs, and manuals in any quantity with spiral, perfect, or hard-cover binding.</p>
+  <!-- BOOK PRINTING MODAL -->
+  <div class="modal-overlay" id="bookModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('bookModal')">&times;</span>
+      <h2>Book & Catalog Printing</h2>
+      <p class="desc">Multi-page bound booklets, manuals, and annual reports:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="book.jpg.jfif" alt="Softcover Book Binding">
+          <div class="quality-item-text">
+            <strong>1. Perfect Binding (Softcover) & Hardcover</strong>
+            <span>Glued paperback binding for thick catalogs, books, and corporate annual reports.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="book.jpg.jfif" alt="Spiral Wire-O Binding">
+          <div class="quality-item-text">
+            <strong>2. Wire-O & Spiral Binding</strong>
+            <span>Double-loop metal wire binding ideal for training manuals, notebooks, and calendars.</span>
+          </div>
         </div>
       </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Book/Catalog%20Printing." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Book Printing via WhatsApp
+      </a>
+    </div>
+  </div>
 
-      <div class="card">
-        <img src="engraving.jpg.jfif" alt="Engraving & Keychains">
-        <div class="card-body">
-          <h3>Laser Engraving & Custom Keychains</h3>
-          <p>Precision laser etching on metal, wood, or acrylic along with customized promo keychains.</p>
+  <!-- ENGRAVING MODAL -->
+  <div class="modal-overlay" id="engravingModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('engravingModal')">&times;</span>
+      <h2>Laser Engraving & Custom Keychains</h2>
+      <p class="desc">High-precision laser etching and promotional keyrings:</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <img src="engraving.jpg.jfif" alt="Laser Metal Engraving">
+          <div class="quality-item-text">
+            <strong>1. Laser Metal & Wood Etching</strong>
+            <span>Permanent, sharp laser marking on metal nameplates, wooden awards, pens, and flasks.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <img src="engraving.jpg.jfif" alt="Custom Promotional Keychain">
+          <div class="quality-item-text">
+            <strong>2. Custom Acrylic, Metal & Leather Keychains</strong>
+            <span>Bespoke cut-out keyrings with full-color UV print or deep laser engraving.</span>
+          </div>
         </div>
       </div>
-
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Laser%20Engraving." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Engraving via WhatsApp
+      </a>
     </div>
   </div>
 
@@ -337,17 +804,17 @@
       setTimeout(() => { splash.style.visibility = 'hidden'; }, 800);
     }
 
-    function openAboutModal() {
-      document.getElementById('aboutModal').classList.add('active');
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
     }
 
-    function closeAboutModal() {
-      document.getElementById('aboutModal').classList.remove('active');
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
     }
 
-    function closeAboutModalOutside(event) {
+    function closeModalOutside(event) {
       if (event.target.classList.contains('modal-overlay')) {
-        closeAboutModal();
+        event.target.classList.remove('active');
       }
     }
   </script>
