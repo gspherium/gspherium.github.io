@@ -21,7 +21,7 @@
       transition: opacity 0.8s ease, visibility 0.8s; text-align: center;
       padding: 20px;
     }
-    .logo-img {
+    .splash-logo-img {
       max-width: 280px; width: 80%; height: auto;
       animation: zoomIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
@@ -56,10 +56,45 @@
     .wa-btn { background: #25d366; }
     .mail-btn { background: #ea4335; }
 
-    /* --- HEADER --- */
-    header { padding: 30px 20px; text-align: center; background: #0f1c3f; border-bottom: 1px solid #1c2d5a; }
+    /* --- HEADER & CLICKABLE LOGO --- */
+    header { padding: 35px 20px 25px; text-align: center; background: #0f1c3f; border-bottom: 1px solid #1c2d5a; }
+    .header-logo-container { display: inline-block; cursor: pointer; transition: transform 0.3s ease; }
+    .header-logo-container:hover { transform: scale(1.04); }
+    .header-logo-img { height: 75px; width: auto; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
     header h1 { font-size: 2.2rem; color: #ffffff; letter-spacing: 2px; }
     header p { color: #38bdf8; font-size: 0.95rem; margin-top: 5px; font-weight: 500; }
+    .click-hint { font-size: 0.75rem; color: #64748b; margin-top: 6px; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* --- ABOUT US POPUP MODAL --- */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(6px);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 10000; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-card {
+      background: #111d42; width: 90%; max-width: 550px; border-radius: 16px;
+      border: 1px solid #1c2d5a; padding: 30px; text-align: center; position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transform: translateY(20px); transition: transform 0.4s ease;
+    }
+    .modal-overlay.active .modal-card { transform: translateY(0); }
+    .modal-close {
+      position: absolute; top: 15px; right: 20px; font-size: 1.5rem; color: #94a3b8;
+      cursor: pointer; transition: color 0.2s;
+    }
+    .modal-close:hover { color: #ffffff; }
+    .modal-logo { height: 60px; margin-bottom: 15px; }
+    .modal-card h2 { color: #ffffff; font-size: 1.6rem; margin-bottom: 12px; }
+    .modal-card p { color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; }
+    .modal-features { text-align: left; background: #0b132b; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px; }
+    .modal-features li { color: #38bdf8; font-size: 0.85rem; margin-bottom: 8px; list-style: none; display: flex; align-items: center; gap: 8px; }
+    .modal-contact-btn {
+      display: inline-block; background: #25d366; color: #ffffff; font-weight: 600;
+      padding: 12px 25px; border-radius: 25px; text-decoration: none; font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+    .modal-contact-btn:hover { transform: scale(1.05); }
 
     /* --- SERVICES GRID --- */
     .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
@@ -80,7 +115,7 @@
 
   <!-- 1. SPLASH SCREEN ANIMATION -->
   <div id="splash-screen">
-    <img src="logo.png.png" alt="GS PHERIUM Logo" class="logo-img">
+    <img src="logo.png.png" alt="GS PHERIUM Logo" class="splash-logo-img">
     <div class="sub-tagline">Custom Printing, Corporate Merch & Branding Solutions</div>
     <div class="enter-btn-container">
       <button class="enter-btn" onclick="enterSite()">
@@ -96,13 +131,37 @@
     <a href="mailto:gspherium@gmail.com" class="floating-btn mail-btn" title="Email Us"><i class="fas fa-envelope"></i></a>
   </div>
 
-  <!-- 3. HEADER -->
+  <!-- 3. HEADER WITH CLICKABLE LOGO -->
   <header>
-    <h1>GS PHERIUM</h1>
+    <div class="header-logo-container" onclick="openAboutModal()" title="Click to view About Us">
+      <img src="logo.png.png" alt="GS PHERIUM Logo" class="header-logo-img">
+      <h1>GS PHERIUM</h1>
+    </div>
     <p>Custom Printing, Corporate Merch & Branding Solutions | Al Rigga, Dubai</p>
+    <div class="click-hint"><i class="fas fa-info-circle"></i> Click logo above for About Us</div>
   </header>
 
-  <!-- 4. SERVICES SHOWCASE -->
+  <!-- 4. ABOUT US POPUP MODAL -->
+  <div class="modal-overlay" id="aboutModal" onclick="closeAboutModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeAboutModal()">&times;</span>
+      <img src="logo.png.png" alt="GS PHERIUM Logo" class="modal-logo">
+      <h2>About GS PHERIUM</h2>
+      <p>Based in Al Rigga, Dubai, <strong>GS PHERIUM</strong> is your premier destination for high-impact custom printing, corporate merchandise, and bespoke promotional solutions. We turn creative concepts into high-quality physical products designed to elevate your brand presence across the UAE.</p>
+      
+      <ul class="modal-features">
+        <li><i class="fas fa-check-circle"></i> High-precision DTF, 3D Puff & UV printing technology.</li>
+        <li><i class="fas fa-check-circle"></i> Premium corporate gifting, embroidery & engraving.</li>
+        <li><i class="fas fa-check-circle"></i> Fast turnaround times tailored for corporate campaigns.</li>
+      </ul>
+
+      <a href="https://wa.me/971526907360" target="_blank" class="modal-contact-btn">
+        <i class="fab fa-whatsapp"></i> Connect With Us
+      </a>
+    </div>
+  </div>
+
+  <!-- 5. SERVICES SHOWCASE -->
   <div class="container">
     <div class="grid">
 
@@ -229,7 +288,7 @@
     </div>
   </div>
 
-  <!-- 5. FOOTER -->
+  <!-- 6. FOOTER -->
   <footer>
     <p><strong>Location:</strong> Al Rigga, Dubai - UAE | <strong>Mobile:</strong> +971 52 690 7360 | <strong>Email:</strong> gspherium@gmail.com</p>
     <p style="margin-top:8px;">&copy; GS PHERIUM. All Rights Reserved.</p>
@@ -240,6 +299,20 @@
       const splash = document.getElementById('splash-screen');
       splash.style.opacity = '0';
       setTimeout(() => { splash.style.visibility = 'hidden'; }, 800);
+    }
+
+    function openAboutModal() {
+      document.getElementById('aboutModal').classList.add('active');
+    }
+
+    function closeAboutModal() {
+      document.getElementById('aboutModal').classList.remove('active');
+    }
+
+    function closeAboutModalOutside(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        closeAboutModal();
+      }
     }
   </script>
 </body>
