@@ -602,8 +602,70 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="embroideryModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('embroideryModal')">&times;</span><h2>Custom Embroidery</h2><p class="desc">High-density thread embroidery for corporate polo shirts, caps, workwear, and jackets.</p><a href="https://wa.me/971526907360?text=Order%20Embroidery" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Embroidery via WhatsApp</a></div></div>
-  <div class="modal-overlay" id="uvModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('uvModal')">&times;</span><h2>UV Direct Printing</h2><p class="desc">Direct UV printing on acrylic, wood, glass, metal, plastic, phone cases, and custom items.</p><a href="https://wa.me/971526907360?text=Order%20UV%20Printing" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order UV Printing via WhatsApp</a></div></div>
+<!-- 3. CUSTOM EMBROIDERY MODAL -->
+  <div class="modal-overlay" id="embroideryModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('embroideryModal')">&times;</span>
+      <h2>Custom Embroidery Options</h2>
+      <p class="desc">Tap any thumbnail image below to expand it to full size:</p>
+      
+      <div class="quality-list">
+
+        <!-- 1. POLO & UNIFORM EMBROIDERY -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('embroidery-polo.jpg', 'Corporate Polo Chest Embroidery')">
+            <img src="embroidery-polo.jpg" alt="Polo Shirt Embroidery">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Corporate Polo & Chest Logos</strong>
+            <span>High-density, durable thread stitching for company staff uniforms and pique cotton polos.</span>
+          </div>
+        </div>
+
+        <!-- 2. CAP & HEADWEAR EMBROIDERY -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('embroidery-cap.jpg', '3D & Flat Cap Embroidery')">
+            <img src="embroidery-cap.jpg" alt="Cap Embroidery">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Custom Caps & Headwear</strong>
+            <span>Structured 3D raised puff or flat embroidery on snapbacks, baseball caps, and beanies.</span>
+          </div>
+        </div>
+
+        <!-- 3. JACKET & HEAVYWEAR EMBROIDERY -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('embroidery-jacket.jpg', 'Jacket & Hoodie Embroidery')">
+            <img src="embroidery-jacket.jpg" alt="Jacket Embroidery">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>3. Jackets, Hoodies & Outerwear</strong>
+            <span>Large statement back stitching and chest emblem embroidery for outerwear and safety jackets.</span>
+          </div>
+        </div>
+
+        <!-- 4. CUSTOM PATCHES & BADGES -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('embroidery-patch.jpg', 'Custom Embroidered Patches')">
+            <img src="embroidery-patch.jpg" alt="Custom Embroidered Patches">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>4. Custom Embroidered Patches</strong>
+            <span>Precision-edged iron-on or Velcro embroidered badges and velcro brand patches.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Custom%20Embroidery." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Custom Embroidery via WhatsApp
+      </a>
+    </div>
+  </div>  <div class="modal-overlay" id="uvModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('uvModal')">&times;</span><h2>UV Direct Printing</h2><p class="desc">Direct UV printing on acrylic, wood, glass, metal, plastic, phone cases, and custom items.</p><a href="https://wa.me/971526907360?text=Order%20UV%20Printing" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order UV Printing via WhatsApp</a></div></div>
   <div class="modal-overlay" id="giftsModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('giftsModal')">&times;</span><h2>Corporate Gifts</h2><p class="desc">Tailored promotional gift sets, branded bottles, notebooks, pens, and corporate giveaways.</p><a href="https://wa.me/971526907360?text=Order%20Corporate%20Gifts" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Corporate Gifts via WhatsApp</a></div></div>
   <div class="modal-overlay" id="acrylicModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('acrylicModal')">&times;</span><h2>Acrylic Stands</h2><p class="desc">Custom laser-cut acrylic display stands, table displays, and office counter signage made to order.</p><a href="https://wa.me/971526907360?text=Order%20Acrylic%20Stands" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Acrylic Stands via WhatsApp</a></div></div>
   <div class="modal-overlay" id="bannerModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('bannerModal')">&times;</span><h2>Banner & Roll-Up Printing</h2><p class="desc">Retractable roll-up stands and wide-format vinyl banners for tradeshows, exhibitions, and retail.</p><a href="https://wa.me/971526907360?text=Order%20Banners" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Banners via WhatsApp</a></div></div>
