@@ -63,4 +63,68 @@
     .header-logo-container { display: inline-block; cursor: pointer; }
     .header-logo-badge { background: #ffffff; padding: 12px 28px; border-radius: 12px; display: inline-block; margin-bottom: 15px; border: 1px solid #e4e4e7; }
     .header-logo-img { height: 60px; width: auto; display: block; }
-    header h1 { font-size: 2.2rem; color:
+    header h1 { font-size: 2.2rem; color: #f4f4f5; letter-spacing: 3px; font-weight: 700; }
+    header p { color: #a1a1aa; font-size: 0.95rem; margin-top: 6px; }
+
+    /* --- SERVICES GRID --- */
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .card { background: #18181b; border-radius: 14px; overflow: hidden; border: 1px solid #27272a; transition: all 0.3s ease; cursor: pointer; }
+    .card:hover { transform: translateY(-8px); border-color: #52525b; }
+    .card img { width: 100%; height: 210px; object-fit: cover; }
+    .card-body { padding: 22px; }
+    .card-body h3 { font-size: 1.1rem; color: #f4f4f5; margin-bottom: 8px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+    .card-body p { font-size: 0.85rem; color: #a1a1aa; line-height: 1.6; }
+    .card-click-badge { font-size: 0.75rem; color: #38bdf8; font-weight: 500; margin-top: 12px; display: inline-flex; align-items: center; gap: 5px; }
+
+    /* --- DETAIL POPUP MODALS --- */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(9, 9, 11, 0.92); backdrop-filter: blur(8px);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 10000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-card {
+      background: #18181b; width: 92%; max-width: 700px; max-height: 88vh; overflow-y: auto;
+      border-radius: 16px; border: 1px solid #3f3f46; padding: 30px; text-align: left; position: relative;
+    }
+    .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.6rem; color: #a1a1aa; cursor: pointer; }
+    .modal-card h2 { color: #f4f4f5; font-size: 1.5rem; margin-bottom: 10px; border-bottom: 1px solid #27272a; padding-bottom: 10px; }
+    .modal-card p.desc { color: #a1a1aa; font-size: 0.9rem; margin-bottom: 20px; }
+    
+    .quality-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 25px; }
+    .quality-item { 
+      background: #09090b; padding: 16px; border-radius: 12px; border: 1px solid #27272a;
+      display: flex; gap: 16px; align-items: center; cursor: pointer;
+    }
+    .quality-item-img-wrap { position: relative; flex-shrink: 0; }
+    .quality-item img {
+      width: 110px; height: 85px; object-fit: cover; border-radius: 8px; border: 1px solid #3f3f46;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .quality-item:hover img { transform: scale(1.05); border-color: #38bdf8; }
+    .expand-hint {
+      position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.7);
+      color: #fff; font-size: 0.6rem; padding: 2px 4px; border-radius: 4px; pointer-events: none;
+    }
+    .quality-item-text strong { color: #38bdf8; font-size: 0.95rem; display: block; margin-bottom: 4px; }
+    .quality-item-text span { color: #d4d4d8; font-size: 0.85rem; line-height: 1.5; display: block; }
+
+    /* --- FULL SCREEN LIGHTBOX --- */
+    #image-lightbox {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.95); z-index: 20000; display: flex;
+      flex-direction: column; justify-content: center; align-items: center;
+      opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s;
+      padding: 20px; cursor: pointer;
+    }
+    #image-lightbox.active { opacity: 1; visibility: visible; }
+    #image-lightbox img {
+      max-width: 95%; max-height: 85vh; object-fit: contain;
+      border-radius: 8px; box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+    }
+    #image-lightbox .lightbox-caption {
+      color: #f4f4f5; margin-top: 15px; font-size: 1rem; font-weight: 500; text-align: center;
+    }
+    #image-lightbox .lightbox-exit-tip {
