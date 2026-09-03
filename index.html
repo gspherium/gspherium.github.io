@@ -566,3 +566,26 @@
     function openModal(id) {
       document.getElementById(id).classList.add('active');
     }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    function closeModalOutside(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        event.target.classList.remove('active');
+      }
+    }
+
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').innerText = caption;
+      document.getElementById('image-lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('image-lightbox').classList.remove('active');
+    }
+  </script>
+</body>
+</html>
