@@ -21,29 +21,19 @@
       transition: opacity 0.8s ease, visibility 0.8s; text-align: center;
       padding: 20px;
     }
-    .logo-container {
-      margin-bottom: 10px;
+    .logo-img {
+      max-width: 280px; width: 80%; height: auto;
       animation: zoomIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
-    .logo-main {
-      font-size: 3.8rem; font-weight: 900; color: #0f1c3f; letter-spacing: -1px;
-      line-height: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
-    }
-    .logo-accent {
-      color: #e11d48; display: inline-block; transform: skewX(-10deg);
-    }
-    .logo-sub {
-      font-size: 1.6rem; font-weight: 700; color: #0f1c3f; letter-spacing: 12px; margin-top: 5px;
-    }
     .sub-tagline {
-      color: #5a6b82; font-size: 1.05rem; margin-top: 20px; font-weight: 500;
+      color: #5a6b82; font-size: 1.1rem; margin-top: 15px; font-weight: 500;
       animation: fadeIn 2s ease forwards;
     }
     .enter-btn-container {
-      margin-top: 35px; animation: fadeIn 2.5s ease forwards;
+      margin-top: 30px; animation: fadeIn 2.5s ease forwards;
     }
     .enter-btn {
-      background-color: #0f1c3f; color: #ffffff; padding: 14px 32px;
+      background-color: #0f1c3f; color: #ffffff; padding: 14px 28px;
       border-radius: 30px; font-weight: 700; font-size: 0.95rem; letter-spacing: 1.5px;
       cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 10px;
       box-shadow: 0 4px 15px rgba(15, 28, 63, 0.3); transition: transform 0.2s, background 0.3s;
@@ -66,7 +56,7 @@
     .wa-btn { background: #25d366; }
     .mail-btn { background: #ea4335; }
 
-    /* --- HEADER & NAVIGATION --- */
+    /* --- HEADER --- */
     header { padding: 30px 20px; text-align: center; background: #0f1c3f; border-bottom: 1px solid #1c2d5a; }
     header h1 { font-size: 2.2rem; color: #ffffff; letter-spacing: 2px; }
     header p { color: #38bdf8; font-size: 0.95rem; margin-top: 5px; font-weight: 500; }
@@ -90,9 +80,7 @@
 
   <!-- 1. SPLASH SCREEN ANIMATION -->
   <div id="splash-screen">
-    <div class="logo-container">
-      <div class="logo-main">GS <span class="logo-accent">PHERIUM</span></div>
-    </div>
+    <img src="logo.png" alt="GS PHERIUM Logo" class="logo-img">
     <div class="sub-tagline">Custom Printing, Corporate Merch & Branding Solutions</div>
     <div class="enter-btn-container">
       <button class="enter-btn" onclick="enterSite()">
@@ -114,127 +102,127 @@
     <p>Custom Printing, Corporate Merch & Branding Solutions | Al Rigga, Dubai</p>
   </header>
 
-  <!-- 4. SERVICES SHOWCASE (15 SERVICES) -->
+  <!-- 4. SERVICES SHOWCASE -->
   <div class="container">
     <div class="grid">
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80" alt="Business Card Printing">
+        <img src="card.jpg" alt="Business Card Printing">
         <div class="card-body">
           <h3>Business Card Printing</h3>
-          <p>Matte, gloss, textured, soft-touch, and foil-stamped business cards designed to elevate your network.</p>
+          <p>Matte, gloss, textured, soft-touch, and foil-stamped business cards designed to elevate your brand.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=600&q=80" alt="Flyer Printing">
+        <img src="flyer.jpg" alt="Flyer Printing">
         <div class="card-body">
           <h3>Flyer & Brochure Printing</h3>
-          <p>High-volume, crisp marketing flyers and bi-fold/tri-fold brochures on premium paper stocks.</p>
+          <p>High-volume marketing flyers and bi-fold/tri-fold brochures on premium paper stocks.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80" alt="Letterhead Printing">
+        <img src="letterhead.jpg" alt="Letterhead Printing">
         <div class="card-body">
           <h3>Letterhead Printing</h3>
-          <p>Official corporate stationary and letterheads printed on high-grade smooth paper.</p>
+          <p>Official corporate stationary and letterheads printed on smooth, high-grade paper.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=600&q=80" alt="T-Shirt Printing DTF">
+        <img src="tshirt.jpg" alt="T-Shirt Printing DTF">
         <div class="card-body">
           <h3>T-Shirt Printing (DTF)</h3>
-          <p>Direct-to-Film custom apparel printing with full-color detail and stretch-resistant durability.</p>
+          <p>Direct-to-Film custom apparel printing with vibrant colors and durable, stretch-resistant prints.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="3D Puff T-Shirt Printing">
+        <img src="3dpuff.jpg" alt="3D Puff T-Shirt Printing">
         <div class="card-body">
           <h3>3D Puff T-Shirt Printing</h3>
-          <p>Tactile, raised 3D rubberized text and graphics for custom streetwear and branding.</p>
+          <p>Tactile, raised 3D rubberized text and graphics for streetwear and custom branded merchandise.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80" alt="Custom Embroidery">
+        <img src="embroidery.jpg" alt="Custom Embroidery">
         <div class="card-body">
           <h3>Custom Embroidery</h3>
-          <p>High-density thread embroidery for corporate polos, caps, uniforms, and jackets.</p>
+          <p>High-density thread embroidery for corporate polo shirts, caps, workwear, and jackets.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fit=crop&w=600&q=80" alt="UV Printing">
+        <img src="uvprint.jpg" alt="UV Printing On Anything">
         <div class="card-body">
-          <h3>UV Direct Printing</h3>
-          <p>Instant-cure direct UV printing on acrylic, wood, glass, metal, and plastic materials.</p>
+          <h3>UV Direct Printing (On Anything)</h3>
+          <p>High-precision, scratch-resistant direct UV printing on acrylic, wood, glass, metal, plastic, phone cases, and custom items.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" alt="Custom Corporate Gifts">
+        <img src="gifts.jpg" alt="Custom Corporate Gifts">
         <div class="card-body">
           <h3>Customized Corporate Gifts</h3>
-          <p>Tailored promotional gift sets, branded drinkware, notebooks, and executive giveaways.</p>
+          <p>Tailored promotional gift sets, branded bottles, notebooks, pens, and corporate giveaways.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80" alt="Acrylic Stands">
+        <img src="acrylic.jpg" alt="Acrylic Stands">
         <div class="card-body">
           <h3>Acrylic Stands (Any Size)</h3>
-          <p>Custom laser-cut acrylic display stands, table menus, and office signage made to order.</p>
+          <p>Custom laser-cut acrylic display stands, table displays, and office counter signage made to order.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Banner & Roll-Up Printing">
+        <img src="banner.jpg" alt="Banner & Roll-Up Printing">
         <div class="card-body">
           <h3>Banner & Roll-Up Printing</h3>
-          <p>Retractable roll-up stands and wide-format vinyl banners for exhibitions and retail spaces.</p>
+          <p>Retractable roll-up stands and wide-format vinyl banners for tradeshows, exhibitions, and retail.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=600&q=80" alt="Signages">
+        <img src="signage.jpg" alt="Signages">
         <div class="card-body">
           <h3>Signages & 3D Letters</h3>
-          <p>Indoor/outdoor 3D acrylic letters, LED illuminated storefront signs, and directional boards.</p>
+          <p>Indoor and outdoor 3D acrylic letters, illuminated shopfront signs, and directional boards.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Large Scale Photo Printing">
+        <img src="photo.jpg" alt="Large Scale Photo Printing">
         <div class="card-body">
           <h3>Large Scale Photo Printing</h3>
-          <p>Gallery-quality high-resolution canvas prints and large photo frames for office or home décor.</p>
+          <p>High-resolution gallery-quality canvas photo prints and wall art framing for offices or homes.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Sticker Printing">
+        <img src="stickers.jpg" alt="Sticker Printing">
         <div class="card-body">
           <h3>Sticker Printing (PVC, Label, Vinyl)</h3>
-          <p>Custom die-cut stickers in PVC, clear vinyl, paper, label, wall, and waterproof finishes.</p>
+          <p>Die-cut vinyl, PVC, transparent, label, wall, and paper stickers tailored to any shape or size.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Book Printing">
+        <img src="book.jpg" alt="Book Printing">
         <div class="card-body">
           <h3>Book & Catalog Printing</h3>
-          <p>Custom booklets, catalogs, and manuals in any quantity with spiral or hard-cover binding.</p>
+          <p>Custom booklets, catalogs, and manuals in any quantity with spiral, perfect, or hard-cover binding.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Engraving & Keychains">
+        <img src="engraving.jpg" alt="Engraving & Keychains">
         <div class="card-body">
-          <h3>Engraving & Custom Keychains</h3>
-          <p>Laser engraving on metal/wood along with customized acrylic, leather, and metal keychains.</p>
+          <h3>Laser Engraving & Custom Keychains</h3>
+          <p>Precision laser etching on metal, wood, or acrylic along with customized promo keychains.</p>
         </div>
       </div>
 
