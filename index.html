@@ -561,8 +561,63 @@
     </div>
   </div>
 
-  <div class="modal-overlay" id="tshirtModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('tshirtModal')">&times;</span><h2>T-Shirt Printing (DTF)</h2><p class="desc">Direct-to-Film custom apparel printing with vibrant colors and durable, stretch-resistant prints.</p><a href="https://wa.me/971526907360?text=Order%20T-Shirts" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order DTF T-Shirts via WhatsApp</a></div></div>
-  <div class="modal-overlay" id="puffModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('puffModal')">&times;</span><h2>3D Puff T-Shirt Printing</h2><p class="desc">Tactile, raised 3D rubberized text and graphics for streetwear and custom branded merchandise.</p><a href="https://wa.me/971526907360?text=Order%203D%20Puff" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order 3D Puff Printing via WhatsApp</a></div></div>
+<div class="modal-overlay" id="tshirtModal" onclick="closeModalOutside(event)">
+  <div class="modal-card">
+    <span class="modal-close" onclick="closeModal('tshirtModal')">&times;</span>
+    <h2>T-Shirt Printing Options (DTF)</h2>
+    <div class="modal-body">
+      
+      <!-- 1. STANDARD DTF PRINTING -->
+      <div class="quality-item">
+        <div class="quality-item-img-wrap" onclick="openLightbox('tshirt-dtf.jpg.jfif', 'Custom DTF Graphic Print')">
+          <img src="tshirt-dtf.jpg.jfif" alt="Standard DTF Print">
+          <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+        </div>
+        <div class="quality-item-text">
+          <strong>1. High-Vibrancy DTF Printing</strong>
+          <span>Direct-to-Film transfer technology producing ultra-vivid colors and crisp fine details on 100% cotton or blends.</span>
+        </div>
+      </div>
+
+      <!-- 2. OVERSIZED STREETWEAR TEE -->
+      <div class="quality-item">
+        <div class="quality-item-img-wrap" onclick="openLightbox('tshirt-oversized.jpg.jfif', 'Heavyweight Oversized Fit Tee')">
+          <img src="tshirt-oversized.jpg.jfif" alt="Oversized Streetwear Tee">
+          <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+        </div>
+        <div class="quality-item-text">
+          <strong>2. Heavyweight Oversized Fit</strong>
+          <span>Premium 240gsm thick cotton streetwear t-shirts with front chest and back graphic prints.</span>
+        </div>
+      </div>
+
+      <!-- 3. CORPORATE POLO UNIFORM -->
+      <div class="quality-item">
+        <div class="quality-item-img-wrap" onclick="openLightbox('tshirt-polo.jpg.jfif', 'Custom Corporate Polo Uniform')">
+          <img src="tshirt-polo.jpg.jfif" alt="Corporate Polo Uniform">
+          <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+        </div>
+        <div class="quality-item-text">
+          <strong>3. Corporate Polo & Staff Uniforms</strong>
+          <span>Professional breathable pique cotton polo shirts featuring crisp embroidered or DTF chest logos.</span>
+        </div>
+      </div>
+
+      <!-- 4. FULL BACK & FRONT PRINT -->
+      <div class="quality-item">
+        <div class="quality-item-img-wrap" onclick="openLightbox('tshirt-backprint.jpg.jfif', 'Full Back & Chest Print Tee')">
+          <img src="tshirt-backprint.jpg.jfif" alt="Full Back Print T-Shirt">
+          <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+        </div>
+        <div class="quality-item-text">
+          <strong>4. Front Logo & Full Back Artwork</strong>
+          <span>Dual-position printing featuring a subtle front left chest accent paired with a large full-back statement print.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>  <div class="modal-overlay" id="puffModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('puffModal')">&times;</span><h2>3D Puff T-Shirt Printing</h2><p class="desc">Tactile, raised 3D rubberized text and graphics for streetwear and custom branded merchandise.</p><a href="https://wa.me/971526907360?text=Order%203D%20Puff" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order 3D Puff Printing via WhatsApp</a></div></div>
   <div class="modal-overlay" id="embroideryModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('embroideryModal')">&times;</span><h2>Custom Embroidery</h2><p class="desc">High-density thread embroidery for corporate polo shirts, caps, workwear, and jackets.</p><a href="https://wa.me/971526907360?text=Order%20Embroidery" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Embroidery via WhatsApp</a></div></div>
   <div class="modal-overlay" id="uvModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('uvModal')">&times;</span><h2>UV Direct Printing</h2><p class="desc">Direct UV printing on acrylic, wood, glass, metal, plastic, phone cases, and custom items.</p><a href="https://wa.me/971526907360?text=Order%20UV%20Printing" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order UV Printing via WhatsApp</a></div></div>
   <div class="modal-overlay" id="giftsModal" onclick="closeModalOutside(event)"><div class="modal-card"><span class="modal-close" onclick="closeModal('giftsModal')">&times;</span><h2>Corporate Gifts</h2><p class="desc">Tailored promotional gift sets, branded bottles, notebooks, pens, and corporate giveaways.</p><a href="https://wa.me/971526907360?text=Order%20Corporate%20Gifts" target="_blank" class="modal-order-btn"><i class="fab fa-whatsapp"></i> Order Corporate Gifts via WhatsApp</a></div></div>
