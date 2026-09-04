@@ -12,10 +12,11 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     
     body { 
-      background-color: #121214; 
+      background-color: #0b0b0e; 
       background-image: 
-        radial-gradient(circle at 50% 20%, #222226 0%, #111113 70%),
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);
+        radial-gradient(circle at 50% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 3px);
       color: #e2e8f0; 
       overflow-x: hidden; 
     }
@@ -23,7 +24,8 @@
     /* --- SPLASH SCREEN --- */
     #splash-screen {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: #0d0d0f; display: flex; flex-direction: column;
+      background: rgba(10, 10, 12, 0.95); backdrop-filter: blur(20px);
+      display: flex; flex-direction: column;
       justify-content: center; align-items: center; z-index: 99999;
       transition: opacity 0.5s ease, visibility 0.5s; text-align: center; padding: 20px;
     }
@@ -41,12 +43,20 @@
     .sub-tagline { color: #a1a1aa; font-size: 1.05rem; margin-top: 20px; font-weight: 400; }
     .enter-btn-container { margin-top: 30px; }
     .enter-btn {
-      background: linear-gradient(135deg, #27272a 0%, #18181b 100%);
+      background: rgba(255, 255, 255, 0.08);
       color: #ffffff; padding: 14px 32px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;
-      letter-spacing: 2px; cursor: pointer; border: 1px solid #3f3f46; display: inline-flex;
-      align-items: center; gap: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.6); transition: all 0.3s ease;
+      letter-spacing: 2px; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.18);
+      display: inline-flex; align-items: center; gap: 10px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .enter-btn:hover { border-color: #71717a; transform: translateY(-2px); }
+    .enter-btn:hover { 
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.35); 
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
 
     @keyframes zoomIn { 0% { transform: scale(0.3); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
@@ -54,58 +64,96 @@
     .floating-contact {
       position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
       display: flex; flex-direction: column; gap: 12px; z-index: 1000;
-      background: rgba(24, 24, 27, 0.85); padding: 16px 10px; border-radius: 30px;
-      border: 1px solid #27272a; backdrop-filter: blur(8px); text-align: center;
+      background: rgba(255, 255, 255, 0.05); padding: 16px 10px; border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); text-align: center;
     }
-    .floating-contact span { font-size: 0.65rem; color: #71717a; writing-mode: vertical-rl; transform: rotate(180deg); }
+    .floating-contact span { font-size: 0.65rem; color: #a1a1aa; writing-mode: vertical-rl; transform: rotate(180deg); }
     .floating-btn { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; text-decoration: none; transition: transform 0.3s; }
     .floating-btn:hover { transform: scale(1.15); }
     .wa-btn { background: #25d366; }
     .mail-btn { background: #ea4335; }
 
     /* --- HEADER --- */
-    header { padding: 40px 20px 30px; text-align: center; background: #18181b; border-bottom: 1px solid #27272a; }
+    header { 
+      padding: 40px 20px 30px; text-align: center; 
+      background: rgba(255, 255, 255, 0.02); 
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
     .header-logo-container { display: inline-block; cursor: pointer; }
     .header-logo-badge { background: #ffffff; padding: 12px 28px; border-radius: 12px; display: inline-block; margin-bottom: 15px; border: 1px solid #e4e4e7; }
     .header-logo-img { height: 60px; width: auto; display: block; }
     header h1 { font-size: 2.2rem; color: #f4f4f5; letter-spacing: 3px; font-weight: 700; }
     header p { color: #a1a1aa; font-size: 0.95rem; margin-top: 6px; }
 
-    /* --- SERVICES GRID --- */
+    /* --- APPLE GLASSMORPHISM CARDS GRID --- */
     .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-    .card { background: #18181b; border-radius: 14px; overflow: hidden; border: 1px solid #27272a; transition: all 0.3s ease; cursor: pointer; }
-    .card:hover { transform: translateY(-8px); border-color: #52525b; }
+    
+    .card { 
+      background: rgba(255, 255, 255, 0.04); 
+      border-radius: 18px; 
+      overflow: hidden; 
+      border: 1px solid rgba(255, 255, 255, 0.1); 
+      backdrop-filter: blur(16px); 
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+      cursor: pointer; 
+    }
+    .card:hover { 
+      transform: translateY(-8px) scale(1.01); 
+      background: rgba(255, 255, 255, 0.08); 
+      border-color: rgba(255, 255, 255, 0.25); 
+      box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.15);
+    }
     .card img { width: 100%; height: 210px; object-fit: cover; }
     .card-body { padding: 22px; }
     .card-body h3 { font-size: 1.1rem; color: #f4f4f5; margin-bottom: 8px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
     .card-body p { font-size: 0.85rem; color: #a1a1aa; line-height: 1.6; }
     .card-click-badge { font-size: 0.75rem; color: #38bdf8; font-weight: 500; margin-top: 12px; display: inline-flex; align-items: center; gap: 5px; }
 
-    /* --- DETAIL POPUP MODALS --- */
+    /* --- DETAIL POPUP MODALS (APPLE GLASS DISPLAY) --- */
     .modal-overlay {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(9, 9, 11, 0.92); backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.75); 
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       display: flex; justify-content: center; align-items: center;
       z-index: 10000; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s;
     }
     .modal-overlay.active { opacity: 1; visibility: visible; }
+    
     .modal-card {
-      background: #18181b; width: 92%; max-width: 700px; max-height: 88vh; overflow-y: auto;
-      border-radius: 16px; border: 1px solid #3f3f46; padding: 30px; text-align: left; position: relative;
+      background: rgba(24, 24, 27, 0.75); 
+      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+      width: 92%; max-width: 700px; max-height: 88vh; overflow-y: auto;
+      border-radius: 24px; 
+      border: 1px solid rgba(255, 255, 255, 0.15); 
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      padding: 30px; text-align: left; position: relative;
     }
-    .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.6rem; color: #a1a1aa; cursor: pointer; }
-    .modal-card h2 { color: #f4f4f5; font-size: 1.5rem; margin-bottom: 10px; border-bottom: 1px solid #27272a; padding-bottom: 10px; }
+    .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.6rem; color: #a1a1aa; cursor: pointer; transition: color 0.2s; }
+    .modal-close:hover { color: #ffffff; }
+    .modal-card h2 { color: #f4f4f5; font-size: 1.5rem; margin-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 10px; }
     .modal-card p.desc { color: #a1a1aa; font-size: 0.9rem; margin-bottom: 20px; }
     
     .quality-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
     .quality-item { 
-      background: #09090b; padding: 16px; border-radius: 12px; border: 1px solid #27272a;
+      background: rgba(255, 255, 255, 0.03); 
+      padding: 16px; border-radius: 16px; 
+      border: 1px solid rgba(255, 255, 255, 0.08);
       display: flex; gap: 16px; align-items: center;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .quality-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.18);
     }
     .quality-item-img-wrap { position: relative; flex-shrink: 0; cursor: pointer; }
     .quality-item img {
-      width: 110px; height: 85px; object-fit: cover; border-radius: 8px; border: 1px solid #3f3f46;
+      width: 110px; height: 85px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.15);
       transition: transform 0.2s, border-color 0.2s; display: block;
     }
     .quality-item-img-wrap:hover img { transform: scale(1.05); border-color: #38bdf8; }
@@ -118,16 +166,24 @@
 
     /* --- AVAILABLE SPECIFICATIONS CONTAINER --- */
     .paper-size-box {
-      background: #09090b; border: 1px solid #27272a; border-radius: 12px; padding: 16px; margin-bottom: 25px; text-align: center;
+      background: rgba(255, 255, 255, 0.03); 
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+      border-radius: 16px; padding: 16px; margin-bottom: 25px; text-align: center;
     }
     .paper-size-title { font-size: 0.85rem; color: #a1a1aa; margin-bottom: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
     .paper-size-tags { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-    .size-tag { background: #27272a; color: #38bdf8; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; border: 1px solid #3f3f46; }
+    .size-tag { 
+      background: rgba(255, 255, 255, 0.08); 
+      color: #38bdf8; padding: 6px 14px; border-radius: 20px; 
+      font-weight: 600; font-size: 0.85rem; border: 1px solid rgba(255, 255, 255, 0.12); 
+    }
 
     /* --- FULL SCREEN LIGHTBOX --- */
     #image-lightbox {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.95); z-index: 20000; display: flex;
+      background: rgba(0, 0, 0, 0.88); 
+      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+      z-index: 20000; display: flex;
       flex-direction: column; justify-content: center; align-items: center;
       opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s;
       padding: 20px; cursor: pointer;
@@ -135,7 +191,8 @@
     #image-lightbox.active { opacity: 1; visibility: visible; }
     #image-lightbox img {
       max-width: 95%; max-height: 85vh; object-fit: contain;
-      border-radius: 8px; box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+      border-radius: 14px; box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     #image-lightbox .lightbox-caption {
       color: #f4f4f5; margin-top: 15px; font-size: 1rem; font-weight: 500; text-align: center;
@@ -145,11 +202,14 @@
     }
 
     .modal-order-btn {
-      display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #ffffff; font-weight: 600;
-      padding: 14px 28px; border-radius: 25px; text-decoration: none; font-size: 0.95rem; width: 100%; justify-content: center;
+      display: inline-flex; align-items: center; gap: 10px; 
+      background: #25d366; color: #ffffff; font-weight: 600;
+      padding: 14px 28px; border-radius: 25px; text-decoration: none; font-size: 0.95rem; 
+      width: 100%; justify-content: center; transition: background 0.3s, transform 0.2s;
     }
+    .modal-order-btn:hover { background: #20ba5a; transform: translateY(-1px); }
 
-    footer { text-align: center; padding: 35px; background: #09090b; color: #71717a; font-size: 0.85rem; border-top: 1px solid #18181b; }
+    footer { text-align: center; padding: 35px; background: rgba(0, 0, 0, 0.6); color: #71717a; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.08); }
   </style>
 </head>
 <body>
