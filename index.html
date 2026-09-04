@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -266,159 +266,57 @@
         </div>
       </div>
 
-     <!-- BANNERS & ROLL-UPS MODAL -->
-  <div class="modal-overlay" id="bannerModal" onclick="closeModalOutside(event)">
-    <div class="modal-card">
-      <span class="modal-close" onclick="closeModal('bannerModal')">&times;</span>
-      <h2>Banners & Roll-Up Displays</h2>
-      <p class="desc">Tap any thumbnail image below to expand it to full size:</p>
-      
-      <div class="quality-list">
-        <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('banner-rollup.jpg.jpg', 'Pull-Up Roll-Up Banner Display')">
-            <img src="banner-rollup.jpg.jpg" alt="Roll-Up Banner">
-            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
-          </div>
-          <div class="quality-item-text">
-            <strong>1. Retractable Roll-Up Banner Stands</strong>
-            <span>Portable aluminum pull-up stands with high-resolution anti-curl banner printing.</span>
-          </div>
-        </div>
-
-        <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('banner-pvc.jpg.jpg', 'Heavy Duty Outdoor PVC Banner')">
-            <img src="banner-pvc.jpg.jpg" alt="PVC Flex Banner">
-            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
-          </div>
-          <div class="quality-item-text">
-            <strong>2. Heavy-Duty Outdoor PVC Banners</strong>
-            <span>Weatherproof flex banners finished with reinforced hems and metal grommets.</span>
-          </div>
-        </div>
-
-        <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('banner-pop-up.jpg.jpg', 'Exhibition Pop-Up Display Wall')">
-            <img src="banner-pop-up.jpg.jpg" alt="Pop-Up Display Wall">
-            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
-          </div>
-          <div class="quality-item-text">
-            <strong>3. Exhibition Backdrop Pop-Up Walls</strong>
-            <span>Large curved or straight magnetic frame exhibition backdrops for trade show booths.</span>
-          </div>
-        </div>
-
-        <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('banner-flag.jpg.jpg', 'Teardrop & Feather Flag Banners')">
-            <img src="banner-flag.jpg.jpg" alt="Feather Beach Flag">
-            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
-          </div>
-          <div class="quality-item-text">
-            <strong>4. Outdoor Feather & Teardrop Flags</strong>
-            <span>Wind-resistant promotional flags complete with spike or water-bag bases.</span>
-          </div>
-        </div>
+     <!-- CARD 6: BANNERS & ROLL-UPS -->
+    <div class="card" onclick="openModal('bannerModal')">
+      <img src="banner-rollup.jpg.jpg" alt="Banners & Roll-Ups">
+      <div class="card-body">
+        <h3>Banners & Roll-Up Printing <i class="fas fa-arrow-right"></i></h3>
+        <p>Retractable roll-up standees and heavy-duty vinyl flex banners for events and retail.</p>
+        <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view options</div>
       </div>
-
-      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Banners%20and%20Roll-Ups." target="_blank" class="modal-order-btn">
-        <i class="fab fa-whatsapp"></i> Order Banners via WhatsApp
-      </a>
     </div>
-  </div>
 
-  <!-- PHOTO MODAL -->
-  <div class="modal-overlay" id="photoModal" onclick="closeModalOutside(event)">
-    <div class="modal-card">
-      <span class="modal-close" onclick="closeModal('photoModal')">&times;</span>
-      <h2>Large Scale Photo Printing</h2>
-      <p class="desc">High-resolution gallery-quality canvas photo prints and wall art framing for offices or homes.</p>
-      <a href="https://wa.me/971526907360?text=Order%20Photo%20Prints" target="_blank" class="modal-order-btn">
-        <i class="fab fa-whatsapp"></i> Order Photo Prints via WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <!-- STICKERS & DECALS MODAL -->
-  <div class="modal-overlay" id="stickerModal" onclick="closeModalOutside(event)">
-    <div class="modal-card">
-      <span class="modal-close" onclick="closeModal('stickerModal')">&times;</span>
-      <h2>Custom Stickers & Decals</h2>
-      <p class="desc">Tap any thumbnail image below to expand it to full size:</p>
-      
-      <div class="quality-list">
-        <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-diecut.jpg.jfif.jpg', 'Custom Die-Cut Vinyl Stickers')">
-            <img src="sticker-diecut.jpg.jfif.jpg" alt="Die-Cut Stickers">
-            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
-          </div>
-          <div class="quality-item-text">
-            <strong>1. Custom Die-Cut Vinyl Stickers</strong>
-            <span>Waterproof and scratch-resistant vinyl stickers precision-cut to your exact logo shape.</span>
-          </div>
-        </div>
-
-        <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-roll.jpg.jfif.jpg', 'Product Packaging Roll Labels')">
-            <img src="sticker-roll.jpg.jfif.jpg" alt="Roll Labels">
-            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
-          </div>
-          <div class="quality-item-text">
-            <strong>2. Packaging & Product Roll Labels</strong>
-            <span>High-volume printed label rolls for bottles, jars, pouches, and retail box packaging.</span>
-          </div>
-        </div>
-
-        <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-clear.jpg.jfif.jpg', 'Clear Transparent Stickers')">
-            <img src="sticker-clear.jpg.jfif.jpg" alt="Clear Vinyl Stickers">
-            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
-          </div>
-          <div class="quality-item-text">
-            <strong>3. Clear Transparent Stickers</strong>
-            <span>Seamless transparent background stickers with white ink backing for a sleek glass or bottle aesthetic.</span>
-          </div>
-        </div>
-
-        <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-window.jpg.jfif.jpg', 'Large Window & Vehicle Decals')">
-            <img src="sticker-window.jpg.jfif.jpg" alt="Window Decals">
-            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
-          </div>
-          <div class="quality-item-text">
-            <strong>4. Storefront Window & Vehicle Graphics</strong>
-            <span>Large-format frosted or full-color vinyl branding for store windows and corporate fleet vehicles.</span>
-          </div>
-        </div>
+    <!-- CARD 7: PHOTO PRINTING -->
+    <div class="card" onclick="openModal('photoModal')">
+      <img src="photo.jpg.jfif" alt="Photo Printing">
+      <div class="card-body">
+        <h3>Large Scale Photo Printing <i class="fas fa-arrow-right"></i></h3>
+        <p>Gallery-quality canvas photo prints, framed poster prints, and high-res wall art.</p>
+        <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view options</div>
       </div>
-
-      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Custom%20Stickers%20and%20Decals." target="_blank" class="modal-order-btn">
-        <i class="fab fa-whatsapp"></i> Order Stickers via WhatsApp
-      </a>
     </div>
-  </div>
 
-  <!-- BOOK MODAL -->
-  <div class="modal-overlay" id="bookModal" onclick="closeModalOutside(event)">
-    <div class="modal-card">
-      <span class="modal-close" onclick="closeModal('bookModal')">&times;</span>
-      <h2>Book & Catalog Printing</h2>
-      <p class="desc">Custom booklets, catalogs, and manuals in any quantity with spiral, perfect, or hard-cover binding.</p>
-      <a href="https://wa.me/971526907360?text=Order%20Book%20Printing" target="_blank" class="modal-order-btn">
-        <i class="fab fa-whatsapp"></i> Order Book Printing via WhatsApp
-      </a>
+    <!-- CARD 8: STICKERS & DECALS -->
+    <div class="card" onclick="openModal('stickerModal')">
+      <img src="stickers.jpg.jfif" alt="Stickers & Decals">
+      <div class="card-body">
+        <h3>Custom Stickers & Decals <i class="fas fa-arrow-right"></i></h3>
+        <p>Precision die-cut vinyl stickers, product packaging labels, and clear window graphics.</p>
+        <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view options</div>
+      </div>
     </div>
-  </div>
 
-  <!-- ENGRAVING MODAL -->
-  <div class="modal-overlay" id="engravingModal" onclick="closeModalOutside(event)">
-    <div class="modal-card">
-      <span class="modal-close" onclick="closeModal('engravingModal')">&times;</span>
-      <h2>Laser Engraving</h2>
-      <p class="desc">Precision laser etching on metal, wood, or acrylic along with customized promo keychains.</p>
-      <a href="https://wa.me/971526907360?text=Order%20Laser%20Engraving" target="_blank" class="modal-order-btn">
-        <i class="fab fa-whatsapp"></i> Order Engraving via WhatsApp
-      </a>
+    <!-- CARD 9: BOOK & CATALOG -->
+    <div class="card" onclick="openModal('bookModal')">
+      <img src="books.jpg.jfif" alt="Book & Catalog">
+      <div class="card-body">
+        <h3>Book & Catalog Printing <i class="fas fa-arrow-right"></i></h3>
+        <p>Custom booklets, corporate catalogs, and training manuals with professional binding.</p>
+        <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view options</div>
+      </div>
     </div>
-  </div>
+
+    <!-- CARD 10: LASER ENGRAVING -->
+    <div class="card" onclick="openModal('engravingModal')">
+      <img src="engraving.jpg.jfif" alt="Laser Engraving">
+      <div class="card-body">
+        <h3>Laser Engraving & Keychains <i class="fas fa-arrow-right"></i></h3>
+        <p>Precision laser etching on metal, wood, and acrylic, plus custom keychains.</p>
+        <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view options</div>
+      </div>
+    </div>
+
+  </div> <!-- THIS CLOSES THE MAIN SERVICES GRID (AFTER CARD 10) -->
 
   <!-- LIGHTBOX -->
   <div id="image-lightbox" onclick="closeLightbox()">
