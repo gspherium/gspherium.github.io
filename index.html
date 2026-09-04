@@ -294,7 +294,7 @@
       </div>
 
       <div class="card" onclick="openModal('bookModal')">
-        <img src="books.jpg.jfif" alt="Book & Catalog">
+        <img src="books.jpg.jfif.jpg" alt="Book & Catalog">
         <div class="card-body">
           <h3>Book & Catalog Printing <i class="fas fa-arrow-right"></i></h3>
           <p>Custom booklets, corporate catalogs, and training manuals with professional binding.</p>
@@ -917,7 +917,7 @@
     </div>
   </div>
 
-<!-- PHOTO MODAL -->
+  <!-- PHOTO MODAL -->
   <div class="modal-overlay" id="photoModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('photoModal')">&times;</span>
@@ -976,7 +976,7 @@
     </div>
   </div>
 
-<!-- STICKERS & DECALS MODAL -->
+  <!-- STICKERS & DECALS MODAL -->
   <div class="modal-overlay" id="stickerModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('stickerModal')">&times;</span>
@@ -1035,15 +1035,117 @@
     </div>
   </div>
 
+  <!-- BOOK & CATALOG MODAL -->
+  <div class="modal-overlay" id="bookModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('bookModal')">&times;</span>
+      <h2>Book & Catalog Printing Options</h2>
+      <p class="desc">Tap any thumbnail image below to expand it to full size:</p>
+      
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('book-perfect.jpg.jfif.jpg', 'Perfect Bound Catalogs')">
+            <img src="book-perfect.jpg.jfif.jpg" alt="Perfect Bound Catalog">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Perfect Bound Softcover Books</strong>
+            <span>Clean glued spine finish ideal for high-page corporate product catalogs and magazines.</span>
+          </div>
+        </div>
 
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('book-saddle.jpg.jfif.jpg', 'Saddle-Stitched Booklets')">
+            <img src="book-saddle.jpg.jfif.jpg" alt="Saddle Stitch Booklet">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Saddle-Stitched Stapled Booklets</strong>
+            <span>Cost-effective double-stapled spine booklets for company profiles, handbooks, and event programs.</span>
+          </div>
+        </div>
 
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('book-hardcover.jpg.jfif.jpg', 'Hardcover Premium Executive Notebooks')">
+            <img src="book-hardcover.jpg.jfif.jpg" alt="Hardcover Executive Notebook">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>3. Hardcover Executive Notebooks & Portfolios</strong>
+            <span>Custom debossed or printed leatherette hardcover organizers with built-in accessories.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('book-diecut.jpg.jfif.jpg', 'Custom Die-Cut Cover Catalogs')">
+            <img src="book-diecut.jpg.jfif.jpg" alt="Die-Cut Cover Catalog">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>4. Creative Die-Cut Cover Books</strong>
+            <span>Precision laser or die-cut window covers to reveal inner artwork for unique branding.</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin: 15px 0 5px; font-size: 0.9em; color: #a0a0a0; text-align: center;">
+        <strong>Note:</strong> Standard sizes available (A6, A5, A4) — all dimensions and page counts are fully customizable.
+      </p>
+
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Book%20and%20Catalog%20Printing." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Books & Catalogs via WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- LASER ENGRAVING & KEYCHAINS MODAL -->
   <div class="modal-overlay" id="engravingModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('engravingModal')">&times;</span>
-      <h2>Laser Engraving</h2>
-      <p class="desc">Precision laser etching on metal, wood, or acrylic along with customized promo keychains.</p>
-      <a href="https://wa.me/971526907360?text=Order%20Laser%20Engraving" target="_blank" class="modal-order-btn">
-        <i class="fab fa-whatsapp"></i> Order Engraving via WhatsApp
+      <h2>Laser Engraving & Keychains Options</h2>
+      <p class="desc">Tap any thumbnail image below to expand it to full size:</p>
+      
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('engraving-wood.jpg.jfif.jpg.jpg', 'Precision Wood Engraving')">
+            <img src="engraving-wood.jpg.jfif.jpg.jpg" alt="Wood Engraving">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Wood Engraving</strong>
+            <span>Detailed laser burning and etching on natural timber, cutting boards, plaques, and wooden boxes.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('engraving-glass.jpg.jfif.jpg.jpg', 'Custom Glass Etching')">
+            <img src="engraving-glass.jpg.jfif.jpg.jpg" alt="Glass Engraving">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Glass Engraving</strong>
+            <span>Frosted laser etching on glass decanters, drinkware, bottles, and corporate awards.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('engraving-pvc.jpg.jfif.jpg.jpg', 'PVC & Acrylic Cutting')">
+            <img src="engraving-pvc.jpg.jfif.jpg.jpg" alt="PVC and Acrylic Cutting">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>3. PVC & Acrylic Die Cutting</strong>
+            <span>High-precision laser contour cutting and etching for custom acrylic keychains, name badges, and signage.</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin: 15px 0 5px; font-size: 0.9em; color: #a0a0a0; text-align: center;">
+        <strong>Note:</strong> We engrave on anything! Any size, material, or shape is fully customizable to your needs.
+      </p>
+
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Laser%20Engraving%20services." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Laser Engraving via WhatsApp
       </a>
     </div>
   </div>
