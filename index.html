@@ -266,23 +266,66 @@
         </div>
       </div>
 
-      <div class="card" onclick="openModal('bannerModal')">
-        <img src="banner.jpg.jfif" alt="Banners & Roll-Ups">
-        <div class="card-body">
-          <h3>Banner & Roll-Up Printing <i class="fas fa-arrow-right"></i></h3>
-          <p>Retractable roll-up standees and heavy-duty vinyl flex banners for events and retail.</p>
-          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view options</div>
+<!-- BANNERS & ROLL-UPS MODAL -->
+  <div class="modal-overlay" id="bannerModal" onclick="closeModalOutside(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('bannerModal')">&times;</span>
+      <h2>Banners & Roll-Up Displays</h2>
+      <p class="desc">Tap any thumbnail image below to expand it to full size:</p>
+      
+      <div class="quality-list">
+        <!-- 1. ROLL-UP STAND -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('banner-rollup.jpg.jpg', 'Pull-Up Roll-Up Banner Display')">
+            <img src="banner-rollup.jpg.jpg" alt="Roll-Up Banner">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Retractable Roll-Up Banner Stands</strong>
+            <span>Portable aluminum pull-up stands with high-resolution anti-curl banner printing.</span>
+          </div>
         </div>
-      </div>
 
-      <div class="card" onclick="openModal('signageModal')">
-        <img src="signage.jpg.png" alt="Signages & 3D Letters">
-        <div class="card-body">
-          <h3>Signages & 3D Letters <i class="fas fa-arrow-right"></i></h3>
-          <p>Indoor and outdoor 3D acrylic letters, illuminated shopfront signs, and boards.</p>
-          <div class="card-click-badge"><i class="fas fa-plus-circle"></i> Click to view options</div>
+        <!-- 2. PVC FLEX BANNER -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('banner-pvc.jpg.jpg', 'Heavy Duty Outdoor PVC Banner')">
+            <img src="banner-pvc.jpg.jpg" alt="PVC Flex Banner">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Heavy-Duty Outdoor PVC Banners</strong>
+            <span>Weatherproof flex banners finished with reinforced hems and metal grommets.</span>
+          </div>
         </div>
-      </div>
+
+        <!-- 3. POP-UP DISPLAY WALL -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('banner-pop-up.jpg.jpg', 'Exhibition Pop-Up Display Wall')">
+            <img src="banner-pop-up.jpg.jpg" alt="Pop-Up Display Wall">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>3. Exhibition Backdrop Pop-Up Walls</strong>
+            <span>Large curved or straight magnetic frame exhibition backdrops for trade show booths.</span>
+          </div>
+        </div>
+
+        <!-- 4. BEACH FLAGS -->
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('banner-flag.jpg.jpg', 'Teardrop & Feather Flag Banners')">
+            <img src="banner-flag.jpg.jpg" alt="Feather Beach Flag">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>4. Outdoor Feather & Teardrop Flags</strong>
+            <span>Wind-resistant promotional flags complete with spike or water-bag bases.</span>
+</div> <!-- Closes quality-list -->
+
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Banners%20and%20Roll-Ups." target="_blank" class="modal-order-btn">
+        <i class="fab fa-whatsapp"></i> Order Banners via WhatsApp
+      </a>
+    </div> <!-- Closes modal-card -->
+  </div> <!-- Closes modal-overlay -->
 
       <div class="card" onclick="openModal('photoModal')">
         <img src="photo.jpg.jfif" alt="Large Scale Photo Printing">
