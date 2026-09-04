@@ -917,12 +917,60 @@
     </div>
   </div>
 
+<!-- PHOTO MODAL -->
   <div class="modal-overlay" id="photoModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('photoModal')">&times;</span>
-      <h2>Large Scale Photo Printing</h2>
-      <p class="desc">High-resolution gallery-quality canvas photo prints and wall art framing for offices or homes.</p>
-      <a href="https://wa.me/971526907360?text=Order%20Photo%20Prints" target="_blank" class="modal-order-btn">
+      <h2>Large Scale Photo Printing Options</h2>
+      <p class="desc">Tap any thumbnail image below to expand it to full size:</p>
+      
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('photo-canvas.jpg.jfif.jpg', 'Gallery Wrapped Canvas Prints')">
+            <img src="photo-canvas.jpg.jfif.jpg" alt="Canvas Prints">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Premium Wrapped Canvas Prints</strong>
+            <span>Gallery-quality textured cotton canvas mounted on sturdy internal wooden stretcher frames.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('photo-framed.jpg.jfif.jpg', 'Framed Fine Art Poster Prints')">
+            <img src="photo-framed.jpg.jfif.jpg" alt="Framed Prints">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Custom Framed Poster Art</strong>
+            <span>High-resolution photo prints enclosed in minimalist black, white, or natural wood frames.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('photo-poster.jpg.jfif.jpg', 'Large Format Gloss & Matte Posters')">
+            <img src="photo-poster.jpg.jfif.jpg" alt="Large Format Posters">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>3. High-Gloss & Satin Photo Posters</strong>
+            <span>Vibrant 260gsm heavy photo paper prints tailored for commercial wall displays and portfolios.</span>
+          </div>
+        </div>
+
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('photo-acrylic.jpg.jfif.png', 'Acrylic Wall Art Prints')">
+            <img src="photo-acrylic.jpg.jfif.png" alt="Acrylic Photo Prints">
+            <div class="expand-hint"><i class="fas fa-search-plus"></i> Tap</div>
+          </div>
+          <div class="quality-item-text">
+            <strong>4. Acrylic Face-Mounted Photo Glass</strong>
+            <span>Sleek, frameless acrylic face-mount prints offering maximum color depth and floating wall standoffs.</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Large%20Scale%20Photo%20Printing." target="_blank" class="modal-order-btn">
         <i class="fab fa-whatsapp"></i> Order Photo Prints via WhatsApp
       </a>
     </div>
