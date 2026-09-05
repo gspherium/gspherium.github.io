@@ -12,180 +12,151 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     
     body { 
-      background: #000000 url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed; 
-      background-size: cover;
+      background: #0f172a;
       color: #ffffff; 
       overflow-x: hidden; 
       position: relative;
+      min-height: 100vh;
     }
 
-    /* --- LIQUID WAVE GLOWING HIGHLIGHTS --- */
-    body::before {
-      content: '';
-      position: fixed; top: -10%; left: -10%; width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.4) 0%, rgba(236, 72, 153, 0.3) 50%, transparent 70%);
-      filter: blur(100px); z-index: -1; pointer-events: none;
-      animation: floatGlow 10s ease-in-out infinite alternate;
+    /* --- VIBRANT GRADIENT MESH BACKGROUND (MATCHES YOUR IMAGE) --- */
+    .bg-gradient-mesh {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.8;
+      animation: floatMesh 12s ease-in-out infinite alternate;
+    }
+    .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #ea580c; } /* Orange */
+    .blob-2 { top: 20%; right: -10%; width: 55vw; height: 55vw; background: #0284c7; } /* Blue */
+    .blob-3 { bottom: -10%; left: 20%; width: 45vw; height: 45vw; background: #7c3aed; } /* Purple */
+
+    @keyframes floatMesh {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, 50px) scale(1.1); }
     }
 
-    body::after {
-      content: '';
-      position: fixed; bottom: -10%; right: -10%; width: 650px; height: 650px;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.45) 0%, rgba(168, 85, 247, 0.3) 50%, transparent 70%);
-      filter: blur(110px); z-index: -1; pointer-events: none;
-      animation: floatGlow2 12s ease-in-out infinite alternate;
+    /* --- GLASSMORPHISM CARD STYLING --- */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4);
     }
 
-    @keyframes floatGlow { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(100px, 80px) scale(1.2); } }
-    @keyframes floatGlow2 { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(-80px, -100px) scale(1.25); } }
-
-    /* --- SPLASH SCREEN --- */
-    #splash-screen {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(30px);
-      display: flex; flex-direction: column; justify-content: center; align-items: center; 
-      z-index: 99999; transition: opacity 0.5s ease, visibility 0.5s; text-align: center; padding: 20px;
-    }
-    #splash-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-    
-    .splash-logo-container {
-      background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      padding: 20px 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 1px 2px rgba(255, 255, 255, 0.5);
-      animation: zoomIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    }
-    .splash-logo-img { max-width: 260px; width: 80%; height: auto; display: block; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5)); }
-    .sub-tagline { color: #ffffff; font-size: 1.05rem; margin-top: 20px; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
-    .enter-btn-container { margin-top: 30px; }
-    .enter-btn {
-      background: rgba(255, 255, 255, 0.15); color: #ffffff; padding: 14px 34px; border-radius: 30px; 
-      font-weight: 600; font-size: 0.9rem; letter-spacing: 2px; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.4);
-      display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 8px 32px 0 rgba(245, 158, 11, 0.4);
-      backdrop-filter: blur(20px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .enter-btn:hover { background: rgba(255, 255, 255, 0.28); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(245, 158, 11, 0.6); }
-
-    @keyframes zoomIn { 0% { transform: scale(0.3); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-
-    /* --- FLOATING CONTACT WIDGET --- */
-    .floating-contact {
-      position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
-      display: flex; flex-direction: column; gap: 12px; z-index: 1000;
-      background: rgba(0, 0, 0, 0.35); padding: 16px 10px; border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.25); backdrop-filter: blur(25px);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); text-align: center;
-    }
-    .floating-contact span { font-size: 0.65rem; color: #f1f5f9; writing-mode: vertical-rl; transform: rotate(180deg); }
-    .floating-btn { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; text-decoration: none; transition: transform 0.3s; }
-    .floating-btn:hover { transform: scale(1.15); }
-    .wa-btn { background: #25d366; }
-    .mail-btn { background: #ea4335; }
-
-    /* --- BRIGHT LOGO HEADER --- */
+    /* --- HEADER --- */
     header { 
-      padding: 15px 40px; background: rgba(10, 10, 15, 0.75); 
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 16px 40px; 
+      background: rgba(15, 23, 42, 0.4); 
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       position: sticky; top: 0; z-index: 1000;
     }
 
     .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .brand-wrapper { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+    .brand-wrapper { display: flex; align-items: center; gap: 15px; }
 
     .clean-logo-img { 
       height: 48px; width: auto; display: block; 
-      filter: brightness(1.3) contrast(1.1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-    .brand-wrapper:hover .clean-logo-img { 
-      transform: scale(1.05); 
-      filter: brightness(1.5) contrast(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+      filter: brightness(1.2) drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
     }
 
     .brand-info h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: 2px; color: #ffffff; line-height: 1; margin-bottom: 4px; }
     .brand-info p { font-size: 0.8rem; color: #cbd5e1; font-weight: 400; }
 
     .header-cta-btn {
-      background: linear-gradient(135deg, #38bdf8, #a855f7); color: #ffffff; padding: 10px 22px; 
-      border-radius: 30px; font-size: 0.85rem; font-weight: 600; text-decoration: none;
-      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3); transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff; padding: 10px 24px; border-radius: 30px;
+      font-size: 0.85rem; font-weight: 600; text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
-    .header-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5); }
+    .header-cta-btn:hover { background: rgba(255, 255, 255, 0.3); border-color: rgba(255, 255, 255, 0.6); }
 
-    /* --- 3D CARD FLIP CONTAINER --- */
+    /* --- GRID LAYOUT --- */
     .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 30px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
+    /* --- FLIP CARDS WITH GLASSMORPHISM --- */
     .flip-card {
-      background-color: transparent;
-      height: 440px;
+      height: 480px;
       perspective: 1000px;
       cursor: pointer;
     }
 
     .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: left;
+      position: relative; width: 100%; height: 100%;
       transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transform-style: preserve-3d;
     }
 
-    /* Flip action on click/tap */
-    .flip-card.flipped .flip-card-inner {
-      transform: rotateY(180deg);
-    }
+    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
 
     .flip-card-front, .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
+      position: absolute; width: 100%; height: 100%;
+      -webkit-backface-visibility: hidden; backface-visibility: hidden;
+      border-radius: 28px;
       overflow: hidden;
     }
 
     /* FRONT DESIGN */
     .flip-card-front {
-      background: rgba(0, 0, 0, 0.55);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column;
     }
     .flip-card-front img { width: 100%; height: 220px; object-fit: cover; }
-    .card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .card-body h3 { font-size: 1.15rem; color: #ffffff; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
-    .card-body p { font-size: 0.85rem; color: #e2e8f0; line-height: 1.5; margin-top: 6px; }
-    .tap-hint { font-size: 0.8rem; color: #38bdf8; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; }
+    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .card-body h3 { font-size: 1.2rem; color: #ffffff; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+    .card-body p { font-size: 0.88rem; color: #e2e8f0; line-height: 1.6; margin-top: 8px; }
+    .tap-hint { font-size: 0.8rem; color: #38bdf8; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
 
-    /* BACK DESIGN */
+    /* BACK DESIGN WITH OPTION IMAGES */
     .flip-card-back {
-      background: rgba(15, 15, 22, 0.92);
       transform: rotateY(180deg);
       padding: 22px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 2px rgba(255, 255, 255, 0.4);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: rgba(15, 23, 42, 0.65);
     }
 
-    .back-title { font-size: 1.1rem; color: #ffffff; border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 8px; margin-bottom: 12px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
-    .back-unflip-btn { font-size: 0.8rem; color: #cbd5e1; cursor: pointer; padding: 4px 8px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; }
+    .back-title { font-size: 1.1rem; color: #ffffff; border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding-bottom: 10px; margin-bottom: 12px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+    .back-unflip-btn { font-size: 0.78rem; color: #cbd5e1; cursor: pointer; padding: 4px 10px; background: rgba(255, 255, 255, 0.12); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2); }
 
-    .back-list { list-style: none; overflow-y: auto; max-height: 250px; padding-right: 5px; margin-bottom: 10px; }
-    .back-list li { font-size: 0.8rem; color: #f1f5f9; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: flex-start; gap: 8px; }
-    .back-list li i { color: #38bdf8; margin-top: 3px; font-size: 0.75rem; }
+    .back-list { overflow-y: auto; max-height: 290px; padding-right: 4px; display: flex; flex-direction: column; gap: 10px; }
+    
+    .quality-item { 
+      background: rgba(255, 255, 255, 0.08); 
+      padding: 10px; border-radius: 16px; 
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex; gap: 12px; align-items: center;
+    }
+    .quality-item-img-wrap { position: relative; flex-shrink: 0; cursor: pointer; }
+    .quality-item img {
+      width: 70px; height: 55px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.25); display: block;
+    }
+    .expand-hint {
+      position: absolute; bottom: 2px; right: 2px; background: rgba(0,0,0,0.75);
+      color: #fff; font-size: 0.55rem; padding: 2px 4px; border-radius: 4px; pointer-events: none;
+    }
+    .quality-item-text strong { color: #38bdf8; font-size: 0.85rem; display: block; }
+    .quality-item-text span { color: #e2e8f0; font-size: 0.75rem; line-height: 1.3; display: block; }
 
     .back-order-btn {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       background: #25d366; color: #ffffff; text-decoration: none;
       padding: 12px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); transition: background 0.3s;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); margin-top: 10px; transition: background 0.3s;
     }
     .back-order-btn:hover { background: #20ba5a; }
 
@@ -197,35 +168,25 @@
       opacity: 0; visibility: hidden; transition: opacity 0.3s ease; padding: 20px; cursor: pointer;
     }
     #image-lightbox.active { opacity: 1; visibility: visible; }
-    #image-lightbox img { max-width: 95%; max-height: 85vh; object-fit: contain; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.4); }
+    #image-lightbox img { max-width: 95%; max-height: 80vh; object-fit: contain; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.4); }
+    #image-lightbox .lightbox-caption { color: #fff; margin-top: 12px; font-size: 1rem; }
 
-    footer { text-align: center; padding: 35px; background: rgba(0, 0, 0, 0.85); color: #cbd5e1; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.15); }
+    footer { text-align: center; padding: 35px; background: rgba(15, 23, 42, 0.8); color: #cbd5e1; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.15); }
 
     @media (max-width: 768px) {
       header { padding: 12px 20px; }
       .brand-info p { display: none; }
-      .flip-card { height: 420px; }
+      .flip-card { height: 460px; }
     }
   </style>
 </head>
 <body>
 
-  <div id="splash-screen">
-    <div class="splash-logo-container">
-      <img src="logo.png.png" alt="GS PHERIUM Logo" class="splash-logo-img">
-    </div>
-    <div class="sub-tagline">Custom Printing, Corporate Merch & Branding Solutions</div>
-    <div class="enter-btn-container">
-      <button class="enter-btn" onclick="enterSite()">
-        <i class="fas fa-mouse-pointer"></i> CLICK. CONNECT. CONVERT.
-      </button>
-    </div>
-  </div>
-
-  <div class="floating-contact">
-    <span>For More Information</span>
-    <a href="https://wa.me/971526907360" target="_blank" class="floating-btn wa-btn"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:gspherium@gmail.com" class="floating-btn mail-btn"><i class="fas fa-envelope"></i></a>
+  <!-- GRADIENT BACKGROUND MESH -->
+  <div class="bg-gradient-mesh">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
   </div>
 
   <header>
@@ -238,7 +199,8 @@
         </div>
       </div>
       
-      <a href="https://wa.me/971526907360" target="_blank" class="header-cta-btn">
+      <!-- HEADER WHATSAPP QUESTIONNAIRE LINK -->
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20would%20like%20to%20get%20a%20quote.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Service%20/%20Items%20Needed:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="header-cta-btn">
         <i class="fab fa-whatsapp"></i> Get Quote
       </a>
     </div>
@@ -248,41 +210,66 @@
     <div class="grid">
 
       <!-- 1. BUSINESS CARDS -->
-      <div class="flip-card" onclick="flipCard(this)">
+      <div class="flip-card" onclick="flipCard(this, event)">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
+          <div class="flip-card-front glass-panel">
             <img src="card.jpg.webp" alt="Business Cards">
             <div class="card-body">
               <h3>Business Card Printing <i class="fas fa-sync-alt"></i></h3>
-              <p>Matte, gloss, textured, soft-touch, and foil-stamped business cards designed to elevate your brand.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
+              <p>Matte, gloss, textured, soft-touch, and foil-stamped cards designed to elevate your brand.</p>
+              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view finishes</div>
             </div>
           </div>
-          <div class="flip-card-back">
+          <div class="flip-card-back glass-panel">
             <div>
               <div class="back-title">
                 <span>Business Card Finishes</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
+                <span class="back-unflip-btn" onclick="flipCard(this.closest('.flip-card'), event)"><i class="fas fa-undo"></i> Flip Back</span>
               </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Spot UV Finish:</strong> Glossy accents over matte paper.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Foil Stamping:</strong> Metallic Gold, Silver & Foil logos.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Embossed/Debossed:</strong> 3D raised paper impressions.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Painted Edges:</strong> Bold brand colors on card edges.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Die-Cut Shapes:</strong> Custom laser-cut contours.</li>
-              </ul>
+              <div class="back-list">
+                <div class="quality-item">
+                  <div class="quality-item-img-wrap" onclick="openLightbox('card-spotuv.jpg.jfif', 'Spot UV Finish', event)">
+                    <img src="card-spotuv.jpg.jfif" alt="Spot UV">
+                    <div class="expand-hint"><i class="fas fa-search-plus"></i> View</div>
+                  </div>
+                  <div class="quality-item-text">
+                    <strong>Spot UV Finish</strong>
+                    <span>Raised glossy accents over matte stock.</span>
+                  </div>
+                </div>
+                <div class="quality-item">
+                  <div class="quality-item-img-wrap" onclick="openLightbox('card-foil.jpg.jfif', 'Foil Stamping', event)">
+                    <img src="card-foil.jpg.jfif" alt="Foil Stamping">
+                    <div class="expand-hint"><i class="fas fa-search-plus"></i> View</div>
+                  </div>
+                  <div class="quality-item-text">
+                    <strong>Foil Stamping</strong>
+                    <span>Metallic Gold, Silver & custom foils.</span>
+                  </div>
+                </div>
+                <div class="quality-item">
+                  <div class="quality-item-img-wrap" onclick="openLightbox('card-embossed.jpg.jfif', 'Embossed Finish', event)">
+                    <img src="card-embossed.jpg.jfif" alt="Embossed">
+                    <div class="expand-hint"><i class="fas fa-search-plus"></i> View</div>
+                  </div>
+                  <div class="quality-item-text">
+                    <strong>Embossed / Debossed</strong>
+                    <span>Tactile 3D paper impressions.</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Business%20Cards." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Business Cards
+            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Business%20Cards.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Finish%20Choice:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
+              <i class="fab fa-whatsapp"></i> Get Quote for Business Cards
             </a>
           </div>
         </div>
       </div>
 
       <!-- 2. FLYERS -->
-      <div class="flip-card" onclick="flipCard(this)">
+      <div class="flip-card" onclick="flipCard(this, event)">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
+          <div class="flip-card-front glass-panel">
             <img src="flyer.jpg.jfif" alt="Flyers & Brochures">
             <div class="card-body">
               <h3>Flyer & Brochure Printing <i class="fas fa-sync-alt"></i></h3>
@@ -290,394 +277,47 @@
               <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
             </div>
           </div>
-          <div class="flip-card-back">
+          <div class="flip-card-back glass-panel">
             <div>
               <div class="back-title">
                 <span>Flyer & Brochure Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
+                <span class="back-unflip-btn" onclick="flipCard(this.closest('.flip-card'), event)"><i class="fas fa-undo"></i> Flip Back</span>
               </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Single/Double Flyers:</strong> 150-170gsm Gloss/Matte.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Bi-Fold Brochures:</strong> 4-panel menus & portfolios.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Tri-Fold / Z-Fold:</strong> Compact 6-panel pamphlets.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Heavy 300gsm Stock:</strong> Luxury cards with lamination.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Available Sizes:</strong> A6, A5, and A4.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Flyers." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Flyers via WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. LETTERHEADS -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="letterhead.jpg.jfif" alt="Letterhead Printing">
-            <div class="card-body">
-              <h3>Letterhead Printing <i class="fas fa-sync-alt"></i></h3>
-              <p>Official corporate stationary and letterheads printed on smooth, high-grade paper.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Letterhead Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
+              <div class="back-list">
+                <div class="quality-item">
+                  <div class="quality-item-img-wrap" onclick="openLightbox('flyer-single.jpg.jfif', 'Single & Double Flyers', event)">
+                    <img src="flyer-single.jpg.jfif" alt="Flyers">
+                    <div class="expand-hint"><i class="fas fa-search-plus"></i> View</div>
+                  </div>
+                  <div class="quality-item-text">
+                    <strong>Single / Double Flyers</strong>
+                    <span>150-170gsm Gloss or Matte paper.</span>
+                  </div>
+                </div>
+                <div class="quality-item">
+                  <div class="quality-item-img-wrap" onclick="openLightbox('flyer-bifold.jpg.jfif', 'Bi-Fold Brochures', event)">
+                    <img src="flyer-bifold.jpg.jfif" alt="Bi-Fold">
+                    <div class="expand-hint"><i class="fas fa-search-plus"></i> View</div>
+                  </div>
+                  <div class="quality-item-text">
+                    <strong>Bi-Fold Brochures</strong>
+                    <span>4-panel folded menus & portfolios.</span>
+                  </div>
+                </div>
+                <div class="quality-item">
+                  <div class="quality-item-img-wrap" onclick="openLightbox('flyer-trifold.jpg.jfif', 'Tri-Fold Pamphlets', event)">
+                    <img src="flyer-trifold.jpg.jfif" alt="Tri-Fold">
+                    <div class="expand-hint"><i class="fas fa-search-plus"></i> View</div>
+                  </div>
+                  <div class="quality-item-text">
+                    <strong>Tri-Fold / Z-Fold</strong>
+                    <span>Compact 6-panel pamphlets.</span>
+                  </div>
+                </div>
               </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Standard Bond:</strong> 100gsm smooth daily stationery.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Textured Linen:</strong> 120gsm executive woven paper.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Foil & Embossed Header:</strong> Metallic 3D accents.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Stationery Suite:</strong> DL envelopes & folders.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Size:</strong> A4 (210 x 297mm).</li>
-              </ul>
             </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Letterheads." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Letterheads
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. T-SHIRTS (DTF) -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="tshirt.jpg.jfif" alt="T-Shirt DTF">
-            <div class="card-body">
-              <h3>T-Shirt Printing (DTF) <i class="fas fa-sync-alt"></i></h3>
-              <p>Direct-to-Film custom apparel printing with vibrant colors and durable, stretch-resistant prints.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>DTF Printing Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>High-Vibrancy DTF:</strong> Vivid prints on cotton/blends.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Oversized Streetwear:</strong> Heavy 240gsm thick tees.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Corporate Polos:</strong> Breathable staff uniforms.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Placement:</strong> Chest logos & full back artwork.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20DTF%20T-Shirts." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order DTF T-Shirts
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. 3D PUFF T-SHIRTS -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="3dpuff.jpg.jfif" alt="3D Puff T-Shirt">
-            <div class="card-body">
-              <h3>3D Puff T-Shirt Printing <i class="fas fa-sync-alt"></i></h3>
-              <p>Tactile, raised 3D rubberized text and graphics for streetwear and custom branded merchandise.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>3D Puff Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>High-Density Foam:</strong> Tactile raised 3D effect.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Minimalist Chest Accent:</strong> Matte raised logos.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Sleeve/Back Placement:</strong> Hoodies & crewnecks.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Multi-Color Layered:</strong> Tonal 3D raised prints.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%203D%20Puff%20Printing." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order 3D Puff Printing
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. EMBROIDERY -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="embroidery.jpg.jfif" alt="Custom Embroidery">
-            <div class="card-body">
-              <h3>Custom Embroidery <i class="fas fa-sync-alt"></i></h3>
-              <p>High-density thread embroidery for corporate polo shirts, caps, workwear, and jackets.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Embroidery Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Polo Chest Stitching:</strong> Durable uniform logos.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Caps & Headwear:</strong> 3D raised or flat stitching.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Jackets & Outerwear:</strong> Large back emblems.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Custom Patches:</strong> Iron-on or Velcro badges.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Embroidery." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Embroidery
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. UV PRINTING -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="uvprint.jpg.webp" alt="UV Direct Printing">
-            <div class="card-body">
-              <h3>UV Direct Printing <i class="fas fa-sync-alt"></i></h3>
-              <p>Direct UV flatbed printing on acrylic, wood, glass, metal, phone cases, and tumblers.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>UV Direct Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Acrylic & Glass:</strong> Full-color direct prints.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Metal & Wood:</strong> Vibrant cured inks on plaques.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Phone Cases & Gadgets:</strong> Textured 3D graphics.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>360° Rotary:</strong> Full wrap on bottles & tumblers.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20UV%20Printing." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order UV Printing
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. CORPORATE GIFTS -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="gifts.jpg.jfif" alt="Corporate Gifts">
-            <div class="card-body">
-              <h3>Corporate Gifts & Items <i class="fas fa-sync-alt"></i></h3>
-              <p>Tailored gift sets, branded bottles, promotional pens, and executive giveaways.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Corporate Gift Items</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Executive Gift Sets:</strong> Pens, journals & USBs.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Vacuum Flasks:</strong> Temp-display water bottles.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Ceramic Mugs:</strong> Sublimation coffee mugs.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Metal Pens:</strong> Engraved executive pens.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Corporate%20Gifts." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Corporate Gifts
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. ACRYLIC STANDS -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="acrylic.jpg.jfif" alt="Acrylic Stands">
-            <div class="card-body">
-              <h3>Acrylic Stands & Signage <i class="fas fa-sync-alt"></i></h3>
-              <p>Custom laser-cut acrylic display stands, desk blocks, and corporate wall signs.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Acrylic Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Desktop Holders:</strong> Menu & table nameplates.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Wall Signage:</strong> Frosted panels with standoffs.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Acrylic Blocks:</strong> Bevel-cut trophy blocks.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Acrylic%20Stands." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Acrylic Stands
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. BANNERS -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="banner-rollup.jpg.jpg" alt="Banners & Roll-Ups">
-            <div class="card-body">
-              <h3>Banners & Roll-Up Printing <i class="fas fa-sync-alt"></i></h3>
-              <p>Retractable roll-up standees and heavy-duty vinyl flex banners for events and retail.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Banner & Standee Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Roll-Up Stands:</strong> Anti-curl pull-up banners.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Outdoor PVC:</strong> Weatherproof flex with grommets.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Pop-Up Walls:</strong> Exhibition backdrop frames.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Feather Flags:</strong> Wind-resistant beach flags.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Banners." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Banners
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 11. PHOTO PRINTING -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="photo.jpg.jfif" alt="Photo Printing">
-            <div class="card-body">
-              <h3>Large Scale Photo Printing <i class="fas fa-sync-alt"></i></h3>
-              <p>Gallery-quality canvas photo prints, framed poster prints, and high-res wall art.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Photo Print Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Canvas Prints:</strong> Mounted on wooden frames.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Framed Posters:</strong> Fine art wood/black frames.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Gloss/Satin Posters:</strong> Heavy 260gsm paper.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Acrylic Glass Art:</strong> Sleek face-mounted glass.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Photo%20Prints." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Photo Prints
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12. STICKERS -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="stickers.jpg.jfif" alt="Custom Stickers">
-            <div class="card-body">
-              <h3>Custom Stickers & Decals <i class="fas fa-sync-alt"></i></h3>
-              <p>Precision die-cut vinyl stickers, product packaging labels, and clear window graphics.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Sticker & Decal Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Die-Cut Vinyl:</strong> Waterproof custom shapes.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Packaging Rolls:</strong> High-volume labels.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Clear Stickers:</strong> Transparent with white ink.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Window Decals:</strong> Storefront vinyl branding.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Stickers." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Stickers
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 13. BOOKS -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="books.jpg.jfif.jpg" alt="Books & Catalogs">
-            <div class="card-body">
-              <h3>Book & Catalog Printing <i class="fas fa-sync-alt"></i></h3>
-              <p>Custom booklets, corporate catalogs, and training manuals with professional binding.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Book Binding Options</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Perfect Bound:</strong> Glued spine softcovers.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Saddle-Stitched:</strong> Double-stapled booklets.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Hardcover Portfolios:</strong> Executive organizers.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Sizes:</strong> A6, A5, A4 (Customizable).</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Book%20Printing." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Book Printing
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 14. ENGRAVING -->
-      <div class="flip-card" onclick="flipCard(this)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="engraving.jpg.jfif" alt="Laser Engraving">
-            <div class="card-body">
-              <h3>Laser Engraving & Keychains <i class="fas fa-sync-alt"></i></h3>
-              <p>Precision laser etching on metal, wood, and acrylic, plus custom keychains.</p>
-              <div class="tap-hint"><i class="fas fa-hand-pointer"></i> Tap card to flip & view options</div>
-            </div>
-          </div>
-          <div class="flip-card-back">
-            <div>
-              <div class="back-title">
-                <span>Laser Engraving Services</span>
-                <span class="back-unflip-btn"><i class="fas fa-undo"></i> Flip Back</span>
-              </div>
-              <ul class="back-list">
-                <li><i class="fas fa-check-circle"></i> <strong>Wood Engraving:</strong> Laser etching on timber.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Glass Etching:</strong> Frosted glassware & awards.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>PVC/Acrylic Cutting:</strong> Custom keychains.</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Custom:</strong> Engraving on any material.</li>
-              </ul>
-            </div>
-            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20order%20Laser%20Engraving." target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i> Order Laser Engraving
+            <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Flyers.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Brochure%20Type:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="back-order-btn" onclick="event.stopPropagation()">
+              <i class="fab fa-whatsapp"></i> Get Quote for Flyers
             </a>
           </div>
         </div>
@@ -686,18 +326,34 @@
     </div>
   </div>
 
+  <!-- LIGHTBOX CONTAINER -->
+  <div id="image-lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Full Screen View">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
   <footer>
     <p><strong>Location:</strong> Al Rigga, Dubai - UAE | <strong>Mobile:</strong> +971 52 690 7360 | <strong>Email:</strong> gspherium@gmail.com</p>
     <p style="margin-top:8px;">&copy; GS PHERIUM. All Rights Reserved.</p>
   </footer>
 
   <script>
-    function enterSite() {
-      document.getElementById('splash-screen').classList.add('hidden');
+    function flipCard(card, event) {
+      if (event.target.closest('a') || event.target.closest('.quality-item-img-wrap')) {
+        return;
+      }
+      card.classList.toggle('flipped');
     }
 
-    function flipCard(card) {
-      card.classList.toggle('flipped');
+    function openLightbox(src, caption, event) {
+      event.stopPropagation();
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').innerText = caption;
+      document.getElementById('image-lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('image-lightbox').classList.remove('active');
     }
   </script>
 </body>
