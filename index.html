@@ -107,7 +107,7 @@
     }
     .header-cta-btn:hover { background: #cbd5e1; transform: translateY(-2px); }
 
-    /* --- HERO SECTION --- */
+    /* --- HERO --- */
     .hero-section { max-width: 1300px; margin: 60px auto 40px; padding: 0 50px; }
     .hero-title { font-size: 4.2rem; font-weight: 900; line-height: 1.05; letter-spacing: -2px; max-width: 800px; }
     .hero-title span { color: #60a5fa; }
@@ -116,7 +116,7 @@
     .btn-primary { background: #ffffff; color: #000000; padding: 14px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 0.85rem; }
     .btn-secondary { background: rgba(255, 255, 255, 0.08); color: #ffffff; padding: 14px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; }
 
-    /* --- APPROACH SECTION ("Built to look expensive") --- */
+    /* --- APPROACH SECTION WITH SHOWCASE CARDS (WITH IMAGES) --- */
     .approach-section { max-width: 1300px; margin: 100px auto 40px; padding: 0 50px; }
     .section-subtitle { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: #64748b; font-weight: 600; }
     .approach-head { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 12px; margin-bottom: 40px; flex-wrap: wrap; gap: 20px; }
@@ -125,15 +125,25 @@
     .approach-desc { font-size: 0.95rem; color: #94a3b8; max-width: 450px; line-height: 1.6; }
 
     .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    
     .showcase-card {
       background: rgba(255, 255, 255, 0.03); border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 35px; min-height: 380px; display: flex; flex-direction: column; justify-content: space-between;
+      padding: 28px; height: 420px; display: flex; flex-direction: column; justify-content: space-between;
       transition: all 0.3s ease; position: relative; overflow: hidden;
     }
     .showcase-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-6px); background: rgba(255, 255, 255, 0.05); }
-    .showcase-card h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #64748b; }
-    .showcase-card h3 { font-size: 2rem; font-weight: 800; line-height: 1.2; margin-top: auto; margin-bottom: 8px; }
-    .showcase-card p { font-size: 0.85rem; color: #94a3b8; }
+    .showcase-card h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #64748b; z-index: 2; position: relative; }
+    
+    /* Showcase Embedded Product Image */
+    .showcase-card-img-wrap {
+      width: 100%; height: 180px; margin: 15px 0; border-radius: 18px; overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .showcase-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95) contrast(1.05); }
+
+    .showcase-card-text { z-index: 2; position: relative; }
+    .showcase-card h3 { font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 6px; }
+    .showcase-card p { font-size: 0.85rem; color: #94a3b8; line-height: 1.5; }
 
     /* --- SERVICE CATALOG GRID --- */
     .services-section { max-width: 1300px; margin: 100px auto; padding: 0 50px; }
@@ -150,7 +160,7 @@
     .card-body p { font-size: 0.85rem; color: #94a3b8; margin-top: 10px; line-height: 1.6; }
     .card-badge { font-size: 0.8rem; color: #60a5fa; font-weight: 600; margin-top: 16px; display: inline-flex; align-items: center; gap: 8px; }
 
-    /* --- MODAL POPUP (EACH SERVICE PAGE) --- */
+    /* --- MODAL POPUP --- */
     .modal-overlay {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
       background: rgba(5, 7, 12, 0.92); backdrop-filter: blur(35px);
@@ -270,6 +280,7 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero-section">
     <h1 class="hero-title">Make your brand <span>impossible to ignore.</span></h1>
     <p class="hero-desc">Custom printing, corporate merchandise, and branding solutions produced with the finish, detail, and consistency your business deserves.</p>
@@ -279,6 +290,7 @@
     </div>
   </section>
 
+  <!-- APPROACH ("Built to look expensive") WITH PRODUCT PREVIEW IMAGES -->
   <section class="approach-section" id="approach">
     <div class="section-subtitle">The GS Pherium Approach</div>
     <div class="approach-head">
@@ -287,24 +299,47 @@
     </div>
 
     <div class="showcase-grid">
-      <div class="showcase-card">
+      
+      <!-- SHOWCASE 1: FINISHING WITH IMAGE -->
+      <div class="showcase-card" onclick="openModal('cardModal')">
         <h4>Finishing</h4>
-        <h3>Details people can feel.</h3>
-        <p>Spot UV, foil, embossing, painted edges, and custom die-cuts.</p>
+        <div class="showcase-card-img-wrap">
+          <img src="card.jpg.webp" alt="Business Card Finishing">
+        </div>
+        <div class="showcase-card-text">
+          <h3>Details people can feel.</h3>
+          <p>Spot UV, foil, embossing, painted edges, and custom die-cuts.</p>
+        </div>
       </div>
-      <div class="showcase-card">
+
+      <!-- SHOWCASE 2: APPAREL WITH IMAGE -->
+      <div class="showcase-card" onclick="openModal('tshirtModal')">
         <h4>Apparel</h4>
-        <h3>Wear the identity.</h3>
-        <p>DTF, 3D puff, embroidery, and corporate uniforms.</p>
+        <div class="showcase-card-img-wrap">
+          <img src="tshirt.jpg.jfif" alt="Apparel Identity">
+        </div>
+        <div class="showcase-card-text">
+          <h3>Wear the identity.</h3>
+          <p>DTF, 3D puff, embroidery, and corporate uniforms.</p>
+        </div>
       </div>
-      <div class="showcase-card">
+
+      <!-- SHOWCASE 3: MERCH WITH IMAGE -->
+      <div class="showcase-card" onclick="openModal('giftsModal')">
         <h4>Merch</h4>
-        <h3>Useful. Memorable.</h3>
-        <p>Corporate gifts, bottles, pens, notebooks, and branded sets.</p>
+        <div class="showcase-card-img-wrap">
+          <img src="gift-bottle.jpg.jfif.jpg" alt="Corporate Gifts">
+        </div>
+        <div class="showcase-card-text">
+          <h3>Useful. Memorable.</h3>
+          <p>Corporate gifts, bottles, pens, notebooks, and branded sets.</p>
+        </div>
       </div>
+
     </div>
   </section>
 
+  <!-- SERVICES CATALOG (ALL 14 SERVICES) -->
   <section class="services-section" id="services">
     <div class="section-subtitle" style="margin-bottom: 24px;">Our Core Catalog</div>
     <div class="grid">
@@ -437,6 +472,8 @@
 
     </div>
   </section>
+
+  <!-- POPUP MODALS FOR EVERY SERVICE -->
 
   <div class="modal-overlay" id="cardModal" onclick="closeModalOutside(event, 'cardModal')">
     <div class="modal-card">
@@ -822,6 +859,7 @@
     </div>
   </div>
 
+  <!-- "HAVE A PROJECT IN MIND?" PROJECT CLOSING SECTION -->
   <section class="project-closing-section" id="contact">
     <div class="closing-subtitle">Let's Make Something</div>
     <h2 class="closing-title">Have a project<br><span>in mind?</span></h2>
@@ -832,6 +870,7 @@
     </div>
   </section>
 
+  <!-- LIGHTBOX -->
   <div id="image-lightbox" onclick="closeLightbox()">
     <img id="lightbox-img" src="" alt="Full View">
     <div class="lightbox-caption" id="lightbox-caption"></div>
