@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GS PHERIUM - Custom Printing & Branding Solutions Dubai</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -52,6 +52,66 @@
       box-shadow: 
         0 20px 50px rgba(0, 0, 0, 0.35),
         inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    }
+
+    /* --- LIQUID GLASS WATERMARK BANNER --- */
+    .hero-glass-watermark {
+      padding: 40px 20px 10px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .glass-bubble-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border-radius: 35px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+      padding: 35px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .watermark-text {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: 5px;
+      color: #ffffff;
+      text-transform: uppercase;
+      line-height: 1.1;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .watermark-text::after {
+      content: "GRESTAN LUTH PAUL";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: transparent;
+      background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.5) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      filter: drop-shadow(0 6px 12px rgba(255,255,255,0.4)) blur(0.5px);
+      transform: scale(1.02) skewX(-2deg);
+      pointer-events: none;
+    }
+
+    .hero-subtag {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-top: 12px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      text-transform: uppercase;
     }
 
     /* --- SPLASH SCREEN --- */
@@ -142,7 +202,7 @@
     .header-cta-btn:hover { background: rgba(255, 255, 255, 0.3); border-color: rgba(255, 255, 255, 0.6); }
 
     /* --- GRID & FLIP CARDS --- */
-    .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    .container { max-width: 1200px; margin: 30px auto 50px; padding: 0 20px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
     .flip-card {
@@ -230,6 +290,8 @@
     @media (max-width: 768px) {
       header { padding: 12px 20px; }
       .brand-info p { display: none; }
+      .watermark-text { font-size: 1.8rem; letter-spacing: 2px; }
+      .hero-subtag { font-size: 0.75rem; }
       .flip-card { height: 460px; }
     }
   </style>
@@ -276,6 +338,14 @@
       </a>
     </div>
   </header>
+
+  <!-- LIQUID GLASS WATERMARK HERO BANNER -->
+  <div class="hero-glass-watermark">
+    <div class="glass-bubble-card">
+      <div class="watermark-text">GRESTAN LUTH PAUL</div>
+      <div class="hero-subtag">Premium Custom Printing & Creative Branding Studio</div>
+    </div>
+  </div>
 
   <div class="container">
     <div class="grid">
