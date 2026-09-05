@@ -12,7 +12,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     
     body { 
-      background: #06080e;
+      background: #05070c;
       color: #ffffff; 
       overflow-x: hidden; 
       position: relative;
@@ -30,23 +30,23 @@
     .blob {
       position: absolute;
       border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.55;
-      animation: floatMesh 14s ease-in-out infinite alternate;
+      filter: blur(140px);
+      opacity: 0.45;
+      animation: floatMesh 16s ease-in-out infinite alternate;
     }
-    .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #2563eb; }
-    .blob-2 { top: 30%; right: -10%; width: 55vw; height: 55vw; background: #7c3aed; }
-    .blob-3 { bottom: -10%; left: 20%; width: 45vw; height: 45vw; background: #db2777; }
+    .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #1d4ed8; }
+    .blob-2 { top: 35%; right: -10%; width: 55vw; height: 55vw; background: #6d28d9; }
+    .blob-3 { bottom: -10%; left: 20%; width: 45vw; height: 45vw; background: #be185d; }
 
     @keyframes floatMesh {
       0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(40px, 50px) scale(1.1); }
+      100% { transform: translate(50px, 60px) scale(1.15); }
     }
 
     /* --- SPLASH SCREEN --- */
     #splash-screen {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(6, 8, 14, 0.92); backdrop-filter: blur(30px);
+      background: rgba(5, 7, 12, 0.95); backdrop-filter: blur(30px);
       display: flex; flex-direction: column;
       justify-content: center; align-items: center; z-index: 99999;
       transition: opacity 0.5s ease, visibility 0.5s; text-align: center; padding: 20px;
@@ -54,44 +54,35 @@
     #splash-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
     
     .splash-logo-container {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
       padding: 24px 48px; border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.7), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
       animation: zoomIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
     .splash-logo-img { max-width: 260px; width: 80%; height: auto; display: block; filter: brightness(1.3) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)); }
-    .sub-tagline { color: #ffffff; font-size: 1.05rem; margin-top: 22px; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+    .sub-tagline { color: #94a3b8; font-size: 1rem; margin-top: 22px; font-weight: 400; letter-spacing: 1px; }
     .enter-btn-container { margin-top: 32px; }
     .enter-btn {
-      background: rgba(255, 255, 255, 0.12);
-      color: #ffffff; padding: 16px 36px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;
-      letter-spacing: 2px; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff; padding: 16px 36px; border-radius: 30px; font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 2px; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.25);
       display: inline-flex; align-items: center; gap: 10px;
-      box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.4);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      transition: all 0.3s ease;
+      backdrop-filter: blur(20px); transition: all 0.3s ease;
     }
-    .enter-btn:hover { 
-      background: rgba(255, 255, 255, 0.25);
-      border-color: rgba(255, 255, 255, 0.7); 
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(37, 99, 235, 0.6);
-    }
+    .enter-btn:hover { background: #ffffff; color: #000000; transform: translateY(-2px); }
 
     @keyframes zoomIn { 0% { transform: scale(0.3); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
-    /* --- FLOATING CONTACT WIDGET --- */
+    /* --- FLOATING CONTACT --- */
     .floating-contact {
       position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
       display: flex; flex-direction: column; gap: 12px; z-index: 1000;
-      background: rgba(0, 0, 0, 0.45); padding: 16px 10px; border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6); text-align: center;
+      background: rgba(0, 0, 0, 0.5); padding: 16px 10px; border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(25px); text-align: center;
     }
-    .floating-contact span { font-size: 0.65rem; color: #cbd5e1; writing-mode: vertical-rl; transform: rotate(180deg); }
+    .floating-contact span { font-size: 0.65rem; color: #64748b; writing-mode: vertical-rl; transform: rotate(180deg); }
     .floating-btn { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2rem; text-decoration: none; transition: transform 0.3s; }
     .floating-btn:hover { transform: scale(1.15); }
     .wa-btn { background: #25d366; }
@@ -99,122 +90,122 @@
 
     /* --- HEADER --- */
     header { 
-      padding: 16px 40px; 
-      background: rgba(6, 8, 14, 0.7); 
-      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px 50px; 
+      background: rgba(5, 7, 12, 0.75); 
+      backdrop-filter: blur(25px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       position: sticky; top: 0; z-index: 1000;
     }
-
-    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .brand-wrapper { display: flex; align-items: center; gap: 15px; }
-
-    .clean-logo-img { 
-      height: 48px; width: auto; display: block; 
-      filter: brightness(1.3) contrast(1.1) drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
-    }
-
-    .brand-info h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: 2px; color: #ffffff; line-height: 1; margin-bottom: 4px; }
-    .brand-info p { font-size: 0.8rem; color: #94a3b8; font-weight: 400; }
-
+    .header-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .clean-logo-img { height: 42px; width: auto; filter: brightness(1.3); }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: #ffffff; }
     .header-cta-btn {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff; padding: 10px 24px; border-radius: 30px;
-      font-size: 0.85rem; font-weight: 600; text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
+      background: #ffffff; color: #000000; padding: 10px 24px; border-radius: 30px;
+      font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease;
     }
-    .header-cta-btn:hover { background: rgba(255, 255, 255, 0.25); border-color: rgba(255, 255, 255, 0.6); }
+    .header-cta-btn:hover { background: #cbd5e1; transform: translateY(-2px); }
 
-    /* --- HERO AGENCY HEADER BANNER --- */
-    .hero-banner {
-      max-width: 1200px; margin: 40px auto 20px; padding: 0 20px; text-align: left;
-    }
-    .hero-glass-card {
-      background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
-      border-radius: 32px; border: 1px solid rgba(255, 255, 255, 0.18);
-      padding: 48px 40px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.3);
-      display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap;
-    }
-    .hero-title { font-size: 2.8rem; font-weight: 800; line-height: 1.15; letter-spacing: -1px; max-width: 650px; }
-    .hero-title span { color: #38bdf8; }
-    .hero-desc { font-size: 0.95rem; color: #94a3b8; margin-top: 14px; max-width: 550px; line-height: 1.6; }
-    .hero-meta-box {
-      background: rgba(255, 255, 255, 0.06); padding: 20px 28px; border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.15); text-align: right;
-    }
-    .hero-meta-title { font-size: 0.8rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
-    .hero-meta-name { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-top: 4px; }
+    /* --- HERO SECTION --- */
+    .hero-section { max-width: 1300px; margin: 60px auto 40px; padding: 0 50px; }
+    .hero-title { font-size: 4.2rem; font-weight: 900; line-height: 1.05; letter-spacing: -2px; max-width: 800px; }
+    .hero-title span { color: #60a5fa; }
+    .hero-desc { font-size: 1rem; color: #94a3b8; margin-top: 24px; max-width: 600px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 16px; margin-top: 32px; }
+    .btn-primary { background: #ffffff; color: #000000; padding: 14px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 0.85rem; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.08); color: #ffffff; padding: 14px 28px; border-radius: 30px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); font-size: 0.85rem; }
 
-    /* --- SERVICE GRID & CARDS --- */
-    .container { max-width: 1200px; margin: 30px auto 60px; padding: 0 20px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    /* --- APPROACH SECTION ("Built to look expensive") --- */
+    .approach-section { max-width: 1300px; margin: 100px auto 40px; padding: 0 50px; }
+    .section-subtitle { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: #64748b; font-weight: 600; }
+    .approach-head { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 12px; margin-bottom: 40px; flex-wrap: wrap; gap: 20px; }
+    .approach-title { font-size: 3.2rem; font-weight: 900; line-height: 1.1; letter-spacing: -1px; }
+    .approach-title span { color: #818cf8; }
+    .approach-desc { font-size: 0.95rem; color: #94a3b8; max-width: 450px; line-height: 1.6; }
 
+    .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .showcase-card {
+      background: rgba(255, 255, 255, 0.03); border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 35px; min-height: 380px; display: flex; flex-direction: column; justify-content: space-between;
+      transition: all 0.3s ease; position: relative; overflow: hidden;
+    }
+    .showcase-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-6px); background: rgba(255, 255, 255, 0.05); }
+    .showcase-card h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #64748b; }
+    .showcase-card h3 { font-size: 2rem; font-weight: 800; line-height: 1.2; margin-top: auto; margin-bottom: 8px; }
+    .showcase-card p { font-size: 0.85rem; color: #94a3b8; }
+
+    /* --- SERVICE CATALOG GRID --- */
+    .services-section { max-width: 1300px; margin: 100px auto; padding: 0 50px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
+    
     .card {
-      background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-      border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.15);
-      overflow: hidden; transition: all 0.3s ease; display: flex; flex-direction: column;
+      background: rgba(255, 255, 255, 0.03); border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden; transition: all 0.3s ease; cursor: pointer;
     }
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    }
-    .card-img { width: 100%; height: 210px; object-fit: cover; display: block; }
-    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .card-body h3 { font-size: 1.15rem; font-weight: 600; color: #ffffff; }
-    .card-body p { font-size: 0.85rem; color: #cbd5e1; margin-top: 8px; line-height: 1.6; }
-    .open-modal-btn {
-      margin-top: 18px; padding: 12px 20px; border-radius: 20px;
-      background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #38bdf8; font-size: 0.85rem; font-weight: 600; cursor: pointer;
-      display: inline-flex; align-items: center; justify-content: space-between; width: 100%;
-      transition: all 0.25s ease;
-    }
-    .open-modal-btn:hover { background: rgba(56, 189, 248, 0.2); border-color: #38bdf8; color: #ffffff; }
+    .card:hover { border-color: #60a5fa; transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+    .card-img { width: 100%; height: 230px; object-fit: cover; display: block; }
+    .card-body { padding: 28px; }
+    .card-body h3 { font-size: 1.25rem; font-weight: 700; color: #ffffff; display: flex; justify-content: space-between; align-items: center; }
+    .card-body p { font-size: 0.85rem; color: #94a3b8; margin-top: 10px; line-height: 1.6; }
+    .card-badge { font-size: 0.8rem; color: #60a5fa; font-weight: 600; margin-top: 16px; display: inline-flex; align-items: center; gap: 8px; }
 
-    /* --- POPUP MODAL OVERLAY --- */
+    /* --- MODAL POPUP (EACH SERVICE PAGE) --- */
     .modal-overlay {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+      background: rgba(5, 7, 12, 0.92); backdrop-filter: blur(35px);
       display: flex; justify-content: center; align-items: center;
       z-index: 10000; opacity: 0; visibility: hidden; transition: all 0.3s ease; padding: 20px;
     }
     .modal-overlay.active { opacity: 1; visibility: visible; }
     
     .modal-card {
-      background: rgba(12, 16, 26, 0.95);
-      border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.2);
-      width: 100%; max-width: 680px; max-height: 88vh; overflow-y: auto;
-      padding: 32px; position: relative; box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+      background: #0b0f19; border-radius: 32px; border: 1px solid rgba(255, 255, 255, 0.15);
+      width: 100%; max-width: 780px; max-height: 90vh; overflow-y: auto;
+      padding: 40px; position: relative; box-shadow: 0 40px 80px rgba(0,0,0,0.9);
     }
-    .modal-close { position: absolute; top: 20px; right: 24px; font-size: 1.6rem; color: #cbd5e1; cursor: pointer; }
+    .modal-close { position: absolute; top: 24px; right: 28px; font-size: 1.8rem; color: #64748b; cursor: pointer; transition: color 0.2s; }
     .modal-close:hover { color: #ffffff; }
-    .modal-card h2 { font-size: 1.4rem; color: #ffffff; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding-bottom: 12px; margin-bottom: 16px; }
-    
-    .quality-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .modal-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #60a5fa; font-weight: 600; }
+    .modal-card h2 { font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-top: 6px; margin-bottom: 8px; }
+    .modal-desc { font-size: 0.9rem; color: #94a3b8; margin-bottom: 24px; line-height: 1.6; }
+
+    .quality-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
     .quality-item { 
-      background: rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 16px; 
-      border: 1px solid rgba(255, 255, 255, 0.12); display: flex; gap: 16px; align-items: center;
+      background: rgba(255, 255, 255, 0.04); padding: 14px 18px; border-radius: 20px; 
+      border: 1px solid rgba(255, 255, 255, 0.08); display: flex; gap: 18px; align-items: center;
+      transition: border-color 0.2s;
     }
+    .quality-item:hover { border-color: rgba(255, 255, 255, 0.25); }
     .quality-item-img-wrap { position: relative; flex-shrink: 0; cursor: pointer; }
-    .quality-item img { width: 85px; height: 65px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2); display: block; }
-    .quality-item-text strong { color: #38bdf8; font-size: 0.9rem; display: block; }
-    .quality-item-text span { color: #cbd5e1; font-size: 0.8rem; line-height: 1.4; display: block; margin-top: 2px; }
+    .quality-item img { width: 95px; height: 70px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.15); display: block; }
+    .quality-item-text strong { color: #ffffff; font-size: 0.95rem; display: block; }
+    .quality-item-text span { color: #94a3b8; font-size: 0.8rem; line-height: 1.4; display: block; margin-top: 3px; }
 
     .modal-quote-btn {
       display: flex; align-items: center; justify-content: center; gap: 10px;
-      background: #25d366; color: #ffffff; text-decoration: none;
-      padding: 14px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: background 0.3s; width: 100%;
+      background: #ffffff; color: #000000; text-decoration: none;
+      padding: 16px; border-radius: 30px; font-weight: 700; font-size: 0.9rem;
+      transition: all 0.3s; width: 100%;
     }
-    .modal-quote-btn:hover { background: #20ba5a; }
+    .modal-quote-btn:hover { background: #60a5fa; color: #ffffff; }
 
-    /* LIGHTBOX OVERLAY */
+    /* --- "HAVE A PROJECT IN MIND?" PROJECT CLOSING SECTION --- */
+    .project-closing-section {
+      max-width: 1300px; margin: 120px auto 80px; padding: 60px 50px;
+      text-align: center; background: rgba(255, 255, 255, 0.02);
+      border-radius: 40px; border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .closing-subtitle { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: #64748b; font-weight: 600; }
+    .closing-title { font-size: 3.8rem; font-weight: 900; line-height: 1.1; margin-top: 12px; letter-spacing: -1.5px; }
+    .closing-title span { color: #818cf8; }
+    .closing-desc { font-size: 0.95rem; color: #94a3b8; margin: 20px auto 36px; max-width: 550px; line-height: 1.6; }
+    .closing-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-whatsapp-cta { background: #ffffff; color: #000000; padding: 16px 36px; border-radius: 30px; font-weight: 700; text-decoration: none; font-size: 0.9rem; transition: all 0.3s; }
+    .btn-whatsapp-cta:hover { background: #25d366; color: #ffffff; }
+    .btn-email-cta { background: rgba(255, 255, 255, 0.06); color: #ffffff; padding: 16px 36px; border-radius: 30px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); font-size: 0.9rem; }
+
+    /* LIGHTBOX */
     #image-lightbox {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
       background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(40px);
@@ -223,16 +214,17 @@
     }
     #image-lightbox.active { opacity: 1; visibility: visible; }
     #image-lightbox img { max-width: 95%; max-height: 80vh; object-fit: contain; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.3); }
-    #image-lightbox .lightbox-caption { color: #fff; margin-top: 12px; font-size: 1rem; }
+    #image-lightbox .lightbox-caption { color: #fff; margin-top: 14px; font-size: 1rem; }
 
-    footer { text-align: center; padding: 35px; background: rgba(6, 8, 14, 0.9); color: #94a3b8; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.12); }
+    footer { text-align: center; padding: 40px; background: rgba(5, 7, 12, 0.95); color: #64748b; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.08); }
 
     @media (max-width: 768px) {
-      header { padding: 12px 20px; }
-      .brand-info p { display: none; }
-      .hero-title { font-size: 1.8rem; }
-      .hero-glass-card { padding: 30px 20px; }
-      .hero-meta-box { text-align: left; width: 100%; }
+      header { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero-section, .approach-section, .services-section, .project-closing-section { padding: 0 24px; }
+      .hero-title { font-size: 2.6rem; }
+      .approach-title { font-size: 2.2rem; }
+      .closing-title { font-size: 2.4rem; }
     }
   </style>
 </head>
@@ -266,167 +258,192 @@
     <div class="header-inner">
       <div class="brand-wrapper">
         <img src="logo.png.png" alt="GS PHERIUM Logo" class="clean-logo-img">
-        <div class="brand-info">
-          <h1>GS PHERIUM</h1>
-          <p>Custom Printing & Branding | Al Rigga, Dubai</p>
-        </div>
       </div>
-      
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
       <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20would%20like%20to%20get%20a%20quote.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Service%20/%20Items%20Needed:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="header-cta-btn">
-        <i class="fab fa-whatsapp"></i> Get Quote
+        Get a Quote <i class="fas fa-arrow-up-right"></i>
       </a>
     </div>
   </header>
 
-  <div class="hero-banner">
-    <div class="hero-glass-card">
-      <div>
-        <h1 class="hero-title">Make your brand <span>impossible to ignore.</span></h1>
-        <p class="hero-desc">Custom printing, corporate merchandise, and bespoke branding solutions produced with premium finishes and fast local fulfillment.</p>
+  <section class="hero-section">
+    <h1 class="hero-title">Make your brand <span>impossible to ignore.</span></h1>
+    <p class="hero-desc">Custom printing, corporate merchandise, and branding solutions produced with the finish, detail, and consistency your business deserves.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Explore Services &darr;</a>
+      <a href="https://wa.me/971526907360" target="_blank" class="btn-secondary">WhatsApp Us &nearr;</a>
+    </div>
+  </section>
+
+  <section class="approach-section" id="approach">
+    <div class="section-subtitle">The GS Pherium Approach</div>
+    <div class="approach-head">
+      <h2 class="approach-title">Built to look<br><span>expensive.</span></h2>
+      <p class="approach-desc">Premium finishing, strong materials, and consistent visual execution across stationery, apparel, and merchandise.</p>
+    </div>
+
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <h4>Finishing</h4>
+        <h3>Details people can feel.</h3>
+        <p>Spot UV, foil, embossing, painted edges, and custom die-cuts.</p>
       </div>
-      <div class="hero-meta-box">
-        <div class="hero-meta-title">Creative Director</div>
-        <div class="hero-meta-name">GRESTAN LUTH PAUL</div>
+      <div class="showcase-card">
+        <h4>Apparel</h4>
+        <h3>Wear the identity.</h3>
+        <p>DTF, 3D puff, embroidery, and corporate uniforms.</p>
+      </div>
+      <div class="showcase-card">
+        <h4>Merch</h4>
+        <h3>Useful. Memorable.</h3>
+        <p>Corporate gifts, bottles, pens, notebooks, and branded sets.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="container">
+  <section class="services-section" id="services">
+    <div class="section-subtitle" style="margin-bottom: 24px;">Our Core Catalog</div>
     <div class="grid">
 
-      <div class="card">
+      <div class="card" onclick="openModal('cardModal')">
         <img src="card.jpg.webp" alt="Business Cards" class="card-img">
         <div class="card-body">
-          <h3>Business Card Printing</h3>
+          <h3>Business Cards <i class="fas fa-arrow-right"></i></h3>
           <p>Matte, gloss, textured, soft-touch, and foil-stamped business cards designed to elevate your brand.</p>
-          <button class="open-modal-btn" onclick="openModal('cardModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 5 finishes</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('flyerModal')">
         <img src="flyer.jpg.jfif" alt="Flyers & Brochures" class="card-img">
         <div class="card-body">
-          <h3>Flyer & Brochure Printing</h3>
+          <h3>Flyers & Brochures <i class="fas fa-arrow-right"></i></h3>
           <p>High-volume marketing flyers and bi-fold/tri-fold brochures on premium paper stocks.</p>
-          <button class="open-modal-btn" onclick="openModal('flyerModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="letterhead.jpg.jfif" alt="Letterhead Printing" class="card-img">
+      <div class="card" onclick="openModal('letterheadModal')">
+        <img src="letterhead.jpg.jfif" alt="Letterheads" class="card-img">
         <div class="card-body">
-          <h3>Letterhead Printing</h3>
+          <h3>Corporate Letterheads <i class="fas fa-arrow-right"></i></h3>
           <p>Official corporate stationary and letterheads printed on smooth, high-grade paper.</p>
-          <button class="open-modal-btn" onclick="openModal('letterheadModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="tshirt.jpg.jfif" alt="T-Shirt Printing DTF" class="card-img">
+      <div class="card" onclick="openModal('tshirtModal')">
+        <img src="tshirt.jpg.jfif" alt="T-Shirt DTF" class="card-img">
         <div class="card-body">
-          <h3>T-Shirt Printing (DTF)</h3>
+          <h3>T-Shirt Printing (DTF) <i class="fas fa-arrow-right"></i></h3>
           <p>Direct-to-Film custom apparel printing with vibrant colors and durable, stretch-resistant prints.</p>
-          <button class="open-modal-btn" onclick="openModal('tshirtModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="3dpuff.jpg.jfif" alt="3D Puff T-Shirt Printing" class="card-img">
+      <div class="card" onclick="openModal('puffModal')">
+        <img src="3dpuff.jpg.jfif" alt="3D Puff T-Shirt" class="card-img">
         <div class="card-body">
-          <h3>3D Puff T-Shirt Printing</h3>
+          <h3>3D Puff T-Shirt Printing <i class="fas fa-arrow-right"></i></h3>
           <p>Tactile, raised 3D rubberized text and graphics for streetwear and custom merchandise.</p>
-          <button class="open-modal-btn" onclick="openModal('puffModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('embroideryModal')">
         <img src="embroidery.jpg.jfif" alt="Custom Embroidery" class="card-img">
         <div class="card-body">
-          <h3>Custom Embroidery</h3>
+          <h3>Custom Embroidery <i class="fas fa-arrow-right"></i></h3>
           <p>High-density thread embroidery for corporate polo shirts, caps, workwear, and jackets.</p>
-          <button class="open-modal-btn" onclick="openModal('embroideryModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('uvModal')">
         <img src="uvprint.jpg.webp" alt="UV Direct Printing" class="card-img">
         <div class="card-body">
-          <h3>UV Direct Printing</h3>
+          <h3>UV Direct Printing <i class="fas fa-arrow-right"></i></h3>
           <p>Direct UV flatbed printing on acrylic, wood, glass, metal, phone cases, and tumblers.</p>
-          <button class="open-modal-btn" onclick="openModal('uvModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('giftsModal')">
         <img src="gifts.jpg.jfif" alt="Corporate Gifts" class="card-img">
         <div class="card-body">
-          <h3>Corporate Gifts & Items</h3>
+          <h3>Corporate Gifts & Sets <i class="fas fa-arrow-right"></i></h3>
           <p>Tailored gift sets, branded bottles, promotional pens, and executive giveaways.</p>
-          <button class="open-modal-btn" onclick="openModal('giftsModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('acrylicModal')">
         <img src="acrylic.jpg.jfif" alt="Acrylic Stands" class="card-img">
         <div class="card-body">
-          <h3>Acrylic Stands & Signage</h3>
+          <h3>Acrylic Stands & Signage <i class="fas fa-arrow-right"></i></h3>
           <p>Custom laser-cut acrylic display stands, desk blocks, and corporate wall signs.</p>
-          <button class="open-modal-btn" onclick="openModal('acrylicModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 3 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('bannerModal')">
         <img src="banner-rollup.jpg.jpg" alt="Banners & Roll-Ups" class="card-img">
         <div class="card-body">
-          <h3>Banners & Roll-Up Printing</h3>
+          <h3>Banners & Roll-Up Displays <i class="fas fa-arrow-right"></i></h3>
           <p>Retractable roll-up standees and heavy-duty vinyl flex banners for events and retail.</p>
-          <button class="open-modal-btn" onclick="openModal('bannerModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('photoModal')">
         <img src="photo.jpg.jfif" alt="Photo Printing" class="card-img">
         <div class="card-body">
-          <h3>Large Scale Photo Printing</h3>
+          <h3>Large Scale Photo Prints <i class="fas fa-arrow-right"></i></h3>
           <p>Gallery-quality canvas photo prints, framed poster prints, and high-res wall art.</p>
-          <button class="open-modal-btn" onclick="openModal('photoModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('stickerModal')">
         <img src="stickers.jpg.jfif" alt="Custom Stickers" class="card-img">
         <div class="card-body">
-          <h3>Custom Stickers & Decals</h3>
+          <h3>Custom Stickers & Decals <i class="fas fa-arrow-right"></i></h3>
           <p>Precision die-cut vinyl stickers, product packaging labels, and clear window graphics.</p>
-          <button class="open-modal-btn" onclick="openModal('stickerModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('bookModal')">
         <img src="books.jpg.jfif.jpg" alt="Book Printing" class="card-img">
         <div class="card-body">
-          <h3>Book & Catalog Printing</h3>
+          <h3>Book & Catalog Printing <i class="fas fa-arrow-right"></i></h3>
           <p>Custom booklets, corporate catalogs, and training manuals with professional binding.</p>
-          <button class="open-modal-btn" onclick="openModal('bookModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 4 options</div>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="openModal('engravingModal')">
         <img src="engraving.jpg.jfif" alt="Laser Engraving" class="card-img">
         <div class="card-body">
-          <h3>Laser Engraving & Keychains</h3>
+          <h3>Laser Engraving & Keychains <i class="fas fa-arrow-right"></i></h3>
           <p>Precision laser etching on metal, wood, and acrylic, plus custom keychains.</p>
-          <button class="open-modal-btn" onclick="openModal('engravingModal')">View Options & Request Quote <i class="fas fa-arrow-right"></i></button>
+          <div class="card-badge"><i class="fas fa-plus-circle"></i> Click to view 3 options</div>
         </div>
       </div>
 
     </div>
-  </div>
+  </section>
 
   <div class="modal-overlay" id="cardModal" onclick="closeModalOutside(event, 'cardModal')">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('cardModal')">&times;</span>
-      <h2>Business Card Finishes</h2>
+      <div class="modal-tag">Service 01 / 14</div>
+      <h2>Business Card Printing</h2>
+      <p class="modal-desc">Premium business cards with high-end finishing tailored to leave a lasting impact.</p>
       <div class="quality-list">
         <div class="quality-item">
           <div class="quality-item-img-wrap" onclick="openLightbox('card-spotuv.jpg.jfif', 'Spot UV Finish')">
@@ -434,7 +451,7 @@
           </div>
           <div class="quality-item-text">
             <strong>1. Spot UV Finish</strong>
-            <span>Raised glossy coating over matte paper.</span>
+            <span>Raised glossy coating over logos or text against matte paper.</span>
           </div>
         </div>
         <div class="quality-item">
@@ -442,8 +459,8 @@
             <img src="card-foil.jpg.jfif" alt="Foil Stamping">
           </div>
           <div class="quality-item-text">
-            <strong>2. Gold / Silver Foil Stamping</strong>
-            <span>Hot-stamped metallic foil finish.</span>
+            <strong>2. Gold / Metallic Foil Stamping</strong>
+            <span>Hot-stamped metallic reflective foil typography.</span>
           </div>
         </div>
         <div class="quality-item">
@@ -452,26 +469,46 @@
           </div>
           <div class="quality-item-text">
             <strong>3. Embossed / Debossed</strong>
-            <span>Tactile 3D paper impressions.</span>
+            <span>Raised or indented 3D impressions directly into paper stock.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('card-paintededge.jpg.jfif', 'Painted Edge Cards')">
+            <img src="card-paintededge.jpg.jfif" alt="Painted Edge">
+          </div>
+          <div class="quality-item-text">
+            <strong>4. Painted Edge Cards</strong>
+            <span>Vibrant color along the outer edges of multi-layer cards.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('card-diecut.jpg.jfif', 'Custom Die-Cut Shapes')">
+            <img src="card-diecut.jpg.jfif" alt="Die-Cut">
+          </div>
+          <div class="quality-item-text">
+            <strong>5. Custom Die-Cut Shapes</strong>
+            <span>Precision laser-cut silhouettes tailored to your brand shape.</span>
           </div>
         </div>
       </div>
-      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Business%20Cards.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Finish%20Choice:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn"><i class="fab fa-whatsapp"></i> Request Quote via WhatsApp</a>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Business%20Cards.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Finish%20Choice:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
     </div>
   </div>
 
   <div class="modal-overlay" id="flyerModal" onclick="closeModalOutside(event, 'flyerModal')">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('flyerModal')">&times;</span>
-      <h2>Flyer & Brochure Options</h2>
+      <div class="modal-tag">Service 02 / 14</div>
+      <h2>Flyer & Brochure Printing</h2>
+      <p class="modal-desc">High-volume promotional flyers and folded brochures printed on premium paper stocks.</p>
       <div class="quality-list">
         <div class="quality-item">
           <div class="quality-item-img-wrap" onclick="openLightbox('flyer-single.jpg.jfif', 'Single & Double Flyers')">
             <img src="flyer-single.jpg.jfif" alt="Flyers">
           </div>
           <div class="quality-item-text">
-            <strong>1. Single / Double-Sided Flyers</strong>
-            <span>150gsm to 170gsm gloss or matte paper.</span>
+            <strong>1. Single & Double-Sided Flyers</strong>
+            <span>150gsm to 170gsm gloss or smooth matte paper.</span>
           </div>
         </div>
         <div class="quality-item">
@@ -480,32 +517,320 @@
           </div>
           <div class="quality-item-text">
             <strong>2. Bi-Fold Folded Brochures</strong>
-            <span>4-panel layout for portfolios and menus.</span>
+            <span>4-panel layout folded down the center for portfolios & menus.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('flyer-trifold.jpg.jfif', 'Tri-Fold Pamphlets')">
+            <img src="flyer-trifold.jpg.jfif" alt="Tri-Fold">
+          </div>
+          <div class="quality-item-text">
+            <strong>3. Tri-Fold / Z-Fold Pamphlets</strong>
+            <span>Compact 6-panel informational brochures.</span>
           </div>
         </div>
       </div>
-      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Flyers.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Brochure%20Type:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn"><i class="fab fa-whatsapp"></i> Request Quote via WhatsApp</a>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Flyers.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Brochure%20Type:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
     </div>
   </div>
 
   <div class="modal-overlay" id="letterheadModal" onclick="closeModalOutside(event, 'letterheadModal')">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('letterheadModal')">&times;</span>
-      <h2>Letterhead Printing Options</h2>
+      <div class="modal-tag">Service 03 / 14</div>
+      <h2>Corporate Letterheads</h2>
+      <p class="modal-desc">Official stationary printed on smooth bond or luxury textured paper.</p>
       <div class="quality-list">
         <div class="quality-item">
-          <div class="quality-item-img-wrap" onclick="openLightbox('letterhead-standard.jpg.jfif', 'Standard Letterhead')">
+          <div class="quality-item-img-wrap" onclick="openLightbox('letterhead-standard.jpg.jfif', 'Standard Corporate Letterhead')">
             <img src="letterhead-standard.jpg.jfif" alt="Standard Letterhead">
           </div>
           <div class="quality-item-text">
-            <strong>1. Corporate Bond Paper (100gsm)</strong>
-            <span>Smooth finish for high-volume corporate stationery.</span>
+            <strong>1. Standard Bond Paper (100gsm)</strong>
+            <span>Smooth wood-free bond paper for daily correspondence.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('letterhead-textured.jpg.jpg', 'Textured Linen Paper')">
+            <img src="letterhead-textured.jpg.jpg" alt="Textured Linen">
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Premium Textured Linen Paper</strong>
+            <span>High-grade 120gsm woven linen paper for executive suites.</span>
           </div>
         </div>
       </div>
-      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Letterheads.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Paper%20Choice:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn"><i class="fab fa-whatsapp"></i> Request Quote via WhatsApp</a>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Letterheads.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Paper%20Choice:%20%0A5.%20Quantity:%20%0A6.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
     </div>
   </div>
+
+  <div class="modal-overlay" id="tshirtModal" onclick="closeModalOutside(event, 'tshirtModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('tshirtModal')">&times;</span>
+      <div class="modal-tag">Service 04 / 14</div>
+      <h2>T-Shirt Printing (DTF)</h2>
+      <p class="modal-desc">Direct-to-Film transfer technology for custom apparel and team uniforms.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('tshirt-dtf.jpg.jfif', 'Vibrant DTF Print')">
+            <img src="tshirt-dtf.jpg.jfif" alt="DTF Print">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. High-Vibrancy DTF Printing</strong>
+            <span>Ultra-vivid colors on 100% cotton or fabric blends.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('tshirt-oversized.jpg.jfif', 'Oversized Streetwear Tee')">
+            <img src="tshirt-oversized.jpg.jfif" alt="Oversized Fit">
+          </div>
+          <div class="quality-item-text">
+            <strong>2. Heavyweight Oversized Fit</strong>
+            <span>Premium 240gsm thick cotton streetwear t-shirts.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20DTF%20T-Shirts.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Style/Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="puffModal" onclick="closeModalOutside(event, 'puffModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('puffModal')">&times;</span>
+      <div class="modal-tag">Service 05 / 14</div>
+      <h2>3D Puff T-Shirt Printing</h2>
+      <p class="modal-desc">Raised 3D rubberized text and logos for high-impact streetwear apparel.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('puff-front.jpg.jfif', '3D Raised Print')">
+            <img src="puff-front.jpg.jfif" alt="3D Puff">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. High-Density 3D Raised Foam</strong>
+            <span>Tactile foam technique that expands under heat.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%203D%20Puff.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="embroideryModal" onclick="closeModalOutside(event, 'embroideryModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('embroideryModal')">&times;</span>
+      <div class="modal-tag">Service 06 / 14</div>
+      <h2>Custom Embroidery</h2>
+      <p class="modal-desc">High-density thread stitching on polos, caps, jackets, and workwear.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('embroidery-polo.jpg.jfif', 'Polo Shirt Embroidery')">
+            <img src="embroidery-polo.jpg.jfif" alt="Polo Embroidery">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Corporate Polo Chest Logos</strong>
+            <span>Durable thread stitching for staff uniforms.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('embroidery-cap.jpg.jfif', 'Cap Embroidery')">
+            <img src="embroidery-cap.jpg.jfif" alt="Cap Embroidery">
+          </div>
+          <div class="quality-item-text">
+            <strong>2. 3D & Flat Cap Headwear</strong>
+            <span>Structured 3D raised puff or flat embroidery on snapbacks.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Embroidery.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Item/Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="uvModal" onclick="closeModalOutside(event, 'uvModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('uvModal')">&times;</span>
+      <div class="modal-tag">Service 07 / 14</div>
+      <h2>UV Direct Printing</h2>
+      <p class="modal-desc">Flatbed UV curing directly onto acrylic, glass, metal, wood, and tumblers.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('uv-acrylic.jpg.jfif.jpg', 'UV Acrylic Print')">
+            <img src="uv-acrylic.jpg.jfif.jpg" alt="UV Acrylic">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Acrylic & Glass Panels</strong>
+            <span>Full-color UV prints on clear panels or trophies.</span>
+          </div>
+        </div>
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('uv-rotary.jpg.jfif.jfif', '360° Rotary Tumbler')">
+            <img src="uv-rotary.jpg.jfif.jfif" alt="Rotary Tumbler">
+          </div>
+          <div class="quality-item-text">
+            <strong>2. 360° Rotary Bottle Prints</strong>
+            <span>Full-wrap seamless UV printing on drinkware.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20UV%20Printing.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Material/Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="giftsModal" onclick="closeModalOutside(event, 'giftsModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('giftsModal')">&times;</span>
+      <div class="modal-tag">Service 08 / 14</div>
+      <h2>Corporate Gifts & Sets</h2>
+      <p class="modal-desc">Bespoke executive gift boxes, drinkware, notebooks, and promotional items.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('gifts.jpg.jfif', 'Executive Gift Sets')">
+            <img src="gifts.jpg.jfif" alt="Gift Sets">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Executive Gift Sets</strong>
+            <span>Custom boxes with metal pens, leather journals & power banks.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Gifts.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Items/Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="acrylicModal" onclick="closeModalOutside(event, 'acrylicModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('acrylicModal')">&times;</span>
+      <div class="modal-tag">Service 09 / 14</div>
+      <h2>Acrylic Stands & Signage</h2>
+      <p class="modal-desc">Laser-cut acrylic displays, desk stands, and wall-mounted reception signs.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('acrylic-stand.jpg.jfif.jpg', 'Desktop Stand')">
+            <img src="acrylic-stand.jpg.jfif.jpg" alt="Desktop Stand">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Desktop Signage & Menu Holders</strong>
+            <span>Laser-cut acrylic display stands and table blocks.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Acrylic.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Type/Dimensions:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="bannerModal" onclick="closeModalOutside(event, 'bannerModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('bannerModal')">&times;</span>
+      <div class="modal-tag">Service 10 / 14</div>
+      <h2>Banners & Roll-Up Displays</h2>
+      <p class="modal-desc">Portable retractable standees, outdoor flex banners, and exhibition walls.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('banner-rollup.jpg.jpg', 'Roll-Up Banner')">
+            <img src="banner-rollup.jpg.jpg" alt="Roll-Up Banner">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Retractable Roll-Up Stands</strong>
+            <span>Aluminum pull-up stands with high-resolution anti-curl print.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Banners.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Banner%20Type/Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="photoModal" onclick="closeModalOutside(event, 'photoModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('photoModal')">&times;</span>
+      <div class="modal-tag">Service 11 / 14</div>
+      <h2>Large Scale Photo Prints</h2>
+      <p class="modal-desc">Canvas gallery wraps, framed posters, and high-gloss large format wall art.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('photo-canvas.jpg.jfif.jpg', 'Wrapped Canvas')">
+            <img src="photo-canvas.jpg.jfif.jpg" alt="Wrapped Canvas">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Premium Wrapped Canvas</strong>
+            <span>Gallery cotton canvas mounted on internal wooden frames.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Photo%20Prints.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Medium/Size:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="stickerModal" onclick="closeModalOutside(event, 'stickerModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('stickerModal')">&times;</span>
+      <div class="modal-tag">Service 12 / 14</div>
+      <h2>Custom Stickers & Decals</h2>
+      <p class="modal-desc">Die-cut vinyl stickers, product labels, clear stickers, and window graphics.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('sticker-diecut.jpg.jfif.jpg', 'Die-Cut Stickers')">
+            <img src="sticker-diecut.jpg.jfif.jpg" alt="Die-Cut Stickers">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Custom Die-Cut Vinyl Stickers</strong>
+            <span>Waterproof vinyl stickers cut precisely to your logo outline.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Stickers.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Type/Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="bookModal" onclick="closeModalOutside(event, 'bookModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('bookModal')">&times;</span>
+      <div class="modal-tag">Service 13 / 14</div>
+      <h2>Book & Catalog Printing</h2>
+      <p class="modal-desc">Softcover booklets, product catalogs, and custom executive hardcover notebooks.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('book-perfect.jpg.jfif.jpg', 'Perfect Bound Catalog')">
+            <img src="book-perfect.jpg.jfif.jpg" alt="Perfect Bound Catalog">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Perfect Bound Catalogs</strong>
+            <span>Clean glued spine finish for high-page magazines & profiles.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Books.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Type/Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="engravingModal" onclick="closeModalOutside(event, 'engravingModal')">
+    <div class="modal-card">
+      <span class="modal-close" onclick="closeModal('engravingModal')">&times;</span>
+      <div class="modal-tag">Service 14 / 14</div>
+      <h2>Laser Engraving & Keychains</h2>
+      <p class="modal-desc">Precision laser etching on wood, glass, metal, and acrylic keychains.</p>
+      <div class="quality-list">
+        <div class="quality-item">
+          <div class="quality-item-img-wrap" onclick="openLightbox('engraving-wood.jpg.jfif.jpg.jpg', 'Wood Engraving')">
+            <img src="engraving-wood.jpg.jfif.jpg.jpg" alt="Wood Engraving">
+          </div>
+          <div class="quality-item-text">
+            <strong>1. Precision Wood & Glass Engraving</strong>
+            <span>Detailed laser burning on timber, glassware, and awards.</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/971526907360?text=Hi%20GS%20PHERIUM,%20I%20want%20to%20get%20a%20quote%20for%20Laser%20Engraving.%0A%0A1.%20Name:%20%0A2.%20Mobile:%20%0A3.%20Email:%20%0A4.%20Material/Quantity:%20%0A5.%20Delivery%20Location:%20" target="_blank" class="modal-quote-btn">Request a Quote &nearr;</a>
+    </div>
+  </div>
+
+  <section class="project-closing-section" id="contact">
+    <div class="closing-subtitle">Let's Make Something</div>
+    <h2 class="closing-title">Have a project<br><span>in mind?</span></h2>
+    <p class="closing-desc">Send your requirements and we'll help you choose the right material, finish, and production method.</p>
+    <div class="closing-btns">
+      <a href="https://wa.me/971526907360" target="_blank" class="btn-whatsapp-cta">WhatsApp +971 52 690 7360 &nearr;</a>
+      <a href="mailto:gspherium@gmail.com" class="btn-email-cta">gspherium@gmail.com</a>
+    </div>
+  </section>
 
   <div id="image-lightbox" onclick="closeLightbox()">
     <img id="lightbox-img" src="" alt="Full View">
@@ -513,7 +838,7 @@
   </div>
 
   <footer>
-    <p><strong>Location:</strong> Al Rigga, Dubai - UAE | <strong>Mobile:</strong> +971 52 690 7360 | <strong>Email:</strong> gspherium@gmail.com</p>
+    <p>AL RIGGA &middot; DUBAI &middot; UNITED ARAB EMIRATES</p>
     <p style="margin-top:8px;">&copy; GS PHERIUM. All Rights Reserved.</p>
   </footer>
 
