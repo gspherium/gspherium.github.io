@@ -68,7 +68,6 @@
     }
     #splash-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
     
-    /* FROSTED GLASS LOGO BADGE (NO WHITE BOX) */
     .splash-logo-container {
       background: rgba(255, 255, 255, 0.12);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -113,29 +112,50 @@
     .wa-btn { background: #25d366; }
     .mail-btn { background: #ea4335; }
 
-    /* --- HEADER --- */
+    /* --- CLEAN MODERN HEADER --- */
     header { 
-      padding: 40px 20px 30px; text-align: center; 
-      background: rgba(0, 0, 0, 0.25); 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-    }
-    .header-logo-container { display: inline-block; cursor: pointer; }
-    
-    /* FROSTED GLASS HEADER BADGE (NO WHITE BOX) */
-    .header-logo-badge { 
-      background: rgba(255, 255, 255, 0.12); 
+      padding: 15px 40px; 
+      background: rgba(10, 10, 15, 0.75); 
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      padding: 12px 28px; border-radius: 16px; 
-      display: inline-block; margin-bottom: 15px; 
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      position: sticky; top: 0; z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+    }
+
+    .clean-logo-img { 
+      height: 48px; 
+      width: auto; 
+      display: block; 
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
       transition: transform 0.3s ease;
     }
-    .header-logo-container:hover .header-logo-badge { transform: scale(1.03); border-color: rgba(255,255,255,0.5); }
-    .header-logo-img { height: 60px; width: auto; display: block; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6)); }
-    header h1 { font-size: 2.2rem; color: #ffffff; letter-spacing: 3px; font-weight: 700; text-shadow: 0 0 20px rgba(245, 158, 11, 0.6); }
-    header p { color: #f1f5f9; font-size: 0.95rem; margin-top: 6px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+    .brand-wrapper:hover .clean-logo-img { transform: scale(1.05); }
+
+    .brand-info h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: 2px; color: #ffffff; line-height: 1; margin-bottom: 4px; }
+    .brand-info p { font-size: 0.8rem; color: #cbd5e1; font-weight: 400; }
+
+    .header-cta-btn {
+      background: linear-gradient(135deg, #38bdf8, #a855f7);
+      color: #ffffff; padding: 10px 22px; border-radius: 30px;
+      font-size: 0.85rem; font-weight: 600; text-decoration: none;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+      transition: all 0.3s ease;
+    }
+    .header-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5); }
 
     /* --- HIGH-CONTRAST LIQUID GLASS CARDS --- */
     .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
@@ -260,6 +280,12 @@
     .modal-order-btn:hover { background: #20ba5a; transform: translateY(-1px); }
 
     footer { text-align: center; padding: 35px; background: rgba(0, 0, 0, 0.85); color: #cbd5e1; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.15); }
+
+    @media (max-width: 768px) {
+      header { padding: 12px 20px; }
+      .brand-info p { display: none; }
+      .header-cta-btn { font-size: 0.75rem; padding: 8px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -282,14 +308,21 @@
     <a href="mailto:gspherium@gmail.com" class="floating-btn mail-btn"><i class="fas fa-envelope"></i></a>
   </div>
 
+  <!-- UPDATED MODERN HEADER -->
   <header>
-    <div class="header-logo-container" onclick="openModal('aboutModal')">
-      <div class="header-logo-badge">
-        <img src="logo.png.png" alt="GS PHERIUM Logo" class="header-logo-img">
+    <div class="header-inner">
+      <div class="brand-wrapper" onclick="openModal('aboutModal')">
+        <img src="logo.png.png" alt="GS PHERIUM Logo" class="clean-logo-img">
+        <div class="brand-info">
+          <h1>GS PHERIUM</h1>
+          <p>Custom Printing & Branding | Al Rigga, Dubai</p>
+        </div>
       </div>
-      <h1>GS PHERIUM</h1>
+      
+      <a href="https://wa.me/971526907360" target="_blank" class="header-cta-btn">
+        <i class="fab fa-whatsapp"></i> Get Quote
+      </a>
     </div>
-    <p>Custom Printing, Corporate Merch & Branding Solutions | Al Rigga, Dubai</p>
   </header>
 
   <div class="container">
@@ -421,8 +454,8 @@
         </div>
       </div>
 
-    </div> <!-- CLOSES .grid -->
-  </div> <!-- CLOSES .container -->
+    </div>
+  </div>
 
   <!-- ALL MODAL OVERLAYS -->
 
@@ -1027,7 +1060,6 @@
     </div>
   </div>
 
-  <!-- PHOTO MODAL -->
   <div class="modal-overlay" id="photoModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('photoModal')">&times;</span>
@@ -1086,7 +1118,6 @@
     </div>
   </div>
 
-  <!-- STICKERS & DECALS MODAL -->
   <div class="modal-overlay" id="stickerModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('stickerModal')">&times;</span>
@@ -1145,7 +1176,6 @@
     </div>
   </div>
 
-  <!-- BOOK & CATALOG MODAL -->
   <div class="modal-overlay" id="bookModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('bookModal')">&times;</span>
@@ -1208,7 +1238,6 @@
     </div>
   </div>
 
-  <!-- LASER ENGRAVING & KEYCHAINS MODAL -->
   <div class="modal-overlay" id="engravingModal" onclick="closeModalOutside(event)">
     <div class="modal-card">
       <span class="modal-close" onclick="closeModal('engravingModal')">&times;</span>
